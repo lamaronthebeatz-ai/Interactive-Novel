@@ -1,0 +1,16 @@
+{
+  "id": "san-dinh-lang",
+  "name": "Sân Đình Làng",
+  "description": "Buổi sáng, sương còn giăng mờ trên sân đình. Mái ngói rêu phong, những gốc đa già đứng lặng lẽ như đang dõi theo bước chân bạn. Một cụ già mặc áo the đứng gần cửa đình, tay cầm chổi quét lá.",
+  "npcs": ["ong-tu"],
+  "actions": [
+    {
+      "id": "nhin-xung-quanh",
+      "text": "Nhìn xung quanh sân đình",
+      "effects": [
+        { "type": "addJournalEntry", "text": "Mình quan sát sân đình. Nơi này yên tĩnh nhưng có gì đó khiến mình chột dạ, như thể đang bị dõi theo." },
+        { "type": "advanceTime", "minutes": 10 }
+      ]
+    }
+  ]
+}
