@@ -1,0 +1,67 @@
+{
+  "id": "ong-tu-intro",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Ông Từ",
+      "text": "Cháu là người lạ mặt... Đến đình từ sáng sớm thế này, có chuyện gì không?",
+      "choices": [
+        { "text": "Cháu chỉ đi ngang qua, thấy đình đẹp nên ghé vào.", "next": "ngang-qua" },
+        { "text": "Cháu muốn hỏi về ngôi đình này.", "next": "hoi-dinh" },
+        { "text": "(Im lặng, không trả lời)", "next": "im-lang" }
+      ]
+    },
+    "ngang-qua": {
+      "speaker": "Ông Từ",
+      "text": "Ừ, đình làng ta tuy nhỏ nhưng cũng có chút tiếng linh thiêng. Cháu cứ tự nhiên.",
+      "choices": [
+        { "text": "Cảm ơn cụ.", "next": "ket-thuc-vui-ve" }
+      ]
+    },
+    "hoi-dinh": {
+      "speaker": "Ông Từ",
+      "text": "Đình này thờ Thành Hoàng làng, đã hơn trăm năm tuổi. Nghe đâu dạo gần đây có vài chuyện lạ xảy ra quanh vùng...",
+      "choices": [
+        { "text": "Chuyện lạ gì vậy cụ?", "next": "chuyen-la" },
+        { "text": "Cháu xin phép tìm hiểu sau.", "next": "ket-thuc-vui-ve" }
+      ]
+    },
+    "chuyen-la": {
+      "speaker": "Ông Từ",
+      "text": "Ta cũng chưa rõ ràng lắm... Nhưng nếu cháu thật lòng muốn biết, hãy quay lại tìm ta sau. Trước mắt, cầm lấy thứ này, có thể sẽ cần đến.",
+      "choices": [
+        {
+          "text": "Cháu cảm ơn cụ.",
+          "next": "ket-thuc-nhan-vat-pham",
+          "effects": [
+            { "type": "addItem", "itemId": "bua-binh-an", "name": "Bùa Bình An", "description": "Một lá bùa nhỏ, nét chữ đã phai màu theo thời gian. Ông Từ nói có thể sẽ cần đến nó." },
+            { "type": "addJournalEntry", "text": "Ông Từ đưa cho mình một lá bùa bình an và dặn quay lại tìm ông sau." },
+            { "type": "setFlag", "flag": "da-nhan-bua", "value": true }
+          ]
+        }
+      ]
+    },
+    "im-lang": {
+      "speaker": "Ông Từ",
+      "text": "Cụ chỉ khẽ gật đầu, tiếp tục quét lá, không nói thêm gì.",
+      "choices": [
+        { "text": "(Rời đi)", "next": "ket-thuc-im-lang" }
+      ]
+    },
+    "ket-thuc-vui-ve": {
+      "speaker": "Ông Từ",
+      "text": "Cụ mỉm cười, tiếp tục công việc quét dọn.",
+      "choices": []
+    },
+    "ket-thuc-nhan-vat-pham": {
+      "speaker": "Ông Từ",
+      "text": "Đi đường cẩn thận. Có gì cứ ghé đình tìm ta.",
+      "choices": []
+    },
+    "ket-thuc-im-lang": {
+      "speaker": "",
+      "text": "Bạn lặng lẽ rời đi, để lại cụ già một mình bên sân đình.",
+      "choices": []
+    }
+  }
+}
