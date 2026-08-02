@@ -1,8 +1,22 @@
 import type { GameEngine } from "../engine/GameEngine";
 import { renderFooter, renderHeader, renderMessage } from "./gameHeader";
 
+function renderEmptyWorld(engine: GameEngine): string {
+  return `
+    <section class="screen game-screen">
+      ${renderHeader(engine)}
+      <div class="content">
+        <p class="empty-hint">Thế giới đang được xây dựng. Nội dung sẽ sớm xuất hiện ở đây.</p>
+      </div>
+      ${renderFooter()}
+      ${renderMessage(engine)}
+    </section>
+  `;
+}
+
 export function renderLocation(engine: GameEngine): string {
   const location = engine.getCurrentLocation();
+  if (!location) return renderEmptyWorld(engine);
 
   const npcButtons = location.npcs
     .map((npcId) => {
