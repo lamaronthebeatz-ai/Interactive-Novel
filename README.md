@@ -31,25 +31,36 @@ src/
 
 Thêm nội dung mới (địa điểm / NPC / hội thoại): tạo file JSON trong `src/data/`, đăng ký trong `src/data/index.ts`. Không cần sửa engine.
 
-## Version 1 — Hoàn thành
+## Lore
 
-Mục tiêu: có game chơi được.
+```
+lore/
+  chuong-1-the-gioi.md   # World Bible: lục địa, quốc gia, địa hình, chính trị, thương mại
+```
+
+Tài liệu nền móng thế giới — địa lý, chính trị, kinh tế của Đại Lục Viễn Nguyên. Đây là nền tảng để xây
+dựng cốt truyện và nội dung game sau này, bản thân nó không chứa cốt truyện, nhân vật chính, hay quest.
+
+## Version 1 — Hoàn thành (engine)
+
+Mục tiêu: có game chơi được, engine hoàn chỉnh và tách biệt khỏi nội dung.
 
 - Menu chính: Chơi Mới, Tiếp Tục, Tải
 - Hệ thống lưu/tải qua `localStorage`
-- Một địa điểm đầu tiên (Sân Đình Làng) với hành động khám phá
-- Một NPC (Ông Từ) với hội thoại phân nhánh nhiều lựa chọn
 - Hệ thống hội thoại + lựa chọn, có hiệu ứng (nhận vật phẩm, ghi nhật ký, thời gian trôi, đặt cờ trạng thái)
 - Đồng hồ thời gian trong game (ngày / giờ / buổi)
 - Nhật ký sự kiện
 - Kho đồ cơ bản
 - Giao diện hoàn toàn tiếng Việt, tối ưu cho di động
 
-## Version 2 — Dự kiến
+Dữ liệu nội dung thử nghiệm (địa điểm/NPC/hội thoại demo) đã được gỡ bỏ để nhường chỗ cho nội dung chính
+thức xây dựng trên nền World Bible — hiện `src/data/` đang trống, engine hiển thị màn hình chờ khi chưa
+có địa điểm nào.
 
+## Tiếp theo
+
+- Chuyển hóa nội dung từ World Bible thành dữ liệu địa điểm/NPC/hội thoại thật trong `src/data/`
 - Thêm địa điểm thứ hai và di chuyển giữa các địa điểm
-- Thêm NPC và nhánh hội thoại phụ thuộc vào cờ trạng thái / vật phẩm đã có
 - Nhiều slot lưu
 - Quest đơn giản (mục tiêu + theo dõi tiến độ)
 - Cải thiện giao diện (hiệu ứng chuyển cảnh, chỉ báo hành động mới)
-- Cấu hình deploy GitHub Pages

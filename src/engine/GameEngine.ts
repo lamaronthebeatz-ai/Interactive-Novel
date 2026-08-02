@@ -73,7 +73,7 @@ export class GameEngine {
     this.notify();
   }
 
-  getCurrentLocation(): GameLocation {
+  getCurrentLocation(): GameLocation | undefined {
     return locations[this.state.currentLocationId];
   }
 
@@ -128,7 +128,7 @@ export class GameEngine {
 
   performLocationAction(actionId: string): void {
     const location = this.getCurrentLocation();
-    const action = location.actions?.find((a) => a.id === actionId);
+    const action = location?.actions?.find((a) => a.id === actionId);
     if (!action) return;
     if (action.effects) {
       this.applyEffects(action.effects);
