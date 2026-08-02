@@ -64,7 +64,29 @@ export interface GameLocation {
   actions?: LocationAction[];
 }
 
-export type Screen = "menu" | "location" | "dialogue" | "journal" | "inventory";
+export interface CharacterStat {
+  label: string;
+  value: number; // thang điểm 0-100
+}
+
+export interface CharacterProfile {
+  name: string;
+  age: number;
+  gender: string;
+  race: string;
+  status: string;
+  house: string;
+  occupation: string;
+  personality: string[];
+  strengths: string[];
+  weaknesses: string[];
+  background: string[]; // các đoạn tiểu sử
+  stats: CharacterStat[];
+  startingItems: Item[];
+  openingJournalEntry: string;
+}
+
+export type Screen = "menu" | "location" | "dialogue" | "journal" | "inventory" | "profile";
 
 export interface ActiveDialogue {
   npcId: string;
