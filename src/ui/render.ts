@@ -4,6 +4,7 @@ import { renderInventory } from "./inventoryView";
 import { renderJournal } from "./journalView";
 import { renderLocation } from "./locationView";
 import { renderMainMenu } from "./mainMenu";
+import { renderProfile } from "./profileView";
 
 export function render(root: HTMLElement, engine: GameEngine): void {
   switch (engine.screen) {
@@ -21,6 +22,9 @@ export function render(root: HTMLElement, engine: GameEngine): void {
       break;
     case "inventory":
       root.innerHTML = renderInventory(engine);
+      break;
+    case "profile":
+      root.innerHTML = renderProfile(engine);
       break;
   }
 }

@@ -1,7 +1,8 @@
-import { dialogues, locations, npcs, STARTING_LOCATION_ID } from "../data";
+import { dialogues, locations, npcs, protagonist, STARTING_LOCATION_ID } from "../data";
 import { SaveManager } from "./SaveManager";
 import { advanceTime, formatClock } from "./time";
 import type {
+  CharacterProfile,
   Dialogue,
   DialogueNode,
   Effect,
@@ -39,8 +40,16 @@ export class GameEngine {
 
   newGame(): void {
     this.state = createInitialState();
+    for (const item of protagonist.startingItems) {
+      this.addItem(item.id, item.name, item.description, item.quantity);
+    }
+    this.addJournalEntry(protagonist.openingJournalEntry);
     this.screen = "location";
     this.notify();
+  }
+
+  getProtagonist(): CharacterProfile {
+    return protagonist;
   }
 
   continueGame(): void {
@@ -137,15 +146,25 @@ export class GameEngine {
   }
 
   openJournal(): void {
-    this.previousScreen = this.screen === "journal" || this.screen === "inventory" ? this.previousScreen : this.screen;
+    this.previousScreen = this.isOverlayScreen(this.screen) ? this.previousScreen : this.screen;
     this.screen = "journal";
     this.notify();
   }
 
   openInventory(): void {
-    this.previousScreen = this.screen === "journal" || this.screen === "inventory" ? this.previousScreen : this.screen;
+    this.previousScreen = this.isOverlayScreen(this.screen) ? this.previousScreen : this.screen;
     this.screen = "inventory";
     this.notify();
+  }
+
+  openProfile(): void {
+    this.previousScreen = this.isOverlayScreen(this.screen) ? this.previousScreen : this.screen;
+    this.screen = "profile";
+    this.notify();
+  }
+
+  private isOverlayScreen(screen: Screen): boolean {
+    return screen === "journal" || screen === "inventory" || screen === "profile";
   }
 
   closeOverlay(): void {
@@ -163,17 +182,21 @@ export class GameEngine {
           this.state.time = advanceTime(this.state.time, effect.minutes);
           break;
         case "addJournalEntry":
-          this.state.journal.push({
-            day: this.state.time.day,
-            time: formatClock(this.state.time.minutesOfDay),
-            text: effect.text,
-          });
+          this.addJournalEntry(effect.text);
           break;
         case "setFlag":
           this.state.flags[effect.flag] = effect.value;
           break;
       }
     }
+  }
+
+  private addJournalEntry(text: string): void {
+    this.state.journal.push({
+      day: this.state.time.day,
+      time: formatClock(this.state.time.minutesOfDay),
+      text,
+    });
   }
 
   private addItem(itemId: string, name: string, description: string, quantity: number): void {

@@ -274,13 +274,13 @@ button:disabled {
   align-items: center;
   gap: 0.2rem;
   text-align: center;
-  font-size: 0.72rem;
-  padding: 0.55em 0.3em;
+  font-size: 0.66rem;
+  padding: 0.5em 0.2em;
   border-radius: 10px;
 }
 
 .game-footer button .icon {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
 
 .journal-list,
@@ -330,6 +330,119 @@ button:disabled {
   color: var(--text-dim);
   font-family: var(--font-serif);
   line-height: 1.6;
+}
+
+.profile-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+.profile-header .location-name {
+  border-bottom: none;
+  padding-bottom: 0.35rem;
+}
+
+.profile-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.profile-facts strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.section-title {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.stat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr 2rem;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.stat-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+  border-radius: 999px;
+}
+
+.stat-value {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  text-align: right;
+}
+
+.trait-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.trait-tag {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3em 0.9em;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+.strengths-weaknesses {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.trait-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.background-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.background-text p {
+  margin: 0;
 }
 
 .empty-hint {

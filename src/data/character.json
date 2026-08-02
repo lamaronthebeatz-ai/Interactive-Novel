@@ -1,0 +1,79 @@
+{
+  "name": "Lamar von Berg",
+  "age": 20,
+  "gender": "Nam",
+  "race": "Con người",
+  "status": "Con trai trưởng của một Nam tước",
+  "house": "von Berg",
+  "occupation": "Chiến binh quý tộc",
+  "personality": [
+    "Chính trực",
+    "Bình tĩnh",
+    "Khiêm tốn",
+    "Có trách nhiệm",
+    "Mưu lược",
+    "Kỷ luật",
+    "Tôn trọng pháp luật",
+    "Giữ lời hứa",
+    "Không hiếu chiến",
+    "Không thích khoe khoang"
+  ],
+  "strengths": [
+    "Kiếm thuật rất giỏi",
+    "Bắn cung rất giỏi",
+    "Cưỡi ngựa thành thạo",
+    "Quan sát tốt",
+    "Chiến thuật tốt",
+    "Đọc bản đồ",
+    "Sinh tồn ngoài tự nhiên"
+  ],
+  "weaknesses": [
+    "Chưa từng trải qua chiến tranh thật",
+    "Thiếu kinh nghiệm chính trị",
+    "Khó chấp nhận phản bội",
+    "Có xu hướng tự gánh trách nhiệm"
+  ],
+  "background": [
+    "Gia tộc von Berg là một gia tộc quý tộc nhỏ nhưng có danh dự — sở hữu một lâu đài, ba ngôi làng, và một vùng lãnh địa khiêm tốn. Họ không phải hoàng tộc, không phải công tước, cũng chẳng nắm giữ quyền lực gì đáng kể ngoài lời hứa danh dự với những người dân sống trên đất của mình.",
+    "Từ nhỏ, Lamar đã được huấn luyện kiếm thuật, cung thuật, cưỡi ngựa, đọc bản đồ, và kỹ năng sinh tồn bởi các võ sư và quản gia trong lâu đài. Cậu lớn lên trầm tĩnh, kỷ luật, và luôn đặt trách nhiệm lên trên bản thân — nhưng chưa một lần thực sự bước ra chiến trường.",
+    "Theo truyền thống lâu đời của gia tộc, khi tròn hai mươi tuổi, người thừa kế phải rời lãnh địa để tự mình khám phá thế giới trước khi trở về kế thừa tước vị. Hôm nay là ngày đầu tiên của hành trình đó. Không có lời tiên tri. Không có nhiệm vụ được giao. Không ai chọn Lamar cho một sứ mệnh nào cả — chỉ có một thanh kiếm, một cây cung, một con ngựa, và hành trang của một quý tộc trẻ lên đường."
+  ],
+  "stats": [
+    { "label": "Kiếm thuật", "value": 78 },
+    { "label": "Cung thuật", "value": 75 },
+    { "label": "Cưỡi ngựa", "value": 70 },
+    { "label": "Quan sát", "value": 72 },
+    { "label": "Chiến thuật", "value": 65 },
+    { "label": "Đọc bản đồ", "value": 68 },
+    { "label": "Sinh tồn", "value": 60 },
+    { "label": "Kinh nghiệm thực chiến", "value": 15 },
+    { "label": "Chính trị", "value": 20 }
+  ],
+  "startingItems": [
+    {
+      "id": "kiem-gia-truyen",
+      "name": "Kiếm gia truyền von Berg",
+      "description": "Thanh kiếm được rèn cho các Nam tước von Berg qua nhiều đời — không hoa mỹ, nhưng sắc bén và đáng tin cậy.",
+      "quantity": 1
+    },
+    {
+      "id": "cung-san",
+      "name": "Cung săn",
+      "description": "Cây cung Lamar luyện tập từ nhỏ, quen tay hơn bất kỳ vũ khí nào khác.",
+      "quantity": 1
+    },
+    {
+      "id": "chien-ma-ve",
+      "name": "Chiến mã Vệ",
+      "description": "Con ngựa đã theo Lamar từ những buổi luyện tập đầu tiên, trung thành và quen thuộc địa hình đường trường.",
+      "quantity": 1
+    },
+    {
+      "id": "hanh-trang-quy-toc-tre",
+      "name": "Hành trang quý tộc trẻ",
+      "description": "Lương khô, một tấm bản đồ sơ lược vùng lân cận, dụng cụ cắm trại cơ bản, và một ít lộ phí từ gia tộc.",
+      "quantity": 1
+    }
+  ],
+  "openingJournalEntry": "Ngày đầu tiên rời khỏi lâu đài von Berg. Không có lời tiên tri, không có nhiệm vụ nào được giao sẵn — chỉ có con đường phía trước, và lời hứa sẽ trở về xứng đáng với dòng họ."
+}

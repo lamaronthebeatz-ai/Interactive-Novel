@@ -50,6 +50,9 @@ root.addEventListener("click", (event) => {
     case "open-inventory":
       engine.openInventory();
       break;
+    case "open-profile":
+      engine.openProfile();
+      break;
     case "close-overlay":
       engine.closeOverlay();
       break;
