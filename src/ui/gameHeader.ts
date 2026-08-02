@@ -13,11 +13,11 @@ export function renderHeader(engine: GameEngine): string {
 export function renderFooter(): string {
   return `
     <footer class="game-footer">
-      <button data-action="open-inventory">Kho Đồ</button>
-      <button data-action="open-journal">Nhật Ký</button>
-      <button data-action="save-game">Lưu</button>
-      <button data-action="load-game">Tải</button>
-      <button data-action="go-menu">Menu Chính</button>
+      <button data-action="open-inventory"><span class="icon">🎒</span>Kho Đồ</button>
+      <button data-action="open-journal"><span class="icon">📖</span>Nhật Ký</button>
+      <button data-action="save-game"><span class="icon">💾</span>Lưu</button>
+      <button data-action="load-game"><span class="icon">📂</span>Tải</button>
+      <button data-action="go-menu"><span class="icon">🏠</span>Menu</button>
     </footer>
   `;
 }
