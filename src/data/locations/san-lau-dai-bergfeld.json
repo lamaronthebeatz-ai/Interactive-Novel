@@ -1,0 +1,16 @@
+{
+  "id": "san-lau-dai-bergfeld",
+  "name": "Sân Lâu Đài Bergfeld",
+  "description": "Sương sớm còn giăng trên sân lâu đài. Chiến mã Vệ đã được thắng yên sẵn, đứng chờ bên cổng. Cha con vẫn đứng đó, dõi theo con như thể muốn khắc ghi hình ảnh này. Rowan kiểm tra lại đai kiếm của con lần cuối, còn Giáo sĩ Tobias đứng lặng lẽ trước cửa nhà nguyện nhỏ. Hôm nay là ngày con rời lãnh địa von Berg.",
+  "npcs": ["nam-tuoc-reinhardt-von-berg", "ky-si-rowan-ashby", "giao-si-tobias-wren"],
+  "actions": [
+    {
+      "id": "nhin-lai-lau-dai",
+      "text": "Nhìn lại lâu đài lần cuối trước khi đi",
+      "effects": [
+        { "type": "addJournalEntry", "text": "Mình đứng lặng một lúc, nhìn lâu đài Bergfeld trong ánh sương sớm — nơi mình đã lớn lên suốt hai mươi năm." },
+        { "type": "advanceTime", "minutes": 10 }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 import type { GameEngine } from "../engine/GameEngine";
+import { getNpcDisplayName } from "../engine/npcTypes";
 import { renderFooter, renderHeader, renderMessage } from "./gameHeader";
 
 function renderEmptyWorld(engine: GameEngine): string {
@@ -19,10 +20,12 @@ export function renderLocation(engine: GameEngine): string {
   if (!location) return renderEmptyWorld(engine);
 
   const npcButtons = location.npcs
-    .map((npcId) => {
-      const npc = engine.getNPC(npcId);
-      return `<button data-action="talk-npc" data-npc-id="${npc.id}">Nói chuyện với ${npc.name}</button>`;
-    })
+    .map((npcId) => engine.getAnyNpc(npcId))
+    .filter((npc) => npc !== undefined)
+    .map(
+      (npc) =>
+        `<button data-action="talk-npc" data-npc-id="${npc.id}">Nói chuyện với ${getNpcDisplayName(npc)}</button>`,
+    )
     .join("");
 
   const actionButtons = (location.actions ?? [])

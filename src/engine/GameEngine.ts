@@ -1,4 +1,4 @@
-import { dialogues, historicalNpcs, locations, npcs, persistentNpcs, protagonist, STARTING_LOCATION_ID } from "../data";
+import { dialogues, historicalNpcs, locations, persistentNpcs, protagonist, STARTING_LOCATION_ID } from "../data";
 import { SaveManager } from "./SaveManager";
 import { advanceTime, formatClock } from "./time";
 import { promoteToPersistent } from "./npcPromotion";
@@ -11,7 +11,6 @@ import type {
   Effect,
   GameLocation,
   GameState,
-  NPC,
   Screen,
 } from "./types";
 import type { DynamicNpc, HistoricalNpc, PersistentNpc, PromotionReason } from "./npcTypes";
@@ -92,18 +91,19 @@ export class GameEngine {
     return locations[this.state.currentLocationId];
   }
 
-  getNPC(npcId: string): NPC {
-    return npcs[npcId];
-  }
-
   talkTo(npcId: string): void {
-    const npc = npcs[npcId];
+    const npc = this.getAnyNpc(npcId);
+    if (!npc?.dialogueId) return;
+
     const dialogue = dialogues[npc.dialogueId];
     this.state.activeDialogue = {
       npcId,
       dialogueId: dialogue.id,
       nodeId: dialogue.start,
     };
+    if (npc.tier === "persistent") {
+      this.meetNpc(npcId);
+    }
     this.screen = "dialogue";
     this.notify();
   }
@@ -186,6 +186,10 @@ export class GameEngine {
 
   getPersistentNpc(id: string): PersistentNpc | undefined {
     return persistentNpcs[id] ?? this.state.promotedNpcs.find((npc) => npc.id === id);
+  }
+
+  getAnyNpc(id: string): HistoricalNpc | PersistentNpc | undefined {
+    return historicalNpcs[id] ?? this.getPersistentNpc(id);
   }
 
   getKnownPersistentNpcs(): PersistentNpc[] {

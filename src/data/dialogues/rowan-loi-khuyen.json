@@ -1,0 +1,47 @@
+{
+  "id": "rowan-loi-khuyen",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Rowan Ashby",
+      "text": "Để ta xem lại tư thế đeo kiếm của cậu lần cuối. ...Được. Cậu đã luyện tập với ta bao nhiêu năm rồi nhỉ? Cậu nghĩ mình đã sẵn sàng chưa?",
+      "choices": [
+        { "text": "Con đã luyện tập chăm chỉ suốt nhiều năm rồi.", "next": "tu-tin" },
+        { "text": "Con e là mình chưa từng thực chiến thật sự.", "next": "lo-thuc-chien" }
+      ]
+    },
+    "tu-tin": {
+      "speaker": "Rowan Ashby",
+      "text": "Kỹ thuật của cậu không tệ, ta công nhận. Nhưng nhớ lấy — tự tin không thay được kinh nghiệm thực chiến. Trên thao trường không ai thật sự muốn giết cậu. Ngoài kia thì khác.",
+      "choices": [
+        {
+          "text": "Con sẽ ghi nhớ điều đó.",
+          "next": "ket-thuc",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Rowan nhắc mình rằng tự tin không thay được kinh nghiệm thực chiến." },
+            { "type": "advanceTime", "minutes": 20 }
+          ]
+        }
+      ]
+    },
+    "lo-thuc-chien": {
+      "speaker": "Rowan Ashby",
+      "text": "Thành thật là tốt. Ai cũng vậy thôi, kể cả ta ngày trước. Nền tảng của cậu vững — kiếm, cung, cưỡi ngựa, quan sát, cậu không thiếu thứ gì cả. Kinh nghiệm rồi sẽ đến, miễn là cậu còn sống để học từ nó.",
+      "choices": [
+        {
+          "text": "Con sẽ cẩn thận.",
+          "next": "ket-thuc",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Rowan trấn an mình rằng nền tảng đã đủ vững, kinh nghiệm rồi sẽ đến." },
+            { "type": "advanceTime", "minutes": 20 }
+          ]
+        }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Rowan Ashby",
+      "text": "Một điều cuối cùng — luôn kiểm tra móng ngựa và dây cung mỗi sáng trước khi lên đường. Ta đã thấy nhiều người giỏi chết vì những thứ nhỏ nhặt bị bỏ quên hơn là vì kiếm thuật kém.",
+      "choices": []
+    }
+  }
+}
