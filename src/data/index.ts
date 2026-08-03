@@ -8,10 +8,17 @@ import type { CharacterProfile, Dialogue, GameLocation, WorldIndex } from "../en
 import type { HistoricalNpc, PersistentNpc } from "../engine/npcTypes";
 import type { CityEconomy, Good, Shop, SupplyChain, Tax, TradeRoute } from "../engine/economyTypes";
 import type { Relationship } from "../engine/relationshipTypes";
+import type { Faction, Law, NobilityTitle, ReputationEntry } from "../engine/politicsTypes";
 
 import character from "./character.json";
 import worldIndexData from "./world-index.json";
 import startingRelationshipsData from "./starting-relationships.json";
+
+// Chính trị
+import factionsData from "./factions.json";
+import nobilityTitlesData from "./nobility-titles.json";
+import lawsData from "./laws.json";
+import startingReputationData from "./starting-reputation.json";
 
 // Kinh tế
 import goodsData from "./goods.json";
@@ -122,4 +129,17 @@ export const shops: Record<string, Shop> = Object.fromEntries(shopList.map((shop
 const startingRelationshipList = startingRelationshipsData as Relationship[];
 export const startingRelationships: Record<string, Relationship> = Object.fromEntries(
   startingRelationshipList.map((rel) => [rel.npcId, rel]),
+);
+
+// ---------- Chính trị ----------
+
+const factionList = factionsData as Faction[];
+export const factions: Record<string, Faction> = Object.fromEntries(factionList.map((f) => [f.id, f]));
+
+export const nobilityTitles: NobilityTitle[] = nobilityTitlesData as NobilityTitle[];
+export const laws: Law[] = lawsData as Law[];
+
+const startingReputationList = startingReputationData as ReputationEntry[];
+export const startingReputation: Record<string, ReputationEntry> = Object.fromEntries(
+  startingReputationList.map((r) => [r.targetId, r]),
 );

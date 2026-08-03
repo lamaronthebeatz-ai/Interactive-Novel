@@ -1,0 +1,18 @@
+[
+  { "nation": "Vương quốc Aurenfeld", "crimeType": "trom-cap", "penalty": "Bồi thường gấp ba giá trị tài sản, hoặc lao dịch nếu không có khả năng chi trả", "severity": 3 },
+  { "nation": "Vương quốc Aurenfeld", "crimeType": "giet-nguoi", "penalty": "Tử hình bằng treo cổ, trừ khi chứng minh được tự vệ", "severity": 9 },
+  { "nation": "Vương quốc Aurenfeld", "crimeType": "phan-quoc", "penalty": "Tử hình và tịch thu toàn bộ tài sản gia tộc", "severity": 10 },
+  { "nation": "Vương quốc Aurenfeld", "crimeType": "hoi-lo", "penalty": "Phạt tiền nặng và cách chức nếu là quan chức", "severity": 4 },
+  { "nation": "Vương quốc Aurenfeld", "crimeType": "tron-thue", "penalty": "Phạt gấp đôi số thuế còn thiếu", "severity": 2 },
+  { "nation": "Vương quốc Aurenfeld", "crimeType": "xam-pham-lanh-dia", "penalty": "Trục xuất khỏi lãnh địa, phạt tiền nếu gây thiệt hại", "severity": 3 },
+
+  { "nation": "Vương quốc Kaldrenn", "crimeType": "trom-cap", "penalty": "Chặt một bàn tay đối với tái phạm, lao dịch với lần đầu", "severity": 5 },
+  { "nation": "Vương quốc Kaldrenn", "crimeType": "giet-nguoi", "penalty": "Tử hình công khai, không có ngoại lệ tự vệ trừ khi có nhân chứng", "severity": 10 },
+  { "nation": "Vương quốc Kaldrenn", "crimeType": "phan-quoc", "penalty": "Tử hình toàn bộ trực hệ gia tộc", "severity": 10 },
+  { "nation": "Vương quốc Kaldrenn", "crimeType": "xam-pham-lanh-dia", "penalty": "Giam giữ và thẩm vấn quân sự", "severity": 6 },
+
+  { "nation": "Thành bang Argenport", "crimeType": "trom-cap", "penalty": "Phạt tiền theo giá trị tài sản, cấm giao dịch trong thành bang một năm", "severity": 2 },
+  { "nation": "Thành bang Argenport", "crimeType": "hoi-lo", "penalty": "Phạt tiền cực nặng — Hội Đồng Argent coi đây là mối đe dọa với uy tín thương mại", "severity": 6 },
+  { "nation": "Thành bang Argenport", "crimeType": "tron-thue", "penalty": "Tịch thu hàng hóa và cấm vĩnh viễn khỏi cảng", "severity": 5 },
+  { "nation": "Thành bang Argenport", "crimeType": "giet-nguoi", "penalty": "Trục xuất và giao cho vương quốc liên quan xét xử", "severity": 8 }
+]

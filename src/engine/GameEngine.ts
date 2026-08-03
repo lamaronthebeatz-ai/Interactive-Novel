@@ -1,4 +1,4 @@
-import { cityEconomies, dialogues, goods, historicalNpcs, locations, persistentNpcs, protagonist, shops, startingRelationships, STARTING_LOCATION_ID, supplyChains, taxes, tradeRoutes, worldIndex } from "../data";
+import { cityEconomies, dialogues, factions, goods, historicalNpcs, laws, locations, nobilityTitles, persistentNpcs, protagonist, shops, startingReputation, startingRelationships, STARTING_LOCATION_ID, supplyChains, taxes, tradeRoutes, worldIndex } from "../data";
 import { SaveManager } from "./SaveManager";
 import { advanceTime, formatClock } from "./time";
 import { promoteToPersistent } from "./npcPromotion";
@@ -6,6 +6,7 @@ import { generateDynamicNpc as generateDynamicNpcFromPopulation } from "./popula
 import { getCurrentActivity, getNpcDisplayName } from "./npcTypes";
 import { formatCurrency, getCurrentPrice, getCurrentSeason, isRouteDisruptedFor } from "./economy";
 import { clampDimension, DEFAULT_RELATIONSHIP_DIMENSIONS } from "./relationshipTypes";
+import { clampReputation, CRIME_TYPE_LABELS, NEWS_CHANNEL_SPEED_DAYS } from "./politicsTypes";
 import type { LocationType } from "./population";
 import type {
   CharacterProfile,
@@ -20,6 +21,21 @@ import type {
 import type { DynamicNpc, HistoricalNpc, PersistentNpc, PromotionReason } from "./npcTypes";
 import type { CityEconomy, Good, Shop, SupplyChain, Tax, TradeRoute } from "./economyTypes";
 import type { Memory, MemoryEventType, Relationship, RelationshipDimensions, RelationshipRole } from "./relationshipTypes";
+import type {
+  CrimeRecord,
+  CrimeStatus,
+  CrimeType,
+  Faction,
+  InfluenceStats,
+  Law,
+  LoyaltyRecord,
+  LoyaltyStance,
+  NewsChannel,
+  NobilityTitle,
+  ReputationEntry,
+  ReputationTargetType,
+  WorldEvent,
+} from "./politicsTypes";
 
 function createInitialState(): GameState {
   return {
@@ -35,6 +51,12 @@ function createInitialState(): GameState {
     relationships: JSON.parse(JSON.stringify(startingRelationships)),
     maritalStatus: "doc-than",
     children: [],
+    reputation: JSON.parse(JSON.stringify(startingReputation)),
+    loyalty: {},
+    titles: [],
+    crimeRecords: [],
+    influence: { prestige: 0, influence: 0, connections: 0, power: 0 },
+    worldEvents: [],
   };
 }
 
@@ -120,7 +142,7 @@ export class GameEngine {
     const modeLabel = mode === "horse" ? "cưỡi ngựa" : "đi bộ";
 
     this.addJournalEntry(`Lamar rời ${current.name}, ${modeLabel} hướng tới ${destination.name}.`);
-    this.state.time = advanceTime(this.state.time, minutes);
+    this.advanceGameTime(minutes);
     this.state.currentLocationId = toLocationId;
     this.addJournalEntry(`Đến ${destination.name}.`);
     this.notify();
@@ -531,6 +553,247 @@ export class GameEngine {
     }
   }
 
+  // ---------- Module 1: Phe phái ----------
+
+  getFactions(): Faction[] {
+    return Object.values(factions);
+  }
+
+  getFaction(factionId: string): Faction | undefined {
+    return factions[factionId];
+  }
+
+  // ---------- Module 2: Danh tiếng ----------
+  // Luôn gắn với một đối tượng cụ thể (phe phái/quốc gia/gia tộc/thành phố) — không có
+  // chỉ số danh tiếng toàn thế giới.
+
+  getReputation(targetId: string): ReputationEntry | undefined {
+    return this.state.reputation[targetId];
+  }
+
+  adjustReputation(targetId: string, targetType: ReputationTargetType, targetName: string, delta: number): void {
+    const existing = this.state.reputation[targetId];
+    const value = clampReputation((existing?.value ?? 0) + delta);
+    this.state.reputation[targetId] = { targetId, targetType, targetName, value };
+    this.notify();
+  }
+
+  // ---------- Module 3: Trung thành ----------
+
+  getLoyalty(factionId: string): LoyaltyRecord | undefined {
+    return this.state.loyalty[factionId];
+  }
+
+  private ensureLoyalty(factionId: string): LoyaltyRecord {
+    if (!this.state.loyalty[factionId]) {
+      this.state.loyalty[factionId] = { factionId, stance: "trung-lap", history: [] };
+    }
+    return this.state.loyalty[factionId];
+  }
+
+  private setLoyaltyStance(factionId: string, stance: LoyaltyStance, reason: string): void {
+    const record = this.ensureLoyalty(factionId);
+    record.stance = stance;
+    record.history.push({ day: this.state.time.day, stance, reason });
+    this.notify();
+  }
+
+  swearLoyalty(factionId: string, reason: string): void {
+    this.setLoyaltyStance(factionId, "the-trung-thanh", reason);
+    this.addJournalEntry(`Lamar thề trung thành với ${factions[factionId]?.name ?? factionId}: ${reason}`);
+  }
+
+  betrayFaction(factionId: string, reason: string): void {
+    this.setLoyaltyStance(factionId, "phan-boi", reason);
+    this.addJournalEntry(`Lamar phản bội ${factions[factionId]?.name ?? factionId}: ${reason}`);
+  }
+
+  switchFaction(fromFactionId: string, toFactionId: string, reason: string): void {
+    this.setLoyaltyStance(fromFactionId, "chuyen-phe", reason);
+    this.setLoyaltyStance(toFactionId, "the-trung-thanh", reason);
+    this.addJournalEntry(
+      `Lamar rời bỏ ${factions[fromFactionId]?.name ?? fromFactionId}, chuyển sang phục vụ ${factions[toFactionId]?.name ?? toFactionId}: ${reason}`,
+    );
+  }
+
+  // ---------- Module 4: Hệ thống quý tộc (dữ liệu tham chiếu) ----------
+
+  getNobilityTitles(): NobilityTitle[] {
+    return nobilityTitles;
+  }
+
+  getNobilityTitle(titleId: string): NobilityTitle | undefined {
+    return nobilityTitles.find((t) => t.id === titleId);
+  }
+
+  // ---------- Module 5: Tước vị của người chơi ----------
+
+  getPlayerTitles(): NobilityTitle[] {
+    return this.state.titles
+      .map((id) => this.getNobilityTitle(id))
+      .filter((t): t is NobilityTitle => t !== undefined);
+  }
+
+  hasTitle(titleId: string): boolean {
+    return this.state.titles.includes(titleId);
+  }
+
+  grantTitle(titleId: string, grantedBy: string, reason: string): void {
+    const title = this.getNobilityTitle(titleId);
+    if (!title || this.hasTitle(titleId)) return;
+    this.state.titles.push(titleId);
+    this.addJournalEntry(`Lamar được ${grantedBy} phong tước ${title.name}: ${reason}`);
+    this.notify();
+  }
+
+  stripTitle(titleId: string, reason: string): void {
+    const title = this.getNobilityTitle(titleId);
+    if (!title || !this.hasTitle(titleId)) return;
+    this.state.titles = this.state.titles.filter((id) => id !== titleId);
+    this.addJournalEntry(`Lamar bị tước bỏ danh hiệu ${title.name}: ${reason}`);
+    this.notify();
+  }
+
+  // ---------- Module 6: Pháp luật (dữ liệu tham chiếu, theo từng quốc gia) ----------
+
+  getLaws(nation: string): Law[] {
+    return laws.filter((l) => l.nation === nation);
+  }
+
+  getLaw(nation: string, crimeType: CrimeType): Law | undefined {
+    return laws.find((l) => l.nation === nation && l.crimeType === crimeType);
+  }
+
+  // ---------- Module 7: Tội phạm ----------
+
+  getCrimeRecords(): CrimeRecord[] {
+    return this.state.crimeRecords;
+  }
+
+  isWantedIn(nation: string): boolean {
+    return this.state.crimeRecords.some((c) => c.nation === nation && c.status === "bi-truy-na");
+  }
+
+  commitCrime(nation: string, crimeType: CrimeType, description: string): CrimeRecord {
+    const record: CrimeRecord = {
+      nation,
+      crimeType,
+      description,
+      day: this.state.time.day,
+      status: "chua-bi-phat-hien",
+    };
+    this.state.crimeRecords.push(record);
+    this.notify();
+    return record;
+  }
+
+  private updateCrimeStatus(record: CrimeRecord, status: CrimeStatus, journalText: string): void {
+    record.status = status;
+    this.addJournalEntry(journalText);
+    this.notify();
+  }
+
+  // Bị phát hiện — mức độ nghiêm trọng của tội quyết định bị bắt ngay hay bị truy nã.
+  getCaught(record: CrimeRecord): void {
+    if (record.status !== "chua-bi-phat-hien") return;
+    const law = this.getLaw(record.nation, record.crimeType);
+    const severity = law?.severity ?? 5;
+    if (severity >= 7) {
+      this.updateCrimeStatus(record, "bi-truy-na", `Lamar bị truy nã tại ${record.nation} vì tội ${CRIME_TYPE_LABELS[record.crimeType]}.`);
+    } else {
+      this.updateCrimeStatus(record, "bi-bat", `Lamar bị bắt tại ${record.nation} vì tội ${CRIME_TYPE_LABELS[record.crimeType]}.`);
+    }
+  }
+
+  punishCrime(record: CrimeRecord, punishment: "bi-phat" | "bi-xu-tu"): void {
+    if (record.status !== "bi-bat" && record.status !== "bi-truy-na") return;
+    this.updateCrimeStatus(
+      record,
+      punishment,
+      punishment === "bi-xu-tu" ? `Lamar bị xử tử tại ${record.nation}.` : `Lamar bị phạt tại ${record.nation}.`,
+    );
+  }
+
+  pardonCrime(record: CrimeRecord): void {
+    if (record.status === "chua-bi-phat-hien") return;
+    this.updateCrimeStatus(record, "duoc-an-xa", `Lamar được ân xá tại ${record.nation}.`);
+  }
+
+  // ---------- Module 8: Ảnh hưởng ----------
+
+  getInfluence(): InfluenceStats {
+    return this.state.influence;
+  }
+
+  adjustInfluence(deltas: Partial<InfluenceStats>): void {
+    for (const key of Object.keys(deltas) as (keyof InfluenceStats)[]) {
+      const delta = deltas[key];
+      if (delta === undefined) continue;
+      this.state.influence[key] = Math.max(0, this.state.influence[key] + delta);
+    }
+    this.notify();
+  }
+
+  // ---------- Module 9: Phản ứng thế giới ----------
+  // Tin tức không lan truyền tức thời: phe gốc biết ngay, đồng minh biết sau một chặng,
+  // kẻ thù của phe gốc biết sau hai chặng — tốc độ mỗi chặng phụ thuộc kênh truyền tin.
+
+  getWorldEvents(): WorldEvent[] {
+    return this.state.worldEvents;
+  }
+
+  getKnownWorldEvents(factionId: string): WorldEvent[] {
+    return this.state.worldEvents.filter((e) => e.knownBy.includes(factionId));
+  }
+
+  broadcastEvent(description: string, originFactionId: string | undefined, channel: NewsChannel): WorldEvent {
+    const speed = NEWS_CHANNEL_SPEED_DAYS[channel];
+    const originFaction = originFactionId ? factions[originFactionId] : undefined;
+    const knownBy = originFactionId ? [originFactionId] : [];
+    const pendingSpread: WorldEvent["pendingSpread"] = [];
+
+    if (originFaction) {
+      for (const allyId of originFaction.allies) {
+        pendingSpread.push({ factionId: allyId, arrivesOnDay: this.state.time.day + speed });
+      }
+      for (const enemyId of originFaction.enemies) {
+        pendingSpread.push({ factionId: enemyId, arrivesOnDay: this.state.time.day + speed * 2 });
+      }
+    }
+
+    const event: WorldEvent = {
+      id: `event-${Date.now()}-${this.state.worldEvents.length}`,
+      description,
+      originDay: this.state.time.day,
+      originFactionId,
+      channel,
+      knownBy,
+      pendingSpread,
+    };
+    this.state.worldEvents.push(event);
+    this.notify();
+    return event;
+  }
+
+  // Gọi mỗi khi thời gian trôi — chuyển các tin đã đến hạn từ pendingSpread sang knownBy.
+  private processWorldEventSpread(): void {
+    for (const event of this.state.worldEvents) {
+      const arrived = event.pendingSpread.filter((p) => p.arrivesOnDay <= this.state.time.day);
+      if (arrived.length === 0) continue;
+      for (const p of arrived) {
+        if (!event.knownBy.includes(p.factionId)) {
+          event.knownBy.push(p.factionId);
+        }
+      }
+      event.pendingSpread = event.pendingSpread.filter((p) => p.arrivesOnDay > this.state.time.day);
+    }
+  }
+
+  private advanceGameTime(minutes: number): void {
+    this.state.time = advanceTime(this.state.time, minutes);
+    this.processWorldEventSpread();
+  }
+
   private applyEffects(effects: Effect[]): void {
     for (const effect of effects) {
       switch (effect.type) {
@@ -538,7 +801,7 @@ export class GameEngine {
           this.addItem(effect.itemId, effect.name, effect.description, effect.quantity ?? 1);
           break;
         case "advanceTime":
-          this.state.time = advanceTime(this.state.time, effect.minutes);
+          this.advanceGameTime(effect.minutes);
           break;
         case "addJournalEntry":
           this.addJournalEntry(effect.text);

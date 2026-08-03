@@ -1,0 +1,82 @@
+[
+  {
+    "id": "vua",
+    "name": "Vua",
+    "rank": 1,
+    "rights": ["Ban hành luật pháp", "Tuyên chiến và giảng hòa", "Phong và tước tước vị của mọi quý tộc dưới quyền"],
+    "duties": ["Bảo vệ vương quốc", "Duy trì công lý", "Bảo hộ Linh Giáo chính thống"],
+    "privileges": ["Quyền miễn trừ tuyệt đối", "Thu thuế toàn vương quốc"],
+    "land": "Toàn bộ lãnh thổ vương quốc, trên danh nghĩa",
+    "income": "Thuế ngũ cốc, thuế thương mại, cống nạp từ chư hầu"
+  },
+  {
+    "id": "thai-tu",
+    "name": "Thái tử",
+    "rank": 2,
+    "rights": ["Kế vị ngai vàng", "Dự thính các buổi tiếp kiến của vua"],
+    "duties": ["Học chính sự và quân sự", "Đại diện vương thất khi cần"],
+    "privileges": ["Bổng lộc từ ngân khố hoàng gia", "Đội cận vệ riêng"],
+    "land": "Không có lãnh địa riêng cho đến khi kế vị",
+    "income": "Bổng lộc hoàng gia"
+  },
+  {
+    "id": "cong-tuoc",
+    "name": "Công tước",
+    "rank": 3,
+    "rights": ["Cai quản một công quốc", "Có quân đội riêng", "Ban tước hiệp sĩ trong lãnh địa"],
+    "duties": ["Triều cống hoặc thần phục vương quốc/liên minh chủ quản", "Bảo vệ lãnh địa"],
+    "privileges": ["Miễn một phần thuế trung ương", "Quyền xét xử trong lãnh địa"],
+    "land": "Một công quốc",
+    "income": "Thuế đất và tài nguyên của công quốc"
+  },
+  {
+    "id": "hau-tuoc",
+    "name": "Hầu tước",
+    "rank": 4,
+    "rights": ["Cai quản vùng biên giới hoặc vùng chiến lược", "Có quyền quân sự cao hơn bá tước thường"],
+    "duties": ["Phòng thủ biên giới được giao phó"],
+    "privileges": ["Ngân sách quân sự riêng từ triều đình"],
+    "land": "Một vùng biên trấn hoặc lãnh địa chiến lược",
+    "income": "Thuế đất cộng trợ cấp quân sự từ triều đình"
+  },
+  {
+    "id": "ba-tuoc",
+    "name": "Bá tước",
+    "rank": 5,
+    "rights": ["Cai quản một bá quốc hoặc vùng đất lớn", "Có tiếng nói trong nghị hội lãnh chúa"],
+    "duties": ["Triều cống lãnh chúa cấp trên", "Góp quân khi có chiến sự"],
+    "privileges": ["Quyền thu thuế địa phương"],
+    "land": "Một bá quốc hoặc vùng đất tương đương",
+    "income": "Thuế đất và thương mại địa phương"
+  },
+  {
+    "id": "tu-tuoc",
+    "name": "Tử tước",
+    "rank": 6,
+    "rights": ["Cai quản một vùng đất nhỏ hơn bá quốc", "Đại diện cho bá tước khi vắng mặt"],
+    "duties": ["Hỗ trợ hành chính cho bá tước chủ quản"],
+    "privileges": ["Bổng lộc từ bá tước hoặc công tước chủ quản"],
+    "land": "Một phần nhỏ của bá quốc",
+    "income": "Bổng lộc và thuế đất nhỏ"
+  },
+  {
+    "id": "nam-tuoc",
+    "name": "Nam tước",
+    "rank": 7,
+    "rights": ["Cai quản một lãnh địa nhỏ (thường vài ngôi làng)", "Xét xử tranh chấp nhỏ trong lãnh địa"],
+    "duties": ["Triều cống vương quốc/lãnh chúa cấp trên", "Giữ trật tự địa phương"],
+    "privileges": ["Quyền thu thuế đất trong lãnh địa của mình"],
+    "land": "Một lãnh địa nhỏ, thường gồm một lâu đài và vài ngôi làng",
+    "income": "Thuế nông nghiệp của lãnh địa"
+  },
+  {
+    "id": "hiep-si",
+    "name": "Hiệp sĩ",
+    "rank": 8,
+    "rights": ["Mang danh hiệu quý tộc", "Được phép mang vũ khí và huy hiệu riêng"],
+    "duties": ["Phục vụ quân sự cho lãnh chúa đã phong tước", "Giữ danh dự hiệp sĩ"],
+    "privileges": ["Được xã hội quý tộc công nhận dù không có đất"],
+    "land": "Thường không có lãnh địa, trừ khi được ban riêng",
+    "income": "Bổng lộc từ lãnh chúa phục vụ, hoặc tự túc"
+  }
+]
