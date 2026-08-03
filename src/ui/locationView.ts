@@ -35,6 +35,11 @@ export function renderLocation(engine: GameEngine): string {
     )
     .join("");
 
+  const shopButtons = engine
+    .getShopsAtLocation(location.id)
+    .map((shop) => `<button data-action="open-market" data-shop-id="${shop.id}">Vào ${shop.name}</button>`)
+    .join("");
+
   const travelButtons = location.connections
     .map((connection) => {
       const destination = engine.getAllLocations().find((loc) => loc.id === connection.toLocationId);
@@ -55,6 +60,7 @@ export function renderLocation(engine: GameEngine): string {
         <div class="choices">
           ${npcButtons}
           ${actionButtons}
+          ${shopButtons}
         </div>
         ${
           location.connections.length

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "chuoi-banh-mi",
+    "name": "Chuỗi cung ứng bánh mì",
+    "stages": [
+      { "profession": "Nông dân", "outputGoodId": "lua-mi" },
+      { "profession": "Thợ xay", "inputGoodId": "lua-mi", "outputGoodId": "bot" },
+      { "profession": "Thợ làm bánh", "inputGoodId": "bot", "outputGoodId": "banh-mi" },
+      { "profession": "Chủ quán trọ", "inputGoodId": "banh-mi", "outputGoodId": "banh-mi" }
+    ]
+  },
+  {
+    "id": "chuoi-kiem",
+    "name": "Chuỗi cung ứng kiếm",
+    "stages": [
+      { "profession": "Thợ mỏ", "outputGoodId": "sat" },
+      { "profession": "Thợ rèn", "inputGoodId": "sat", "outputGoodId": "kiem" }
+    ]
+  },
+  {
+    "id": "chuoi-bia",
+    "name": "Chuỗi cung ứng bia",
+    "stages": [
+      { "profession": "Nông dân", "outputGoodId": "lua-mi" },
+      { "profession": "Thợ nấu bia", "inputGoodId": "lua-mi", "outputGoodId": "bia" },
+      { "profession": "Chủ quán trọ", "inputGoodId": "bia", "outputGoodId": "bia" }
+    ]
+  }
+]

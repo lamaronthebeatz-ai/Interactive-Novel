@@ -2,6 +2,7 @@
 // mọi nội dung cụ thể (địa điểm, NPC, hội thoại) đều nằm trong src/data.
 
 import type { PersistentNpc } from "./npcTypes";
+import type { Shop } from "./economyTypes";
 
 export interface Item {
   id: string;
@@ -111,10 +112,11 @@ export interface CharacterProfile {
   background: string[]; // các đoạn tiểu sử
   stats: CharacterStat[];
   startingItems: Item[];
+  startingCurrency: number; // tính bằng Đồng Đồng
   openingJournalEntry: string;
 }
 
-export type Screen = "menu" | "location" | "dialogue" | "journal" | "inventory" | "profile" | "map";
+export type Screen = "menu" | "location" | "dialogue" | "journal" | "inventory" | "profile" | "map" | "market";
 
 export interface ActiveDialogue {
   npcId: string;
@@ -131,4 +133,7 @@ export interface GameState {
   activeDialogue?: ActiveDialogue;
   knownNpcIds: string[]; // id NPC Tầng I/II mà người chơi đã biết/đã gặp
   promotedNpcs: PersistentNpc[]; // NPC Tầng III đã được thăng cấp lên Tầng II lúc chơi
+  currency: number; // ví tiền của người chơi, tính bằng Đồng Đồng
+  shops: Record<string, Shop>; // bản sao có thể thay đổi của cửa hàng (tồn kho giảm khi mua)
+  activeShopId?: string;
 }

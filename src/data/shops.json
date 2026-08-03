@@ -1,0 +1,15 @@
+[
+  {
+    "id": "quan-tro-millbrook",
+    "name": "Quán Trọ Millbrook",
+    "locationId": "lang-millbrook",
+    "merchantNpcId": "chu-quan-tro-agnes-coldwell",
+    "stock": [
+      { "goodId": "banh-mi", "quantity": 12, "priceModifier": 1.1 },
+      { "goodId": "bia", "quantity": 20, "priceModifier": 1 },
+      { "goodId": "pho-mai", "quantity": 6, "priceModifier": 1.1 },
+      { "goodId": "ruou-vang", "quantity": 3, "priceModifier": 1.3 },
+      { "goodId": "thit", "quantity": 5, "priceModifier": 1.15 }
+    ]
+  }
+]

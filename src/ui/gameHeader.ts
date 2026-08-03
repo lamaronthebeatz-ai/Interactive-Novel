@@ -1,11 +1,13 @@
 import type { GameEngine } from "../engine/GameEngine";
+import { formatCurrencyShort } from "../engine/economy";
 import { formatTime, getTimePeriodLabel } from "../engine/time";
 
 export function renderHeader(engine: GameEngine): string {
-  const { time } = engine.state;
+  const { time, currency } = engine.state;
   return `
     <header class="game-header">
       <span class="clock">${formatTime(time)} — ${getTimePeriodLabel(time.minutesOfDay)}</span>
+      <span class="purse">💰 ${formatCurrencyShort(currency)}</span>
     </header>
   `;
 }
