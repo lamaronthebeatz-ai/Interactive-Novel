@@ -3,6 +3,7 @@
 
 import type { PersistentNpc } from "./npcTypes";
 import type { Shop } from "./economyTypes";
+import type { MaritalStatus, Relationship } from "./relationshipTypes";
 
 export interface Item {
   id: string;
@@ -32,6 +33,7 @@ export interface DialogueChoice {
   text: string;
   next?: string; // id node tiếp theo; bỏ trống = kết thúc hội thoại
   effects?: Effect[];
+  requiresTrust?: number; // chỉ hiện khi mức tin tưởng với NPC đang nói chuyện đạt ngưỡng này
 }
 
 export interface DialogueNode {
@@ -136,4 +138,8 @@ export interface GameState {
   currency: number; // ví tiền của người chơi, tính bằng Đồng Đồng
   shops: Record<string, Shop>; // bản sao có thể thay đổi của cửa hàng (tồn kho giảm khi mua)
   activeShopId?: string;
+  relationships: Record<string, Relationship>; // quan hệ của người chơi với từng NPC
+  maritalStatus: MaritalStatus;
+  spouseNpcId?: string;
+  children: string[]; // id NPC con cái (nền tảng cho build sau)
 }

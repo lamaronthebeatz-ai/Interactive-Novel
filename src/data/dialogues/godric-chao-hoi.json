@@ -7,7 +7,25 @@
       "text": "Ông ngẩng lên từ lò rèn, lau mồ hôi trên trán khi nhận ra bộ trang phục của con trai Nam tước. 'Cậu Lamar phải không? Nghe nói cậu lên đường hôm nay.'",
       "choices": [
         { "text": "Đúng vậy, cháu ghé qua chào bác trước khi đi.", "next": "chao-tam-biet" },
-        { "text": "Lò rèn của bác trông bận rộn nhỉ.", "next": "hoi-tham-nghe" }
+        { "text": "Lò rèn của bác trông bận rộn nhỉ.", "next": "hoi-tham-nghe" },
+        {
+          "text": "Bác này, cháu có thể hỏi thật lòng một chuyện không?",
+          "next": "tam-su",
+          "requiresTrust": 20
+        }
+      ]
+    },
+    "tam-su": {
+      "speaker": "Godric Marlin",
+      "text": "Ông ngừng tay, nhìn Lamar một lúc rồi hạ giọng. 'Cứ hỏi. Cậu là người hiếm hoi ở đây thật sự lắng nghe khi ta nói, không chỉ gật đầu cho qua chuyện.'",
+      "choices": [
+        {
+          "text": "Cảm ơn bác đã tin tưởng cháu.",
+          "next": "ket-thuc",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Godric mở lòng tâm sự với mình nhiều hơn thường lệ — có vẻ ông đã thật sự tin tưởng mình." }
+          ]
+        }
       ]
     },
     "chao-tam-biet": {

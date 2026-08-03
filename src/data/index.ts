@@ -7,9 +7,11 @@
 import type { CharacterProfile, Dialogue, GameLocation, WorldIndex } from "../engine/types";
 import type { HistoricalNpc, PersistentNpc } from "../engine/npcTypes";
 import type { CityEconomy, Good, Shop, SupplyChain, Tax, TradeRoute } from "../engine/economyTypes";
+import type { Relationship } from "../engine/relationshipTypes";
 
 import character from "./character.json";
 import worldIndexData from "./world-index.json";
+import startingRelationshipsData from "./starting-relationships.json";
 
 // Kinh tế
 import goodsData from "./goods.json";
@@ -114,3 +116,10 @@ export const taxes: Tax[] = taxesData as Tax[];
 
 const shopList = shopsData as Shop[];
 export const shops: Record<string, Shop> = Object.fromEntries(shopList.map((shop) => [shop.id, shop]));
+
+// ---------- Quan hệ ----------
+
+const startingRelationshipList = startingRelationshipsData as Relationship[];
+export const startingRelationships: Record<string, Relationship> = Object.fromEntries(
+  startingRelationshipList.map((rel) => [rel.npcId, rel]),
+);

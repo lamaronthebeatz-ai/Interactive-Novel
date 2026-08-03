@@ -1,0 +1,65 @@
+[
+  {
+    "npcId": "nam-tuoc-reinhardt-von-berg",
+    "roles": ["cha-me", "chu"],
+    "dimensions": {
+      "trust": 90,
+      "respect": 85,
+      "affection": 80,
+      "fear": 10,
+      "debt": 0,
+      "suspicion": 0,
+      "loyalty": 85
+    },
+    "memories": [
+      {
+        "eventType": "khac",
+        "description": "Cha đã nuôi dạy Lamar từ nhỏ, luôn giữ đúng lời hứa với dân làng.",
+        "day": 1,
+        "impact": {}
+      }
+    ]
+  },
+  {
+    "npcId": "ky-si-rowan-ashby",
+    "roles": ["thay"],
+    "dimensions": {
+      "trust": 70,
+      "respect": 75,
+      "affection": 55,
+      "fear": 15,
+      "debt": 0,
+      "suspicion": 0,
+      "loyalty": 40
+    },
+    "memories": [
+      {
+        "eventType": "khac",
+        "description": "Rowan đã huấn luyện kiếm thuật cho Lamar suốt nhiều năm.",
+        "day": 1,
+        "impact": {}
+      }
+    ]
+  },
+  {
+    "npcId": "giao-si-tobias-wren",
+    "roles": [],
+    "dimensions": {
+      "trust": 60,
+      "respect": 55,
+      "affection": 45,
+      "fear": 0,
+      "debt": 0,
+      "suspicion": 0,
+      "loyalty": 20
+    },
+    "memories": [
+      {
+        "eventType": "khac",
+        "description": "Tobias đã dạy giáo lý cho Lamar từ khi còn nhỏ trong nhà nguyện lâu đài.",
+        "day": 1,
+        "impact": {}
+      }
+    ]
+  }
+]
