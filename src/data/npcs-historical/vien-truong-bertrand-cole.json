@@ -1,0 +1,39 @@
+{
+  "id": "vien-truong-bertrand-cole",
+  "tier": "historical",
+  "fullName": "Bertrand Cole",
+  "title": "Viện Trưởng",
+  "house": "Không có — xuất thân thường dân, địa vị hoàn toàn dựa trên học vấn",
+  "nation": "Thành bang Inkspire",
+  "age": 58,
+  "gender": "Nam",
+  "biography": [
+    "Được hội đồng giáo sư cấp cao của Inkspire bầu làm Viện Trưởng nhiệm kỳ thứ hai, sau nhiều năm nghiên cứu văn khố còn sót lại từ thời Đế chế Aurignis.",
+    "Nổi tiếng vì tính cẩn trọng gần như ám ảnh trong việc bảo tồn tài liệu cổ — nhiều học giả trẻ trong thành bang vừa kính trọng vừa e ngại ông.",
+    "Là người duy trì quan hệ ngoại giao khéo léo giữa Inkspire với tất cả các vương quốc lớn, đảm bảo quy chế trung lập của thành bang không bị bên nào thách thức."
+  ],
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "politicalRelations": [],
+  "wealth": "Trung bình — bổng lộc từ hội đồng giáo sư, không có tài sản đất đai vì Inkspire không có chế độ quý tộc.",
+  "military": "Không có — sự an toàn của thành bang dựa vào quy ước trung lập bất thành văn giữa các cường quốc.",
+  "schedule": [
+    { "time": "06:00", "activity": "Thức dậy, đọc sách buổi sớm" },
+    { "time": "07:30", "activity": "Ăn sáng" },
+    { "time": "08:30", "activity": "Làm việc tại văn khố, giám sát công tác bảo tồn tài liệu" },
+    { "time": "12:00", "activity": "Ăn trưa cùng hội đồng giáo sư" },
+    { "time": "13:30", "activity": "Giảng dạy hoặc tiếp sứ thần các vương quốc" },
+    { "time": "18:00", "activity": "Dùng bữa tối" },
+    { "time": "19:30", "activity": "Nghiên cứu cá nhân" },
+    { "time": "23:00", "activity": "Nghỉ ngơi" }
+  ],
+  "goals": [
+    "Bảo tồn toàn bộ văn khố còn sót lại từ thời Aurignis",
+    "Giữ vững quy chế trung lập của Inkspire trước mọi biến động chính trị"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "giao-si-tobias-wren",
+  "tier": "persistent",
+  "firstName": "Tobias",
+  "lastName": "Wren",
+  "age": 55,
+  "gender": "Nam",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Giáo sĩ",
+  "residence": "Nhà nguyện lâu đài Bergfeld",
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "Không có — giữ giới độc thân theo truyền thống tăng lữ Linh Giáo",
+    "children": ["Không có"]
+  },
+  "friends": ["chưa xây dựng"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Bổng lộc nhỏ từ Nam tước von Berg cùng tiền dâng cúng của dân làng.",
+  "assets": "Phòng ở trong nhà nguyện, một bộ kinh sách Linh Giáo chép tay đã cũ.",
+  "personality": ["Ôn hòa", "Kiên nhẫn lắng nghe", "Hay răn dạy đạo lý", "Bao dung"],
+  "likes": ["Các buổi lễ đông người tham dự", "Trà thảo mộc"],
+  "dislikes": ["Mê tín dị đoan lệch giáo lý", "Tranh cãi trong nhà nguyện"],
+  "lifeGoal": "Xây được một nhà nguyện lớn hơn cho ba ngôi làng thay vì chỉ có phòng lễ nhỏ trong lâu đài.",
+  "schedule": [
+    { "time": "06:00", "activity": "Thức dậy, hành lễ buổi sớm" },
+    { "time": "07:00", "activity": "Ăn sáng" },
+    { "time": "08:00", "activity": "Dạy giáo lý cho trẻ em trong làng" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:30", "activity": "Thăm hỏi người bệnh, người già trong ba ngôi làng" },
+    { "time": "18:00", "activity": "Hành lễ buổi tối" },
+    { "time": "20:00", "activity": "Đọc kinh sách" },
+    { "time": "22:00", "activity": "Ngủ" }
+  ]
+}

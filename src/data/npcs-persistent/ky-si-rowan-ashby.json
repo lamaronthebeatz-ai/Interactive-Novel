@@ -1,0 +1,36 @@
+{
+  "id": "ky-si-rowan-ashby",
+  "tier": "persistent",
+  "firstName": "Rowan",
+  "lastName": "Ashby",
+  "age": 44,
+  "gender": "Nam",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Kỵ sĩ hộ vệ, giáo phụ võ thuật của lâu đài Bergfeld",
+  "residence": "Lâu đài Bergfeld",
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "friends": ["tho-ren-godric-marlin"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Bổng lộc cố định từ Nam tước von Berg, đủ sống dư dả so với dân làng.",
+  "assets": "Một thanh trường kiếm riêng, một con ngựa chiến, phòng ở trong lâu đài.",
+  "personality": ["Nghiêm khắc", "Kiên nhẫn", "Trung thành", "Ít nói"],
+  "likes": ["Rèn luyện học trò có tiến bộ", "Rượu táo Millbrook"],
+  "dislikes": ["Sự lười biếng", "Thất hứa"],
+  "lifeGoal": "Đào tạo được một thế hệ vệ binh lâu đài đủ sức tự đứng vững khi ông nghỉ hưu.",
+  "schedule": [
+    { "time": "05:30", "activity": "Thức dậy, kiểm tra vũ khí" },
+    { "time": "06:30", "activity": "Ăn sáng" },
+    { "time": "07:30", "activity": "Huấn luyện đội vệ binh lâu đài" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:00", "activity": "Tuần tra quanh lâu đài và ba ngôi làng" },
+    { "time": "18:00", "activity": "Về nhà, dùng bữa tối" },
+    { "time": "21:00", "activity": "Bảo dưỡng vũ khí, nghỉ ngơi" },
+    { "time": "22:30", "activity": "Ngủ" }
+  ]
+}

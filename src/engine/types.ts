@@ -1,6 +1,8 @@
 // Kiểu dữ liệu lõi của engine. Engine không biết cốt truyện —
 // mọi nội dung cụ thể (địa điểm, NPC, hội thoại) đều nằm trong src/data.
 
+import type { PersistentNpc } from "./npcTypes";
+
 export interface Item {
   id: string;
   name: string;
@@ -101,4 +103,6 @@ export interface GameState {
   journal: JournalEntry[];
   flags: Record<string, boolean>;
   activeDialogue?: ActiveDialogue;
+  knownNpcIds: string[]; // id NPC Tầng I/II mà người chơi đã biết/đã gặp
+  promotedNpcs: PersistentNpc[]; // NPC Tầng III đã được thăng cấp lên Tầng II lúc chơi
 }

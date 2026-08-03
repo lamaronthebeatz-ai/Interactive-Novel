@@ -1,0 +1,39 @@
+{
+  "id": "chu-ngan-hang-cassian-voss",
+  "tier": "historical",
+  "fullName": "Cassian Voss",
+  "title": "Chủ Đại Gia Tộc Argent",
+  "house": "Voss",
+  "nation": "Thành bang Argenport",
+  "age": 45,
+  "gender": "Nam",
+  "biography": [
+    "Đứng đầu một trong những Đại Gia Tộc Argent quyền lực nhất Argenport, kiểm soát phần lớn hoạt động bảo hiểm hàng hải qua Eo biển Ironthroat.",
+    "Là thành viên có ảnh hưởng nhất trong Hội Đồng Argent hiện tại, thường đóng vai trò trung gian dàn xếp tranh chấp thuế quan giữa Vesmara và thành bang.",
+    "Tin rằng chiến tranh giữa bất kỳ vương quốc nào cũng là mối đe dọa trực tiếp đến của cải của ông — lập trường trung lập tuyệt đối của Argenport không chỉ là chính sách mà còn là niềm tin cá nhân sâu sắc."
+  ],
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "politicalRelations": [],
+  "wealth": "Cực lớn — một trong những người giàu nhất lục địa, tài sản chủ yếu ở dạng cổ phần hạm đội và hợp đồng bảo hiểm hàng hải.",
+  "military": "Không có quân đội riêng; thuê hạm đội tư nhân bảo vệ tàu buôn khi cần.",
+  "schedule": [
+    { "time": "07:00", "activity": "Thức dậy, đọc báo cáo thương mại" },
+    { "time": "08:00", "activity": "Ăn sáng" },
+    { "time": "09:00", "activity": "Làm việc tại sàn giao dịch Argenport" },
+    { "time": "12:00", "activity": "Ăn trưa cùng đối tác thương mại" },
+    { "time": "14:00", "activity": "Họp Hội Đồng Argent (định kỳ)" },
+    { "time": "18:00", "activity": "Dùng bữa tối, tiếp khách" },
+    { "time": "21:00", "activity": "Xem xét sổ sách trước khi nghỉ" },
+    { "time": "23:00", "activity": "Nghỉ ngơi" }
+  ],
+  "goals": [
+    "Mở rộng thị phần bảo hiểm hàng hải qua Eo biển Ironthroat",
+    "Giữ vững thế trung lập của Argenport trước mọi áp lực từ Vesmara"
+  ]
+}

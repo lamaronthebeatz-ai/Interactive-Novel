@@ -1,0 +1,29 @@
+{
+  "firstNamesMale": [
+    "Aldric", "Bram", "Corin", "Daren", "Edmund", "Falk", "Garrick", "Henrik",
+    "Ivo", "Jasper", "Kellan", "Lucan", "Merrick", "Osric", "Perrin", "Quentin"
+  ],
+  "firstNamesFemale": [
+    "Alina", "Brielle", "Cora", "Delphine", "Elin", "Freya", "Greta", "Helena",
+    "Ines", "Junia", "Kira", "Lysandra", "Marta", "Nessa", "Odile", "Petra"
+  ],
+  "lastNames": [
+    "Hartwell", "Marrow", "Doyle", "Fenwick", "Grale", "Holt", "Ives",
+    "Kessler", "Lowry", "Nash", "Osgood", "Pryce", "Quill", "Rourke", "Stanton", "Thorne"
+  ],
+  "occupationsByLocationType": {
+    "village": ["Nông dân", "Người chăn cừu", "Thợ đóng thùng", "Người xay bột", "Thợ dệt", "Người làm vườn"],
+    "town": ["Thương nhân nhỏ", "Thợ mộc", "Người bán vải", "Thợ đóng giày", "Người thu thuế địa phương", "Người vận chuyển hàng"],
+    "city": ["Người bán hàng rong", "Người khuân vác", "Người hành hương", "Người đưa thư", "Người ăn xin", "Người biểu diễn đường phố"]
+  },
+  "behaviors": [
+    "Đang mặc cả ở quầy hàng",
+    "Đang gánh nước về nhà",
+    "Đang ngồi nghỉ bên vệ đường",
+    "Đang trò chuyện với hàng xóm",
+    "Đang vội vã cho kịp giờ làm",
+    "Đang dắt theo một con vật nuôi",
+    "Đang sửa lại hàng hóa trên xe",
+    "Đang xếp hàng chờ đến lượt"
+  ]
+}

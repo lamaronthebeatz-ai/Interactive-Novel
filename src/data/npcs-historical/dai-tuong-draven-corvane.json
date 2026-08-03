@@ -1,0 +1,41 @@
+{
+  "id": "dai-tuong-draven-corvane",
+  "tier": "historical",
+  "fullName": "Draven Corvane",
+  "title": "Đại tướng",
+  "house": "Corvane",
+  "nation": "Vương quốc Kaldrenn",
+  "age": 49,
+  "gender": "Nam",
+  "biography": [
+    "Tổng chỉ huy quân đội Kaldrenn, trực tiếp thành lập và huấn luyện đội quân tinh nhuệ 'Ironguard' nổi danh khắp lục địa.",
+    "Xuất thân từ gia tộc Corvane — một trong ba gia tộc quân sự lâu đời nhất Kaldrenn — Draven được vương thất Eisenhart tin tưởng tuyệt đối trong các vấn đề quân sự.",
+    "Chủ trương cứng rắn trong tranh chấp thuế quan với Aurenfeld tại Cổ Đạo Skyreach, dù bản thân hiểu rõ Kaldrenn không thể mạo hiểm chiến tranh toàn diện vì phụ thuộc lương thực."
+  ],
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "politicalRelations": [
+    { "npcId": "cong-tuoc-elric-whitcrest", "type": "doi-thu", "note": "Căng thẳng vì Albamont muốn tự quyết giá khoáng sản, chạm đến lợi ích quân sự-kinh tế của Kaldrenn" }
+  ],
+  "wealth": "Khá — bổng lộc và đất phong từ vương thất Eisenhart nhờ công lao quân sự, không giàu bằng các nhà buôn lớn.",
+  "military": "Tổng chỉ huy toàn bộ quân đội Kaldrenn, bao gồm đội 'Ironguard' và hải quân duyên hải.",
+  "schedule": [
+    { "time": "05:30", "activity": "Thức dậy, tập luyện cùng binh sĩ" },
+    { "time": "07:00", "activity": "Ăn sáng" },
+    { "time": "08:00", "activity": "Duyệt binh và kiểm tra đồn trú" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:30", "activity": "Họp chiến lược với vương thất Eisenhart" },
+    { "time": "18:00", "activity": "Dùng bữa tối" },
+    { "time": "20:00", "activity": "Xem xét báo cáo biên phòng" },
+    { "time": "22:00", "activity": "Nghỉ ngơi" }
+  ],
+  "goals": [
+    "Duy trì ưu thế quân sự của Kaldrenn trên bộ lẫn trên biển",
+    "Buộc Albamont tuân thủ hiệp ước triều cống cũ"
+  ]
+}

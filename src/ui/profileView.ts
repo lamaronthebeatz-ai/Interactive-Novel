@@ -1,5 +1,27 @@
 import type { GameEngine } from "../engine/GameEngine";
+import type { HistoricalNpc, PersistentNpc } from "../engine/npcTypes";
 import { renderHeader } from "./gameHeader";
+
+function renderHistoricalCard(npc: HistoricalNpc): string {
+  return `
+    <div class="npc-card">
+      <p class="npc-name">${npc.fullName}</p>
+      <p class="npc-meta">${npc.title} · ${npc.house !== "Không có" ? npc.house + " · " : ""}${npc.nation}</p>
+      <p class="npc-bio">${npc.biography[0] ?? ""}</p>
+    </div>
+  `;
+}
+
+function renderPersistentCard(npc: PersistentNpc): string {
+  const traits = npc.personality.map((trait) => `<span class="trait-tag">${trait}</span>`).join("");
+  return `
+    <div class="npc-card">
+      <p class="npc-name">${npc.firstName} ${npc.lastName}</p>
+      <p class="npc-meta">${npc.occupation} · ${npc.residence}</p>
+      ${traits ? `<div class="trait-tags">${traits}</div>` : ""}
+    </div>
+  `;
+}
 
 export function renderProfile(engine: GameEngine): string {
   const p = engine.getProtagonist();
@@ -22,6 +44,13 @@ export function renderProfile(engine: GameEngine): string {
   const weaknessItems = p.weaknesses.map((w) => `<li>${w}</li>`).join("");
 
   const backgroundParagraphs = p.background.map((paragraph) => `<p>${paragraph}</p>`).join("");
+
+  const historicalCards = engine.getHistoricalNpcs().map(renderHistoricalCard).join("");
+
+  const knownNpcs = engine.getKnownPersistentNpcs();
+  const knownNpcsSection = knownNpcs.length
+    ? knownNpcs.map(renderPersistentCard).join("")
+    : `<p class="empty-hint">Bạn chưa quen biết ai trong tầng lớp thường dân của Aldemark.</p>`;
 
   return `
     <section class="screen game-screen">
@@ -61,6 +90,16 @@ export function renderProfile(engine: GameEngine): string {
         <div>
           <h3 class="section-title">Tiểu sử</h3>
           <div class="narrative-text background-text">${backgroundParagraphs}</div>
+        </div>
+
+        <div>
+          <h3 class="section-title">Danh Nhân Aldemark</h3>
+          <div class="npc-card-list">${historicalCards}</div>
+        </div>
+
+        <div>
+          <h3 class="section-title">Người Quen</h3>
+          <div class="npc-card-list">${knownNpcsSection}</div>
         </div>
       </div>
       <footer class="game-footer">

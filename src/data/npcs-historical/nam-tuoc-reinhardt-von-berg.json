@@ -1,0 +1,42 @@
+{
+  "id": "nam-tuoc-reinhardt-von-berg",
+  "tier": "historical",
+  "fullName": "Reinhardt von Berg",
+  "title": "Nam tước",
+  "house": "von Berg",
+  "nation": "Vương quốc Aurenfeld",
+  "age": 51,
+  "gender": "Nam",
+  "biography": [
+    "Nam tước đời thứ sáu của gia tộc von Berg, cai quản lâu đài Bergfeld cùng ba ngôi làng Ashford, Millbrook, và Thornwell.",
+    "Nổi tiếng trong vùng vì sự chính trực và giữ lời hứa — thu thuế đúng mức, không bao giờ vượt quá những gì hiệp ước phong kiến với vương triều Eastmere cho phép.",
+    "Người duy trì nghiêm ngặt truyền thống lâu đời của gia tộc: người thừa kế phải rời lãnh địa khi tròn hai mươi tuổi để tự mình khám phá thế giới trước khi trở về kế thừa tước vị — truyền thống mà chính ông cũng đã trải qua hơn ba mươi năm trước."
+  ],
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["lamar-von-berg"]
+  },
+  "politicalRelations": [
+    { "npcId": "quocvuong-alaric-eastmere", "type": "chu", "note": "Nam tước von Berg là chư hầu trực tiếp của Vương quốc Aurenfeld" }
+  ],
+  "wealth": "Khiêm tốn — thu nhập từ thuế nông nghiệp ba ngôi làng, đủ duy trì lâu đài và một đội vệ binh nhỏ, không dư dả.",
+  "military": "Một đội vệ binh lâu đài khoảng hai mươi người, đủ giữ trật tự địa phương, không đủ sức tham chiến quy mô lớn.",
+  "schedule": [
+    { "time": "06:00", "activity": "Thức dậy" },
+    { "time": "07:00", "activity": "Ăn sáng cùng quản gia" },
+    { "time": "08:00", "activity": "Xem xét sổ sách thuế và tình hình ba ngôi làng" },
+    { "time": "10:00", "activity": "Xử lý tranh chấp/khiếu nại của dân làng" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "14:00", "activity": "Thị sát lâu đài và đội vệ binh" },
+    { "time": "18:00", "activity": "Dùng bữa tối" },
+    { "time": "21:00", "activity": "Đọc thư từ, nghỉ ngơi" },
+    { "time": "22:00", "activity": "Ngủ" }
+  ],
+  "goals": [
+    "Giữ vững danh dự và sự ổn định của lãnh địa trong lúc Lamar vắng mặt",
+    "Chờ ngày Lamar trở về kế thừa tước vị"
+  ]
+}

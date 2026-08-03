@@ -1,0 +1,36 @@
+{
+  "id": "chu-quan-tro-agnes-coldwell",
+  "tier": "persistent",
+  "firstName": "Agnes",
+  "lastName": "Coldwell",
+  "age": 47,
+  "gender": "Nữ",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Chủ quán trọ",
+  "residence": "Làng Millbrook",
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "Đã qua đời — chồng mất trong một tai nạn nhiều năm trước",
+    "children": ["chưa xây dựng"]
+  },
+  "friends": ["chưa xây dựng"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Tiền phòng và tiền rượu từ quán trọ, khá hơn vào mùa Hội Chợ Brackenford khi thương nhân qua lại nhiều.",
+  "assets": "Một quán trọ hai tầng ở trung tâm làng Millbrook, một hầm rượu nhỏ.",
+  "personality": ["Cởi mở", "Nhiều chuyện", "Thực tế", "Hiếu khách"],
+  "likes": ["Tin tức từ khách qua đường", "Rượu táo tự ủ"],
+  "dislikes": ["Khách quỵt tiền", "Ẩu đả trong quán"],
+  "lifeGoal": "Mở rộng quán trọ thêm một tầng để đón được nhiều thương nhân hơn vào mùa hội chợ.",
+  "schedule": [
+    { "time": "05:30", "activity": "Thức dậy, chuẩn bị bếp lò" },
+    { "time": "06:30", "activity": "Dọn bữa sáng cho khách trọ" },
+    { "time": "08:00", "activity": "Dọn dẹp phòng trọ" },
+    { "time": "12:00", "activity": "Ăn trưa, chuẩn bị bữa trưa cho khách" },
+    { "time": "14:00", "activity": "Nhập hàng, kiểm kê hầm rượu" },
+    { "time": "18:00", "activity": "Phục vụ bữa tối, quán đông khách nhất trong ngày" },
+    { "time": "22:00", "activity": "Đóng quán, dọn dẹp" },
+    { "time": "23:00", "activity": "Ngủ" }
+  ]
+}

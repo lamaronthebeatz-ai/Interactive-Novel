@@ -1,0 +1,41 @@
+{
+  "id": "thai-tu-cedric-eastmere",
+  "tier": "historical",
+  "fullName": "Cedric Eastmere",
+  "title": "Thái tử",
+  "house": "Eastmere",
+  "nation": "Vương quốc Aurenfeld",
+  "age": 26,
+  "gender": "Nam",
+  "biography": [
+    "Con trai trưởng và người thừa kế duy nhất của Quốc vương Alaric Eastmere III.",
+    "Được huấn luyện từ nhỏ về quân sự và hành chính, nhưng chưa từng thực sự cầm quân hay tự mình quyết định một chính sách lớn nào.",
+    "Nhiều lãnh chúa trong nghị hội âm thầm đánh giá thái tử còn non kinh nghiệm, dù không ai dám nói thẳng trước mặt vua cha."
+  ],
+  "family": {
+    "father": "quocvuong-alaric-eastmere",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "politicalRelations": [
+    { "npcId": "quocvuong-alaric-eastmere", "type": "gia-dinh", "note": "Phụ vương" }
+  ],
+  "wealth": "Được cấp bổng lộc từ ngân khố hoàng gia, chưa có tài sản riêng đáng kể.",
+  "military": "Danh nghĩa chỉ huy một đội cận vệ nhỏ trong hoàng cung, chưa từng ra trận thật.",
+  "schedule": [
+    { "time": "07:00", "activity": "Thức dậy, luyện kiếm buổi sáng" },
+    { "time": "08:30", "activity": "Ăn sáng" },
+    { "time": "09:30", "activity": "Học chính sự cùng các cố vấn hoàng gia" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "14:00", "activity": "Dự thính các buổi tiếp kiến của vua cha" },
+    { "time": "17:00", "activity": "Cưỡi ngựa hoặc luyện tập quân sự" },
+    { "time": "19:00", "activity": "Dùng bữa tối cùng hoàng gia" },
+    { "time": "23:00", "activity": "Nghỉ ngơi" }
+  ],
+  "goals": [
+    "Chứng minh bản lĩnh trước nghị hội lãnh chúa",
+    "Học cách cân bằng quan hệ với Kaldrenn và Vesmara trước khi kế vị"
+  ]
+}
