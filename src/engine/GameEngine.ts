@@ -1,10 +1,11 @@
-import { cityEconomies, dialogues, goods, historicalNpcs, locations, persistentNpcs, protagonist, shops, STARTING_LOCATION_ID, supplyChains, taxes, tradeRoutes, worldIndex } from "../data";
+import { cityEconomies, dialogues, goods, historicalNpcs, locations, persistentNpcs, protagonist, shops, startingRelationships, STARTING_LOCATION_ID, supplyChains, taxes, tradeRoutes, worldIndex } from "../data";
 import { SaveManager } from "./SaveManager";
 import { advanceTime, formatClock } from "./time";
 import { promoteToPersistent } from "./npcPromotion";
 import { generateDynamicNpc as generateDynamicNpcFromPopulation } from "./population";
 import { getCurrentActivity, getNpcDisplayName } from "./npcTypes";
 import { formatCurrency, getCurrentPrice, getCurrentSeason, isRouteDisruptedFor } from "./economy";
+import { clampDimension, DEFAULT_RELATIONSHIP_DIMENSIONS } from "./relationshipTypes";
 import type { LocationType } from "./population";
 import type {
   CharacterProfile,
@@ -18,6 +19,7 @@ import type {
 } from "./types";
 import type { DynamicNpc, HistoricalNpc, PersistentNpc, PromotionReason } from "./npcTypes";
 import type { CityEconomy, Good, Shop, SupplyChain, Tax, TradeRoute } from "./economyTypes";
+import type { Memory, MemoryEventType, Relationship, RelationshipDimensions, RelationshipRole } from "./relationshipTypes";
 
 function createInitialState(): GameState {
   return {
@@ -30,6 +32,9 @@ function createInitialState(): GameState {
     promotedNpcs: [],
     currency: protagonist.startingCurrency,
     shops: JSON.parse(JSON.stringify(shops)),
+    relationships: JSON.parse(JSON.stringify(startingRelationships)),
+    maritalStatus: "doc-than",
+    children: [],
   };
 }
 
@@ -133,6 +138,8 @@ export class GameEngine {
     };
     if (npc.tier === "persistent") {
       this.meetNpc(npcId);
+      // Mỗi cuộc trò chuyện xây dựng quan hệ dần dần, không thay đổi đột ngột.
+      this.adjustRelationship(npcId, { trust: 1, affection: 1 });
     }
     this.screen = "dialogue";
     this.notify();
@@ -249,6 +256,7 @@ export class GameEngine {
   }
 
   meetNpc(npcId: string): void {
+    this.ensureRelationship(npcId);
     if (!this.state.knownNpcIds.includes(npcId)) {
       this.state.knownNpcIds.push(npcId);
       const npc = this.getAnyNpc(npcId);
@@ -327,6 +335,17 @@ export class GameEngine {
     const good = this.getGood(goodId);
     if (!shop || !good || quantity <= 0) return;
 
+    // Người bán căm ghét người chơi có thể từ chối giao dịch — quan hệ ảnh hưởng
+    // trực tiếp đến hành vi, không chỉ là con số nằm im trong dữ liệu.
+    if (shop.merchantNpcId) {
+      const relationship = this.getRelationship(shop.merchantNpcId);
+      if (relationship && relationship.dimensions.affection < 10 && relationship.dimensions.suspicion > 60) {
+        const merchant = this.getAnyNpc(shop.merchantNpcId);
+        this.flashMessage(merchant ? `${getNpcDisplayName(merchant)} từ chối bán hàng cho bạn.` : "Người bán từ chối giao dịch.");
+        return;
+      }
+    }
+
     const stockEntry = shop.stock.find((s) => s.goodId === goodId);
     if (!stockEntry || stockEntry.quantity < quantity) {
       this.flashMessage("Cửa hàng không còn đủ hàng.");
@@ -386,6 +405,130 @@ export class GameEngine {
     this.state.currency -= amount;
     this.addJournalEntry(`Nộp ${tax.name}: ${formatCurrency(amount)}.`);
     this.notify();
+  }
+
+  // ---------- Hệ thống quan hệ ----------
+
+  getRelationship(npcId: string): Relationship | undefined {
+    return this.state.relationships[npcId];
+  }
+
+  private ensureRelationship(npcId: string): Relationship {
+    if (!this.state.relationships[npcId]) {
+      this.state.relationships[npcId] = {
+        npcId,
+        roles: [],
+        dimensions: { ...DEFAULT_RELATIONSHIP_DIMENSIONS },
+        memories: [],
+      };
+    }
+    return this.state.relationships[npcId];
+  }
+
+  // Thay đổi nhỏ, dần dần — dùng cho các tương tác thường ngày (trò chuyện, mua bán...).
+  // Không tạo trí nhớ, vì đây không phải sự kiện có ý nghĩa riêng lẻ.
+  adjustRelationship(npcId: string, deltas: Partial<RelationshipDimensions>): void {
+    const relationship = this.ensureRelationship(npcId);
+    for (const key of Object.keys(deltas) as (keyof RelationshipDimensions)[]) {
+      const delta = deltas[key];
+      if (delta === undefined) continue;
+      relationship.dimensions[key] = clampDimension(relationship.dimensions[key] + delta);
+    }
+    this.notify();
+  }
+
+  // Ghi nhớ một sự kiện có ý nghĩa (cứu mạng, xúc phạm, vay tiền...) và áp dụng
+  // mức thay đổi lớn hơn tương ứng. Đây là điều NPC sẽ "nhớ", khác với các tương
+  // tác nhỏ hằng ngày chỉ nhích quan hệ dần qua adjustRelationship().
+  recordMemory(npcId: string, eventType: MemoryEventType, description: string, impact: Partial<RelationshipDimensions>): void {
+    const relationship = this.ensureRelationship(npcId);
+    const memory: Memory = { eventType, description, day: this.state.time.day, impact };
+    relationship.memories.push(memory);
+    for (const key of Object.keys(impact) as (keyof RelationshipDimensions)[]) {
+      const delta = impact[key];
+      if (delta === undefined) continue;
+      relationship.dimensions[key] = clampDimension(relationship.dimensions[key] + delta);
+    }
+    this.notify();
+  }
+
+  addRelationshipRole(npcId: string, role: RelationshipRole): void {
+    const relationship = this.ensureRelationship(npcId);
+    if (!relationship.roles.includes(role)) {
+      relationship.roles.push(role);
+      this.notify();
+    }
+  }
+
+  removeRelationshipRole(npcId: string, role: RelationshipRole): void {
+    const relationship = this.state.relationships[npcId];
+    if (relationship) {
+      relationship.roles = relationship.roles.filter((r) => r !== role);
+      this.notify();
+    }
+  }
+
+  // ---------- Nền tảng hôn nhân (engine hỗ trợ, chưa có giao diện — để dành build sau) ----------
+
+  proposeMarriage(npcId: string): boolean {
+    const npc = this.getAnyNpc(npcId);
+    const relationship = this.getRelationship(npcId);
+    if (!npc || !relationship || this.state.maritalStatus === "ket-hon" || this.state.maritalStatus === "dinh-hon") {
+      return false;
+    }
+    if (relationship.dimensions.affection < 60 || relationship.dimensions.trust < 50) {
+      this.flashMessage("Mối quan hệ chưa đủ sâu sắc để cầu hôn.");
+      return false;
+    }
+    this.state.maritalStatus = "dinh-hon";
+    this.addRelationshipRole(npcId, "hon-uoc");
+    this.addJournalEntry(`Lamar ngỏ lời cầu hôn với ${getNpcDisplayName(npc)}.`);
+    this.notify();
+    return true;
+  }
+
+  marry(npcId: string): boolean {
+    const npc = this.getAnyNpc(npcId);
+    if (!npc || this.state.maritalStatus !== "dinh-hon") return false;
+
+    this.state.maritalStatus = "ket-hon";
+    this.state.spouseNpcId = npcId;
+    this.removeRelationshipRole(npcId, "hon-uoc");
+    this.addRelationshipRole(npcId, "vo-chong");
+    this.addJournalEntry(`Lamar kết hôn với ${getNpcDisplayName(npc)}.`);
+    this.notify();
+    return true;
+  }
+
+  divorce(): boolean {
+    if (this.state.maritalStatus !== "ket-hon" || !this.state.spouseNpcId) return false;
+    const npc = this.getAnyNpc(this.state.spouseNpcId);
+
+    this.removeRelationshipRole(this.state.spouseNpcId, "vo-chong");
+    this.addJournalEntry(npc ? `Lamar ly hôn với ${getNpcDisplayName(npc)}.` : "Lamar ly hôn.");
+    this.state.maritalStatus = "ly-hon";
+    this.state.spouseNpcId = undefined;
+    this.notify();
+    return true;
+  }
+
+  widow(): boolean {
+    if (this.state.maritalStatus !== "ket-hon" || !this.state.spouseNpcId) return false;
+    const npc = this.getAnyNpc(this.state.spouseNpcId);
+
+    this.addJournalEntry(npc ? `${getNpcDisplayName(npc)} qua đời. Lamar trở thành người góa bụa.` : "Lamar trở thành người góa bụa.");
+    this.state.maritalStatus = "goa-bua";
+    this.state.spouseNpcId = undefined;
+    this.notify();
+    return true;
+  }
+
+  haveChild(childNpcId: string): void {
+    if (!this.state.children.includes(childNpcId)) {
+      this.state.children.push(childNpcId);
+      this.addRelationshipRole(childNpcId, "con-cai");
+      this.notify();
+    }
   }
 
   private applyEffects(effects: Effect[]): void {
