@@ -1,0 +1,122 @@
+[
+  {
+    "id": "hoang-gia-aurenfeld",
+    "name": "Vương thất Eastmere",
+    "leader": "Quốc vương Alaric Eastmere III",
+    "headquarters": "Aurenhall",
+    "members": ["quocvuong-alaric-eastmere", "thai-tu-cedric-eastmere"],
+    "goals": ["Duy trì hòa bình với Kaldrenn và Vesmara", "Củng cố quyền lực trung ương trước nghị hội lãnh chúa"],
+    "allies": ["linh-giao-sanctaurum", "gia-toc-von-berg"],
+    "enemies": [],
+    "influenceRegions": ["Vương quốc Aurenfeld"],
+    "fundingSource": "Thuế ngũ cốc và thuế thương mại toàn vương quốc"
+  },
+  {
+    "id": "gia-toc-von-berg",
+    "name": "Gia tộc von Berg",
+    "leader": "Nam tước Reinhardt von Berg",
+    "headquarters": "Lâu đài Bergfeld",
+    "members": ["nam-tuoc-reinhardt-von-berg"],
+    "goals": ["Giữ vững danh dự và sự ổn định của lãnh địa", "Chờ ngày Lamar trở về kế thừa tước vị"],
+    "allies": ["hoang-gia-aurenfeld"],
+    "enemies": [],
+    "influenceRegions": ["Ba ngôi làng Ashford, Millbrook, Thornwell"],
+    "fundingSource": "Thuế đất nông nghiệp ba ngôi làng"
+  },
+  {
+    "id": "linh-giao-sanctaurum",
+    "name": "Giáo hội Linh Giáo",
+    "leader": "Đại Tế Ty Seraphine",
+    "headquarters": "Thánh Đô Sanctaurum",
+    "members": ["dai-te-ty-seraphine", "giao-si-tobias-wren"],
+    "goals": ["Mở rộng ảnh hưởng hòa bình của Linh Giáo", "Giữ vị thế trung lập nhưng có tiếng nói trong xung đột lớn"],
+    "allies": ["hoang-gia-aurenfeld"],
+    "enemies": [],
+    "influenceRegions": ["Vương quốc Aurenfeld", "phần lớn các vương quốc phía nam"],
+    "fundingSource": "Tiền dâng cúng và thuế thập phân"
+  },
+  {
+    "id": "hoi-dong-argent",
+    "name": "Hội Đồng Argent",
+    "leader": "Cassian Voss",
+    "headquarters": "Thành bang Argenport",
+    "members": ["chu-ngan-hang-cassian-voss"],
+    "goals": ["Mở rộng thị phần bảo hiểm hàng hải", "Giữ vững thế trung lập trước áp lực từ Vesmara"],
+    "allies": [],
+    "enemies": [],
+    "influenceRegions": ["Thành bang Argenport", "tuyến hàng hải Eo biển Ironthroat"],
+    "fundingSource": "Phí bảo hiểm hàng hải và thuế cảng"
+  },
+  {
+    "id": "hoi-phuong-mo-albamont",
+    "name": "Hội Phường Mỏ Albamont",
+    "leader": "Công tước Elric Whitcrest (danh nghĩa), các trưởng phường mỏ (thực quyền)",
+    "headquarters": "Oreholt",
+    "members": ["cong-tuoc-elric-whitcrest"],
+    "goals": ["Đàm phán lại hiệp ước triều cống với Kaldrenn", "Củng cố vị thế chính trị của tầng lớp trưởng phường mỏ"],
+    "allies": [],
+    "enemies": ["quan-doi-kaldrenn"],
+    "influenceRegions": ["Công quốc Albamont"],
+    "fundingSource": "Khai khoáng sắt, than, đá"
+  },
+  {
+    "id": "linh-danh-thue-vesmara",
+    "name": "Đội Lính Đánh Thuê Vesmara",
+    "leader": "Không có thủ lĩnh cố định — các đội trưởng hoạt động độc lập theo hợp đồng",
+    "headquarters": "Westhaven",
+    "members": [],
+    "goals": ["Nhận hợp đồng từ Vương quốc Vesmara khi cần viện binh trên bộ"],
+    "allies": [],
+    "enemies": [],
+    "influenceRegions": ["Vương quốc Vesmara"],
+    "fundingSource": "Tiền công theo hợp đồng"
+  },
+  {
+    "id": "hai-quan-vesmara",
+    "name": "Hải Quân Vương quốc Vesmara",
+    "leader": "Vương tộc Marloch",
+    "headquarters": "Bayhaven",
+    "members": [],
+    "goals": ["Bảo vệ tuyến hàng hải của Vesmara", "Duy trì ưu thế hải quân trên Biển Aldris"],
+    "allies": [],
+    "enemies": [],
+    "influenceRegions": ["Vương quốc Vesmara", "Biển Aldris", "Vịnh Marloch"],
+    "fundingSource": "Ngân khố hoàng gia Vesmara và thuế thương mại hàng hải"
+  },
+  {
+    "id": "quan-doi-kaldrenn",
+    "name": "Quân Đội Hoàng Gia Kaldrenn (Ironguard)",
+    "leader": "Đại tướng Draven Corvane",
+    "headquarters": "Kaldrenhold",
+    "members": ["dai-tuong-draven-corvane"],
+    "goals": ["Duy trì ưu thế quân sự trên bộ lẫn trên biển", "Buộc Albamont tuân thủ hiệp ước triều cống cũ"],
+    "allies": [],
+    "enemies": ["hoi-phuong-mo-albamont"],
+    "influenceRegions": ["Vương quốc Kaldrenn"],
+    "fundingSource": "Ngân khố vương thất Eisenhart"
+  },
+  {
+    "id": "mat-vu-aurenfeld",
+    "name": "Mật Vụ Vương Thất Aurenfeld",
+    "leader": "Giấu danh tính",
+    "headquarters": "Không công khai",
+    "members": [],
+    "goals": ["Theo dõi động thái của Kaldrenn và Vesmara", "Bảo vệ tính chính danh của vương triều Eastmere"],
+    "allies": ["hoang-gia-aurenfeld", "gia-toc-von-berg"],
+    "enemies": ["quan-doi-kaldrenn"],
+    "influenceRegions": ["Vương quốc Aurenfeld", "vùng biên giới"],
+    "fundingSource": "Ngân sách bí mật của vương thất"
+  },
+  {
+    "id": "hoi-hoc-gia-inkspire",
+    "name": "Hội Học Giả Inkspire",
+    "leader": "Viện Trưởng Bertrand Cole",
+    "headquarters": "Thành bang Inkspire",
+    "members": ["vien-truong-bertrand-cole"],
+    "goals": ["Bảo tồn văn khố từ thời Đế chế Aurignis", "Giữ vững quy chế trung lập của Inkspire"],
+    "allies": [],
+    "enemies": [],
+    "influenceRegions": ["Thành bang Inkspire"],
+    "fundingSource": "Bổng lộc hội đồng giáo sư, không thu thuế"
+  }
+]

@@ -4,6 +4,7 @@
 import type { PersistentNpc } from "./npcTypes";
 import type { Shop } from "./economyTypes";
 import type { MaritalStatus, Relationship } from "./relationshipTypes";
+import type { CrimeRecord, InfluenceStats, LoyaltyRecord, ReputationEntry, WorldEvent } from "./politicsTypes";
 
 export interface Item {
   id: string;
@@ -142,4 +143,10 @@ export interface GameState {
   maritalStatus: MaritalStatus;
   spouseNpcId?: string;
   children: string[]; // id NPC con cái (nền tảng cho build sau)
+  reputation: Record<string, ReputationEntry>; // danh tiếng theo từng đối tượng, không có chỉ số toàn thế giới
+  loyalty: Record<string, LoyaltyRecord>; // lập trường trung thành với từng phe phái
+  titles: string[]; // id tước vị (nobility-titles.json) hiện đang nắm giữ
+  crimeRecords: CrimeRecord[];
+  influence: InfluenceStats;
+  worldEvents: WorldEvent[];
 }

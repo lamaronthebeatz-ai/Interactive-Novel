@@ -1,0 +1,5 @@
+[
+  { "targetId": "gia-toc-von-berg", "targetType": "gia-toc", "targetName": "Gia tộc von Berg", "value": 80 },
+  { "targetId": "hoang-gia-aurenfeld", "targetType": "phe-phai", "targetName": "Vương thất Eastmere", "value": 20 },
+  { "targetId": "linh-giao-sanctaurum", "targetType": "phe-phai", "targetName": "Giáo hội Linh Giáo", "value": 15 }
+]
