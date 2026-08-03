@@ -22,10 +22,10 @@ export function renderLocation(engine: GameEngine): string {
   const npcButtons = location.npcs
     .map((npcId) => engine.getAnyNpc(npcId))
     .filter((npc) => npc !== undefined)
-    .map(
-      (npc) =>
-        `<button data-action="talk-npc" data-npc-id="${npc.id}">Nói chuyện với ${getNpcDisplayName(npc)}</button>`,
-    )
+    .map((npc) => {
+      const activity = engine.getNpcCurrentActivity(npc);
+      return `<button data-action="talk-npc" data-npc-id="${npc.id}">Nói chuyện với ${getNpcDisplayName(npc)} <span class="npc-activity">(${activity})</span></button>`;
+    })
     .join("");
 
   const actionButtons = (location.actions ?? [])
@@ -33,6 +33,17 @@ export function renderLocation(engine: GameEngine): string {
       (action) =>
         `<button data-action="location-action" data-action-id="${action.id}">${action.text}</button>`,
     )
+    .join("");
+
+  const travelButtons = location.connections
+    .map((connection) => {
+      const destination = engine.getAllLocations().find((loc) => loc.id === connection.toLocationId);
+      if (!destination) return "";
+      return `
+        <button data-action="travel" data-to="${connection.toLocationId}" data-mode="walk">Đi bộ tới ${destination.name} (${connection.walkMinutes} phút)</button>
+        <button data-action="travel" data-to="${connection.toLocationId}" data-mode="horse">Cưỡi ngựa tới ${destination.name} (${connection.horseMinutes} phút)</button>
+      `;
+    })
     .join("");
 
   return `
@@ -45,6 +56,14 @@ export function renderLocation(engine: GameEngine): string {
           ${npcButtons}
           ${actionButtons}
         </div>
+        ${
+          location.connections.length
+            ? `<div>
+                <h3 class="section-title">Di chuyển</h3>
+                <div class="choices">${travelButtons}</div>
+              </div>`
+            : ""
+        }
       </div>
       ${renderFooter()}
       ${renderMessage(engine)}

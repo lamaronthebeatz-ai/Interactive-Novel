@@ -1,0 +1,33 @@
+{
+  "id": "godric-chao-hoi",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Godric Marlin",
+      "text": "Ông ngẩng lên từ lò rèn, lau mồ hôi trên trán khi nhận ra bộ trang phục của con trai Nam tước. 'Cậu Lamar phải không? Nghe nói cậu lên đường hôm nay.'",
+      "choices": [
+        { "text": "Đúng vậy, cháu ghé qua chào bác trước khi đi.", "next": "chao-tam-biet" },
+        { "text": "Lò rèn của bác trông bận rộn nhỉ.", "next": "hoi-tham-nghe" }
+      ]
+    },
+    "chao-tam-biet": {
+      "speaker": "Godric Marlin",
+      "text": "'Vậy thì đi cẩn thận. Kiếm của cậu là do chính tay ta rèn lại phần lưỡi năm ngoái đấy — đừng để nó cùn vì thiếu chăm sóc.'",
+      "choices": [
+        { "text": "Cháu sẽ nhớ.", "next": "ket-thuc" }
+      ]
+    },
+    "hoi-tham-nghe": {
+      "speaker": "Godric Marlin",
+      "text": "'Rèn nông cụ cho cả ba làng, thỉnh thoảng có đơn từ lâu đài. Không giàu, nhưng đủ sống.' Ông cười, chỉ tay vào đống móng ngựa mới rèn.",
+      "choices": [
+        { "text": "Chúc bác buôn may bán đắt.", "next": "ket-thuc" }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Godric Marlin",
+      "text": "'Đi đường bình an, cậu Lamar.'",
+      "choices": []
+    }
+  }
+}

@@ -1,8 +1,9 @@
-import { dialogues, historicalNpcs, locations, persistentNpcs, protagonist, STARTING_LOCATION_ID } from "../data";
+import { dialogues, historicalNpcs, locations, persistentNpcs, protagonist, STARTING_LOCATION_ID, worldIndex } from "../data";
 import { SaveManager } from "./SaveManager";
 import { advanceTime, formatClock } from "./time";
 import { promoteToPersistent } from "./npcPromotion";
 import { generateDynamicNpc as generateDynamicNpcFromPopulation } from "./population";
+import { getCurrentActivity, getNpcDisplayName } from "./npcTypes";
 import type { LocationType } from "./population";
 import type {
   CharacterProfile,
@@ -12,6 +13,7 @@ import type {
   GameLocation,
   GameState,
   Screen,
+  WorldIndex,
 } from "./types";
 import type { DynamicNpc, HistoricalNpc, PersistentNpc, PromotionReason } from "./npcTypes";
 
@@ -89,6 +91,30 @@ export class GameEngine {
 
   getCurrentLocation(): GameLocation | undefined {
     return locations[this.state.currentLocationId];
+  }
+
+  getAllLocations(): GameLocation[] {
+    return Object.values(locations);
+  }
+
+  getWorldIndex(): WorldIndex {
+    return worldIndex;
+  }
+
+  travelTo(toLocationId: string, mode: "walk" | "horse"): void {
+    const current = this.getCurrentLocation();
+    const destination = locations[toLocationId];
+    const connection = current?.connections.find((c) => c.toLocationId === toLocationId);
+    if (!current || !destination || !connection) return;
+
+    const minutes = mode === "horse" ? connection.horseMinutes : connection.walkMinutes;
+    const modeLabel = mode === "horse" ? "cưỡi ngựa" : "đi bộ";
+
+    this.addJournalEntry(`Lamar rời ${current.name}, ${modeLabel} hướng tới ${destination.name}.`);
+    this.state.time = advanceTime(this.state.time, minutes);
+    this.state.currentLocationId = toLocationId;
+    this.addJournalEntry(`Đến ${destination.name}.`);
+    this.notify();
   }
 
   talkTo(npcId: string): void {
@@ -169,8 +195,14 @@ export class GameEngine {
     this.notify();
   }
 
+  openMap(): void {
+    this.previousScreen = this.isOverlayScreen(this.screen) ? this.previousScreen : this.screen;
+    this.screen = "map";
+    this.notify();
+  }
+
   private isOverlayScreen(screen: Screen): boolean {
-    return screen === "journal" || screen === "inventory" || screen === "profile";
+    return screen === "journal" || screen === "inventory" || screen === "profile" || screen === "map";
   }
 
   closeOverlay(): void {
@@ -201,8 +233,16 @@ export class GameEngine {
   meetNpc(npcId: string): void {
     if (!this.state.knownNpcIds.includes(npcId)) {
       this.state.knownNpcIds.push(npcId);
+      const npc = this.getAnyNpc(npcId);
+      if (npc) {
+        this.addJournalEntry(`Gặp ${getNpcDisplayName(npc)}.`);
+      }
       this.notify();
     }
+  }
+
+  getNpcCurrentActivity(npc: HistoricalNpc | PersistentNpc): string {
+    return getCurrentActivity(npc.schedule, this.state.time.minutesOfDay);
   }
 
   generateDynamicNpc(locationType: LocationType, residence: string): DynamicNpc {

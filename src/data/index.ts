@@ -4,18 +4,25 @@
 // Nội dung địa điểm/NPC/hội thoại chính thức đang được xây dựng trên nền
 // World Bible (xem lore/). Nhân vật chính đã có: Lamar von Berg.
 
-import type { CharacterProfile, Dialogue, GameLocation } from "../engine/types";
+import type { CharacterProfile, Dialogue, GameLocation, WorldIndex } from "../engine/types";
 import type { HistoricalNpc, PersistentNpc } from "../engine/npcTypes";
 
 import character from "./character.json";
+import worldIndexData from "./world-index.json";
 
 // Địa điểm
 import sanLauDaiBergfeld from "./locations/san-lau-dai-bergfeld.json";
+import langAshford from "./locations/lang-ashford.json";
+import langMillbrook from "./locations/lang-millbrook.json";
+import langThornwell from "./locations/lang-thornwell.json";
 
 // Hội thoại
 import reinhardtChiaTay from "./dialogues/reinhardt-chia-tay.json";
 import rowanLoiKhuyen from "./dialogues/rowan-loi-khuyen.json";
 import tobiasChucPhuc from "./dialogues/tobias-chuc-phuc.json";
+import godricChaoHoi from "./dialogues/godric-chao-hoi.json";
+import elowenChaoHoi from "./dialogues/elowen-chao-hoi.json";
+import agnesChaoHoi from "./dialogues/agnes-chao-hoi.json";
 
 // NPC Tầng I — NPC Lịch Sử
 import quocVuongAlaricEastmere from "./npcs-historical/quocvuong-alaric-eastmere.json";
@@ -35,17 +42,28 @@ import thayThuocElowenBrack from "./npcs-persistent/thay-thuoc-elowen-brack.json
 import giaoSiTobiasWren from "./npcs-persistent/giao-si-tobias-wren.json";
 import chuQuanTroAgnesColdwell from "./npcs-persistent/chu-quan-tro-agnes-coldwell.json";
 
-export const locations: Record<string, GameLocation> = {
-  [sanLauDaiBergfeld.id]: sanLauDaiBergfeld as GameLocation,
-};
+const locationList = [sanLauDaiBergfeld, langAshford, langMillbrook, langThornwell] as GameLocation[];
 
-export const dialogues: Record<string, Dialogue> = {
-  [reinhardtChiaTay.id]: reinhardtChiaTay as Dialogue,
-  [rowanLoiKhuyen.id]: rowanLoiKhuyen as Dialogue,
-  [tobiasChucPhuc.id]: tobiasChucPhuc as Dialogue,
-};
+export const locations: Record<string, GameLocation> = Object.fromEntries(
+  locationList.map((location) => [location.id, location]),
+);
+
+const dialogueList = [
+  reinhardtChiaTay,
+  rowanLoiKhuyen,
+  tobiasChucPhuc,
+  godricChaoHoi,
+  elowenChaoHoi,
+  agnesChaoHoi,
+] as Dialogue[];
+
+export const dialogues: Record<string, Dialogue> = Object.fromEntries(
+  dialogueList.map((dialogue) => [dialogue.id, dialogue]),
+);
 
 export const STARTING_LOCATION_ID = sanLauDaiBergfeld.id;
+
+export const worldIndex: WorldIndex = worldIndexData as WorldIndex;
 
 export const protagonist: CharacterProfile = character as CharacterProfile;
 

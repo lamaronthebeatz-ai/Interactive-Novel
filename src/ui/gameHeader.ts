@@ -14,6 +14,7 @@ export function renderFooter(): string {
   return `
     <footer class="game-footer">
       <button data-action="open-profile"><span class="icon">🛡️</span>Hồ Sơ</button>
+      <button data-action="open-map"><span class="icon">🗺️</span>Bản Đồ</button>
       <button data-action="open-inventory"><span class="icon">🎒</span>Kho Đồ</button>
       <button data-action="open-journal"><span class="icon">📖</span>Nhật Ký</button>
       <button data-action="save-game"><span class="icon">💾</span>Lưu</button>

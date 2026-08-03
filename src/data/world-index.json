@@ -1,0 +1,35 @@
+{
+  "continent": "Đại Lục Aldemark",
+  "nations": [
+    { "name": "Vương quốc Kaldrenn", "type": "Vương quốc", "blurb": "Bắc lục địa, ven Biển Mistfall." },
+    { "name": "Vương quốc Aurenfeld", "type": "Vương quốc", "blurb": "Trung–nam lục địa, đồng bằng sông Goldrun." },
+    { "name": "Vương quốc Vesmara", "type": "Vương quốc", "blurb": "Tây–nam lục địa, ven Biển Maren." },
+    { "name": "Công quốc Brackenford", "type": "Công quốc", "blurb": "Thung lũng giữa Kaldrenn và Aurenfeld." },
+    { "name": "Công quốc Albamont", "type": "Công quốc", "blurb": "Cao nguyên chân dãy Skyreach." },
+    { "name": "Liên minh Bá quốc Wyndreach", "type": "Liên minh Bá quốc", "blurb": "Thảo nguyên phía đông." },
+    { "name": "Thành bang Argenport", "type": "Thành bang", "blurb": "Bán đảo Argenport, kiểm soát Eo biển Ironthroat." },
+    { "name": "Thành bang Inkspire", "type": "Thành bang", "blurb": "Dải đất nhỏ giữa Aurenfeld và Brackenford." },
+    { "name": "Thánh Đô Sanctaurum", "type": "Lãnh địa tôn giáo tự trị", "blurb": "Enclave độc lập trong lãnh thổ Aurenfeld." },
+    { "name": "Lãnh địa tự trị Mistpeak", "type": "Lãnh địa tự trị", "blurb": "Vùng núi cao phía tây dãy Skyreach." },
+    { "name": "Biên Trấn Greymarch", "type": "Vùng biên giới quân sự", "blurb": "Bắc thảo nguyên, giáp hoang mạc." },
+    { "name": "Thung Lũng Mistvale", "type": "Vùng tranh chấp", "blurb": "Giữa Kaldrenn và Brackenford." },
+    { "name": "Vùng Đất Hoang Hollowreach", "type": "Đất vô chủ", "blurb": "Đông bắc, ngoài Biên Trấn Greymarch." }
+  ],
+  "majorRoads": [
+    { "name": "Cổ Đạo Skyreach", "blurb": "Nối Kaldrenn, qua Cao Nguyên Albamont, xuống Aurenfeld." },
+    { "name": "Con Đường Muối", "blurb": "Nối Vesmara, qua Brackenford, đến Aurenfeld và Wyndreach." }
+  ],
+  "forests": [
+    { "name": "Rừng Nguyên Sinh Greenmere", "blurb": "Rừng nguyên sinh rộng lớn trong nội địa Vesmara." },
+    { "name": "Rừng Tối Blackleaf", "blurb": "Rừng rậm rạp ở vùng biên giữa Kaldrenn và Thung Lũng Mistvale." },
+    { "name": "Rừng Cấm Duskwood", "blurb": "Rừng thiêng giáp Lãnh địa Mistpeak, cấm người ngoài xâm nhập." }
+  ],
+  "mountains": [
+    { "name": "Dãy Skyreach", "blurb": "Rặng núi khổng lồ chia đôi lục địa, xương sống địa lý của Aldemark." }
+  ],
+  "rivers": [
+    { "name": "Sông Goldrun", "blurb": "Con sông dài nhất lục địa, chảy từ Hồ Goldmere ra Biển Aldris." },
+    { "name": "Sông Blackwater", "blurb": "Sông ngắn, chảy xiết, đổ xuống bờ biển Kaldrenn." },
+    { "name": "Sông Wyndrun", "blurb": "Chảy qua thảo nguyên Wyndreach, tan vào đầm lầy nước mặn nội địa." }
+  ]
+}

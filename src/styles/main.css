@@ -485,6 +485,13 @@ button:disabled {
   margin-top: 0.4rem;
 }
 
+.npc-activity {
+  color: var(--text-faint);
+  font-size: 0.82em;
+  font-weight: 400;
+  font-style: italic;
+}
+
 .empty-hint {
   color: var(--text-faint);
   font-style: italic;

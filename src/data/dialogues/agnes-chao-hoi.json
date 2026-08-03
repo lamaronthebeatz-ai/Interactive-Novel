@@ -1,0 +1,33 @@
+{
+  "id": "agnes-chao-hoi",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Agnes Coldwell",
+      "text": "Bà đang lau bàn trong quán trọ, thấy Lamar bước vào liền tươi cười. 'Ô, cậu chủ nhỏ! Ghé nghỉ chân hay cần gì khác?'",
+      "choices": [
+        { "text": "Cháu chỉ ghé qua chào bác trước khi lên đường.", "next": "chao-hoi" },
+        { "text": "Bác có nghe tin tức gì mới không?", "next": "hoi-tin-tuc" }
+      ]
+    },
+    "chao-hoi": {
+      "speaker": "Agnes Coldwell",
+      "text": "'Vậy à. Cẩn thận đấy, ngoài kia không phải lúc nào cũng dễ chịu như quán trọ của ta đâu.' Bà cười, rót cho cậu một cốc nước.",
+      "choices": [
+        { "text": "Cháu sẽ nhớ lời bác.", "next": "ket-thuc" }
+      ]
+    },
+    "hoi-tin-tuc": {
+      "speaker": "Agnes Coldwell",
+      "text": "'Toàn chuyện thương nhân qua đường kể lại thôi — giá muối tăng, đường sá dạo này đông người hơn mọi năm. Không có gì đáng lo.'",
+      "choices": [
+        { "text": "Cảm ơn bác đã kể.", "next": "ket-thuc" }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Agnes Coldwell",
+      "text": "'Đi đường bình an. Lúc nào về, quán này vẫn còn chỗ cho cậu.'",
+      "choices": []
+    }
+  }
+}
