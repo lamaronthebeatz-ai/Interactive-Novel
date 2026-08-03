@@ -1,0 +1,41 @@
+{
+  "id": "dai-te-ty-seraphine",
+  "tier": "historical",
+  "fullName": "Seraphine",
+  "title": "Đại Tế Ty",
+  "house": "Không có — tăng lữ cấp cao của Linh Giáo từ bỏ danh xưng gia tộc khi thụ phong",
+  "nation": "Thánh Đô Sanctaurum",
+  "age": 61,
+  "gender": "Nữ",
+  "biography": [
+    "Được hội đồng tăng lữ cấp cao bầu chọn làm Đại Tế Ty suốt đời cách đây mười hai năm, sau bốn mươi năm tu hành và nghiên cứu giáo lý Linh Giáo.",
+    "Là người khởi xướng việc mở rộng phạm vi 'Hòa Ước Thần Linh' để bao trùm cả những ngày lễ nhỏ, không chỉ đại lễ, nhằm giảm bớt xung đột nhỏ lẻ giữa các vương quốc.",
+    "Giữ quan điểm thận trọng với các vùng theo tín ngưỡng cổ xưa như Kaldrenn hay Mistpeak — không lên án công khai, nhưng cũng không công nhận ngang hàng với Linh Giáo chính thống."
+  ],
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "Không có — giữ giới độc thân theo quy định tăng lữ cấp cao",
+    "children": ["Không có"]
+  },
+  "politicalRelations": [
+    { "npcId": "quocvuong-alaric-eastmere", "type": "dong-minh", "note": "Quan hệ bảo hộ - tôn giáo bền chặt với Vương quốc Aurenfeld" }
+  ],
+  "wealth": "Không sở hữu tài sản cá nhân theo giới luật; Thánh Đô Sanctaurum sống nhờ tiền dâng cúng và thuế thập phân.",
+  "military": "Không có — chỉ có đội Thánh Vệ canh gác thành thánh, bà không trực tiếp chỉ huy quân sự.",
+  "schedule": [
+    { "time": "05:00", "activity": "Thức dậy, hành lễ buổi sớm" },
+    { "time": "06:30", "activity": "Ăn sáng đơn giản" },
+    { "time": "07:30", "activity": "Chủ trì nghi lễ tại đại điện" },
+    { "time": "10:00", "activity": "Tiếp sứ thần các vương quốc" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "14:00", "activity": "Nghiên cứu giáo lý, xử lý công văn của Linh Giáo" },
+    { "time": "18:00", "activity": "Hành lễ buổi tối" },
+    { "time": "21:00", "activity": "Nghỉ ngơi" }
+  ],
+  "goals": [
+    "Mở rộng ảnh hưởng hòa bình của Linh Giáo trên toàn lục địa",
+    "Giữ Thánh Đô trung lập nhưng có tiếng nói trong mọi cuộc xung đột lớn"
+  ]
+}

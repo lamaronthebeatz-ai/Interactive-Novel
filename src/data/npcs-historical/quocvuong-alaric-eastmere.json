@@ -1,0 +1,44 @@
+{
+  "id": "quocvuong-alaric-eastmere",
+  "tier": "historical",
+  "fullName": "Alaric Eastmere III",
+  "title": "Quốc vương",
+  "house": "Eastmere",
+  "nation": "Vương quốc Aurenfeld",
+  "age": 54,
+  "gender": "Nam",
+  "biography": [
+    "Lên ngôi năm hai mươi bốn tuổi sau khi phụ vương qua đời đột ngột vì bạo bệnh, Alaric Eastmere III đã trị vì Aurenfeld suốt ba mươi năm.",
+    "Ông nổi tiếng là một vị vua thận trọng hơn là quyết đoán — luôn ưu tiên giữ ổn định nguồn cung lương thực và tránh chiến tranh trực tiếp với Kaldrenn hay Vesmara, dù áp lực từ nghị hội lãnh chúa đôi khi rất lớn.",
+    "Dưới triều đại của ông, quan hệ bảo hộ với Thánh Đô Sanctaurum được củng cố chặt chẽ hơn bao giờ hết, giúp vương triều Eastmere có thêm tính chính danh tôn giáo."
+  ],
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["thai-tu-cedric-eastmere"]
+  },
+  "politicalRelations": [
+    { "npcId": "thai-tu-cedric-eastmere", "type": "gia-dinh", "note": "Con trai trưởng, người thừa kế ngai vàng" },
+    { "npcId": "dai-te-ty-seraphine", "type": "dong-minh", "note": "Quan hệ bảo hộ - tôn giáo bền chặt với Thánh Đô Sanctaurum" },
+    { "npcId": "nam-tuoc-reinhardt-von-berg", "type": "thuoc-ha", "note": "Nam tước von Berg là chư hầu trực tiếp của vương triều" }
+  ],
+  "wealth": "Rất lớn — kiểm soát thuế ngũ cốc toàn vương quốc, nhưng phần lớn tài sản thực tế nằm trong tay các lãnh chúa vùng chứ không tập trung ở vương thất.",
+  "military": "Quân đội trưng binh đông đảo nhưng huấn luyện không đồng đều; quyền chỉ huy tối cao thuộc về vua, song phụ thuộc lớn vào các lãnh chúa vùng khi cần động viên lực lượng.",
+  "schedule": [
+    { "time": "06:30", "activity": "Thức dậy, nghe báo cáo buổi sáng từ quản gia hoàng cung" },
+    { "time": "08:00", "activity": "Ăn sáng cùng cận thần thân tín" },
+    { "time": "09:00", "activity": "Tiếp kiến sứ thần và lãnh chúa" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:30", "activity": "Họp nghị hội lãnh chúa hoặc xử lý công văn" },
+    { "time": "18:00", "activity": "Dùng bữa tối cùng hoàng gia" },
+    { "time": "20:00", "activity": "Đọc báo cáo trước khi nghỉ" },
+    { "time": "22:30", "activity": "Nghỉ ngơi" }
+  ],
+  "goals": [
+    "Duy trì hòa bình với Kaldrenn và Vesmara",
+    "Củng cố quyền lực trung ương trước nghị hội lãnh chúa",
+    "Đảm bảo Thái tử Cedric đủ bản lĩnh kế vị"
+  ]
+}

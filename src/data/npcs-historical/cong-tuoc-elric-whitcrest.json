@@ -1,0 +1,41 @@
+{
+  "id": "cong-tuoc-elric-whitcrest",
+  "tier": "historical",
+  "fullName": "Elric Whitcrest",
+  "title": "Công tước",
+  "house": "Whitcrest",
+  "nation": "Công quốc Albamont",
+  "age": 47,
+  "gender": "Nam",
+  "biography": [
+    "Người đứng đầu gia tộc Whitcrest, cai quản Công quốc Albamont từ thủ phủ Whitspire trên cao nguyên chân dãy Skyreach.",
+    "Thừa hưởng một công quốc giàu khoáng sản nhưng bị ràng buộc bởi hiệp ước triều cống cũ với Kaldrenn, Elric dành phần lớn thời gian trị vì để tìm cách đàm phán lại các điều khoản đó.",
+    "Phải cân bằng giữa quý tộc cũ trung thành với gia tộc Whitcrest và tầng lớp trưởng phường mỏ mới giàu lên nhờ khai khoáng — hai phe ngày càng khó dung hòa trong triều đình của ông."
+  ],
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "politicalRelations": [
+    { "npcId": "dai-tuong-draven-corvane", "type": "doi-thu", "note": "Căng thẳng vì Albamont muốn tự quyết giá khoáng sản, chạm đến lợi ích của Kaldrenn" }
+  ],
+  "wealth": "Rất lớn nhờ khai khoáng, nhưng phần lớn bị ràng buộc bởi hiệp ước triều cống cũ với Kaldrenn.",
+  "military": "Cung nỏ thủ thành thiện chiến; thợ mỏ có thể chuyển thành công binh phá/công thành khi cần.",
+  "schedule": [
+    { "time": "06:30", "activity": "Thức dậy" },
+    { "time": "07:30", "activity": "Ăn sáng, nghe báo cáo sản lượng mỏ" },
+    { "time": "09:00", "activity": "Tiếp các trưởng phường mỏ và quý tộc cũ" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:30", "activity": "Thị sát Oreholt hoặc Stonegate (luân phiên)" },
+    { "time": "18:00", "activity": "Dùng bữa tối" },
+    { "time": "20:00", "activity": "Xử lý công văn, thư từ ngoại giao" },
+    { "time": "22:30", "activity": "Nghỉ ngơi" }
+  ],
+  "goals": [
+    "Đàm phán lại hiệp ước triều cống với Kaldrenn",
+    "Dung hòa quý tộc cũ và tầng lớp trưởng phường mỏ mới nổi"
+  ]
+}

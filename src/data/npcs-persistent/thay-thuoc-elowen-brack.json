@@ -1,0 +1,36 @@
+{
+  "id": "thay-thuoc-elowen-brack",
+  "tier": "persistent",
+  "firstName": "Elowen",
+  "lastName": "Brack",
+  "age": 36,
+  "gender": "Nữ",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Thầy thuốc",
+  "residence": "Làng Ashford",
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "tho-ren-godric-marlin",
+    "children": ["chưa xây dựng"]
+  },
+  "friends": ["chưa xây dựng"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Tiền công khám chữa bệnh và bán thuốc thảo dược, thu nhập thất thường theo mùa dịch bệnh.",
+  "assets": "Một căn nhà kiêm phòng khám nhỏ, vườn thảo dược riêng, tủ thuốc quý được truyền từ thầy dạy nghề.",
+  "personality": ["Điềm tĩnh", "Tỉ mỉ", "Thẳng thắn với bệnh nhân", "Kín đáo"],
+  "likes": ["Thảo dược hiếm", "Sách y thuật cũ"],
+  "dislikes": ["Bệnh nhân giấu triệu chứng", "Lang băm bán thuốc giả"],
+  "lifeGoal": "Truyền lại toàn bộ kiến thức y thuật cho một người học trò xứng đáng trước khi quá già để hành nghề.",
+  "schedule": [
+    { "time": "06:00", "activity": "Thức dậy, chăm vườn thảo dược" },
+    { "time": "07:00", "activity": "Ăn sáng cùng chồng" },
+    { "time": "08:00", "activity": "Khám chữa bệnh tại nhà" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:00", "activity": "Đi thăm khám tại nhà cho người già, người bệnh nặng" },
+    { "time": "18:00", "activity": "Về nhà, dùng bữa tối" },
+    { "time": "20:00", "activity": "Bào chế thuốc, đọc sách y thuật" },
+    { "time": "22:00", "activity": "Ngủ" }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "ba-tuoc-halvard-rosswind",
+  "tier": "historical",
+  "fullName": "Halvard Rosswind",
+  "title": "Bá tước",
+  "house": "Rosswind",
+  "nation": "Bá quốc Rosswind (Liên minh Bá quốc Wyndreach)",
+  "age": 39,
+  "gender": "Nam",
+  "biography": [
+    "Bá tước trẻ nhất trong bốn bá quốc thuộc Liên minh Wyndreach, nổi tiếng vì đội kỵ binh nhẹ thiện chiến do chính ông huấn luyện.",
+    "Là người ủng hộ mạnh mẽ nhất việc thắt chặt liên minh giữa bốn bá quốc — một lập trường khiến Kaldrenn và Aurenfeld theo dõi ông sát sao.",
+    "Thường tự mình cưỡi ngựa tuần tra vùng biên với Biên Trấn Greymarch thay vì giao phó cho thuộc hạ."
+  ],
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "politicalRelations": [],
+  "wealth": "Trung bình — thu nhập từ buôn bán ngựa và da thuộc, không giàu bằng các vương quốc lớn nhưng ổn định.",
+  "military": "Kỵ binh nhẹ cơ động, tinh nhuệ; không có bộ binh hạng nặng hay khả năng công thành.",
+  "schedule": [
+    { "time": "05:30", "activity": "Thức dậy, kiểm tra chuồng ngựa" },
+    { "time": "06:30", "activity": "Ăn sáng" },
+    { "time": "07:30", "activity": "Huấn luyện kỵ binh" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:00", "activity": "Tuần tra vùng biên giáp Biên Trấn Greymarch" },
+    { "time": "18:00", "activity": "Về trại, dùng bữa tối cùng thuộc hạ" },
+    { "time": "21:00", "activity": "Nghỉ ngơi" }
+  ],
+  "goals": [
+    "Thắt chặt liên minh giữa bốn bá quốc Wyndreach",
+    "Bảo vệ tuyến biên giới trước các nhóm cướp từ phương bắc"
+  ]
+}

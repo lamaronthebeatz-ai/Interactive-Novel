@@ -1,0 +1,36 @@
+{
+  "id": "tho-ren-godric-marlin",
+  "tier": "persistent",
+  "firstName": "Godric",
+  "lastName": "Marlin",
+  "age": 38,
+  "gender": "Nam",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Thợ rèn",
+  "residence": "Làng Ashford",
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "thay-thuoc-elowen-brack",
+    "children": ["chưa xây dựng"]
+  },
+  "friends": ["ky-si-rowan-ashby"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Thu nhập ổn định từ rèn nông cụ và móng ngựa cho cả ba ngôi làng, thỉnh thoảng nhận đơn sửa vũ khí từ lâu đài.",
+  "assets": "Một lò rèn, dụng cụ nghề, một căn nhà nhỏ ở rìa làng Ashford.",
+  "personality": ["Chăm chỉ", "Thẳng thắn", "Hay đùa cợt với khách quen", "Cứng đầu"],
+  "likes": ["Kim loại chất lượng tốt", "Nghe chuyện từ thương nhân qua đường"],
+  "dislikes": ["Khách trả giá rẻ mạt", "Bị giục việc"],
+  "lifeGoal": "Mở rộng lò rèn để có thể nhận đơn đặt từ cả vùng lân cận, không chỉ ba ngôi làng.",
+  "schedule": [
+    { "time": "05:00", "activity": "Thức dậy, nhóm lò rèn" },
+    { "time": "06:00", "activity": "Ăn sáng" },
+    { "time": "07:00", "activity": "Rèn nông cụ, móng ngựa theo đơn đặt" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:00", "activity": "Tiếp tục công việc rèn" },
+    { "time": "18:00", "activity": "Đóng lò, về nhà ăn tối cùng vợ" },
+    { "time": "20:00", "activity": "Ra quán trọ Millbrook uống rượu, trò chuyện" },
+    { "time": "22:00", "activity": "Ngủ" }
+  ]
+}

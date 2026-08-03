@@ -445,6 +445,46 @@ button:disabled {
   margin: 0;
 }
 
+.npc-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.npc-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+}
+
+.npc-name {
+  margin: 0;
+  color: var(--accent-bright);
+  font-weight: 600;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+}
+
+.npc-meta {
+  margin: 0.2rem 0 0;
+  color: var(--text-faint);
+  font-size: 0.8rem;
+}
+
+.npc-bio {
+  margin: 0.4rem 0 0;
+  color: var(--text-dim);
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.npc-card .trait-tags {
+  margin-top: 0.4rem;
+}
+
 .empty-hint {
   color: var(--text-faint);
   font-style: italic;

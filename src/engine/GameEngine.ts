@@ -1,6 +1,9 @@
-import { dialogues, locations, npcs, protagonist, STARTING_LOCATION_ID } from "../data";
+import { dialogues, historicalNpcs, locations, npcs, persistentNpcs, protagonist, STARTING_LOCATION_ID } from "../data";
 import { SaveManager } from "./SaveManager";
 import { advanceTime, formatClock } from "./time";
+import { promoteToPersistent } from "./npcPromotion";
+import { generateDynamicNpc as generateDynamicNpcFromPopulation } from "./population";
+import type { LocationType } from "./population";
 import type {
   CharacterProfile,
   Dialogue,
@@ -11,6 +14,7 @@ import type {
   NPC,
   Screen,
 } from "./types";
+import type { DynamicNpc, HistoricalNpc, PersistentNpc, PromotionReason } from "./npcTypes";
 
 function createInitialState(): GameState {
   return {
@@ -19,6 +23,8 @@ function createInitialState(): GameState {
     inventory: [],
     journal: [],
     flags: {},
+    knownNpcIds: [],
+    promotedNpcs: [],
   };
 }
 
@@ -170,6 +176,41 @@ export class GameEngine {
   closeOverlay(): void {
     this.screen = this.previousScreen;
     this.notify();
+  }
+
+  // ---------- Hệ thống NPC ----------
+
+  getHistoricalNpcs(): HistoricalNpc[] {
+    return Object.values(historicalNpcs);
+  }
+
+  getPersistentNpc(id: string): PersistentNpc | undefined {
+    return persistentNpcs[id] ?? this.state.promotedNpcs.find((npc) => npc.id === id);
+  }
+
+  getKnownPersistentNpcs(): PersistentNpc[] {
+    return this.state.knownNpcIds
+      .map((id) => this.getPersistentNpc(id))
+      .filter((npc): npc is PersistentNpc => npc !== undefined);
+  }
+
+  meetNpc(npcId: string): void {
+    if (!this.state.knownNpcIds.includes(npcId)) {
+      this.state.knownNpcIds.push(npcId);
+      this.notify();
+    }
+  }
+
+  generateDynamicNpc(locationType: LocationType, residence: string): DynamicNpc {
+    return generateDynamicNpcFromPopulation(locationType, residence);
+  }
+
+  promoteDynamicNpc(dynamic: DynamicNpc, reason: PromotionReason): PersistentNpc {
+    const id = `promoted-${dynamic.id}`;
+    const persistent = promoteToPersistent(dynamic, id, reason);
+    this.state.promotedNpcs.push(persistent);
+    this.meetNpc(id);
+    return persistent;
   }
 
   private applyEffects(effects: Effect[]): void {
