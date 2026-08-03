@@ -1,0 +1,55 @@
+{
+  "id": "reinhardt-chia-tay",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Nam tước Reinhardt von Berg",
+      "text": "Con đã chuẩn bị xong rồi đấy à. Ta không giữ con lại đâu — đây là truyền thống của gia tộc mình, chính ta cũng đã từng đứng ở chỗ con đứng bây giờ. Con đã sẵn sàng chưa?",
+      "choices": [
+        { "text": "Con đã sẵn sàng, thưa cha.", "next": "san-sang" },
+        { "text": "Thành thật mà nói, con vẫn còn lo lắng.", "next": "lo-lang" },
+        { "text": "Cha có điều gì muốn dặn dò thêm không?", "next": "dan-do" }
+      ]
+    },
+    "san-sang": {
+      "speaker": "Nam tước Reinhardt von Berg",
+      "text": "Tốt. Nhưng nhớ lấy: sẵn sàng không có nghĩa là không cần thận trọng. Giữ danh dự của gia tộc von Berg ở bất cứ nơi nào con đến — đó là thứ duy nhất không ai cướp được của con.",
+      "choices": [
+        { "text": "Con xin ghi nhớ lời cha.", "next": "ket-thuc" }
+      ]
+    },
+    "lo-lang": {
+      "speaker": "Nam tước Reinhardt von Berg",
+      "text": "Ba mươi năm trước ta cũng đứng ở cổng này, lo lắng không kém con bây giờ. Điều đó không có gì xấu hổ — chỉ là con chưa từng đi xa thôi. Cứ đi từng bước một, đừng vội phán xét những gì con chưa hiểu.",
+      "choices": [
+        { "text": "Cảm ơn cha đã nói vậy.", "next": "ket-thuc" }
+      ]
+    },
+    "dan-do": {
+      "speaker": "Nam tước Reinhardt von Berg",
+      "text": "Ba điều thôi. Đừng vội tin ai chỉ vì họ nói lời hay. Đã hứa thì phải giữ, dù có phải trả giá. Và nhớ đường về — lãnh địa này sẽ luôn chờ con, dù con đi bao lâu.",
+      "choices": [
+        { "text": "Con sẽ khắc ghi những điều đó.", "next": "ket-thuc" }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Nam tước Reinhardt von Berg",
+      "text": "Cầm lấy thứ này.",
+      "choices": [
+        {
+          "text": "(Nhận chiếc nhẫn ấn tín từ cha)",
+          "effects": [
+            {
+              "type": "addItem",
+              "itemId": "nhan-an-tin-von-berg",
+              "name": "Nhẫn Ấn Tín von Berg",
+              "description": "Chiếc nhẫn khắc huy hiệu gia tộc, cha trao cho con trước ngày lên đường — bằng chứng thân phận nếu con cần đến."
+            },
+            { "type": "addJournalEntry", "text": "Cha trao cho mình chiếc nhẫn ấn tín của gia tộc trước khi lên đường, và dặn dò vài điều trước lúc chia tay." },
+            { "type": "advanceTime", "minutes": 20 }
+          ]
+        }
+      ]
+    }
+  }
+}

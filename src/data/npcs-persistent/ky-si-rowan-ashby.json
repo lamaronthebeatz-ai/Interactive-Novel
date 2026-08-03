@@ -32,5 +32,6 @@
     { "time": "18:00", "activity": "Về nhà, dùng bữa tối" },
     { "time": "21:00", "activity": "Bảo dưỡng vũ khí, nghỉ ngơi" },
     { "time": "22:30", "activity": "Ngủ" }
-  ]
+  ],
+  "dialogueId": "rowan-loi-khuyen"
 }

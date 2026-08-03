@@ -62,6 +62,7 @@ export interface HistoricalNpc {
   military: string; // "Không có" nếu không phù hợp
   schedule: ScheduleEntry[];
   goals: string[];
+  dialogueId?: string; // nếu có, NPC có thể được đặt vào một địa điểm để nói chuyện
 }
 
 // ---------- Tầng II: NPC Thường Trực ----------
@@ -88,6 +89,7 @@ export interface PersistentNpc {
   schedule: ScheduleEntry[];
   promotedFrom?: "dynamic";
   promotionReason?: PromotionReason;
+  dialogueId?: string; // nếu có, NPC có thể được đặt vào một địa điểm để nói chuyện
 }
 
 // ---------- Tầng III: NPC Quần Chúng ----------
@@ -116,3 +118,7 @@ export const PROMOTION_REASON_LABELS: Record<PromotionReason, string> = {
   "giu-chuc-vu": "Giữ chức vụ",
   "tro-nen-quan-trong": "Trở nên quan trọng",
 };
+
+export function getNpcDisplayName(npc: HistoricalNpc | PersistentNpc): string {
+  return npc.tier === "historical" ? npc.fullName : `${npc.firstName} ${npc.lastName}`;
+}

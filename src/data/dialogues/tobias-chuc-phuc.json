@@ -1,0 +1,47 @@
+{
+  "id": "tobias-chuc-phuc",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Giáo sĩ Tobias Wren",
+      "text": "Con trai của Nam tước, hôm nay là ngày trọng đại. Con có muốn ta cầu nguyện cho hành trình của con trước khi đi không?",
+      "choices": [
+        { "text": "Có, xin giáo sĩ cầu nguyện cho con.", "next": "cau-nguyen" },
+        { "text": "Con xin cảm ơn, nhưng con muốn lên đường ngay.", "next": "tu-choi" }
+      ]
+    },
+    "cau-nguyen": {
+      "speaker": "Giáo sĩ Tobias Wren",
+      "text": "Ông làm một nghi lễ ngắn, đặt tay lên vai con và khẽ nói lời cầu chúc. 'Xin các Linh dõi theo bước chân con, và giữ cho tâm con luôn bình thản dù gặp chuyện gì.'",
+      "choices": [
+        {
+          "text": "Con xin cảm tạ giáo sĩ.",
+          "next": "ket-thuc",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Giáo sĩ Tobias làm lễ cầu chúc cho hành trình của mình trước khi rời lâu đài." },
+            { "type": "advanceTime", "minutes": 15 }
+          ]
+        }
+      ]
+    },
+    "tu-choi": {
+      "speaker": "Giáo sĩ Tobias Wren",
+      "text": "Ông gật đầu, không ép buộc. 'Vậy thì ta chỉ nói một câu thôi: giữ lấy lương tâm mình, đó là thứ quý giá hơn bất kỳ lời cầu nguyện nào.'",
+      "choices": [
+        {
+          "text": "Con sẽ ghi nhớ.",
+          "next": "ket-thuc",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Giáo sĩ Tobias chỉ dặn mình giữ lấy lương tâm trước khi rời lâu đài." },
+            { "type": "advanceTime", "minutes": 5 }
+          ]
+        }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Giáo sĩ Tobias Wren",
+      "text": "Đi bình an, con trai. Nhà nguyện này sẽ luôn thắp đèn chờ con trở về.",
+      "choices": []
+    }
+  }
+}

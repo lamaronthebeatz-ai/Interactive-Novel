@@ -45,13 +45,6 @@ export interface Dialogue {
   nodes: Record<string, DialogueNode>;
 }
 
-export interface NPC {
-  id: string;
-  name: string;
-  description: string;
-  dialogueId: string;
-}
-
 export interface LocationAction {
   id: string;
   text: string;
@@ -62,7 +55,7 @@ export interface GameLocation {
   id: string;
   name: string;
   description: string;
-  npcs: string[];
+  npcs: string[]; // id NPC Tầng I hoặc Tầng II có mặt tại đây (xem npcTypes.ts)
   actions?: LocationAction[];
 }
 
