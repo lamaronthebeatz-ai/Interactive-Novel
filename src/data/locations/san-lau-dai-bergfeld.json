@@ -1,8 +1,16 @@
 {
   "id": "san-lau-dai-bergfeld",
   "name": "Sân Lâu Đài Bergfeld",
+  "type": "Lâu đài",
+  "nation": "Vương quốc Aurenfeld",
   "description": "Sương sớm còn giăng trên sân lâu đài. Chiến mã Vệ đã được thắng yên sẵn, đứng chờ bên cổng. Cha con vẫn đứng đó, dõi theo con như thể muốn khắc ghi hình ảnh này. Rowan kiểm tra lại đai kiếm của con lần cuối, còn Giáo sĩ Tobias đứng lặng lẽ trước cửa nhà nguyện nhỏ. Hôm nay là ngày con rời lãnh địa von Berg.",
   "npcs": ["nam-tuoc-reinhardt-von-berg", "ky-si-rowan-ashby", "giao-si-tobias-wren"],
+  "buildings": ["Nhà nguyện nhỏ", "Chuồng ngựa", "Xưởng rèn nhỏ trong thành", "Vọng gác"],
+  "connections": [
+    { "toLocationId": "lang-ashford", "label": "Con đường đất dẫn tới Ashford", "walkMinutes": 45, "horseMinutes": 20 },
+    { "toLocationId": "lang-millbrook", "label": "Con đường chính dẫn tới Millbrook", "walkMinutes": 60, "horseMinutes": 25 },
+    { "toLocationId": "lang-thornwell", "label": "Con đường mòn dẫn tới Thornwell", "walkMinutes": 90, "horseMinutes": 35 }
+  ],
   "actions": [
     {
       "id": "nhin-lai-lau-dai",

@@ -1,0 +1,13 @@
+{
+  "id": "lang-millbrook",
+  "name": "Làng Millbrook",
+  "type": "Làng",
+  "nation": "Vương quốc Aurenfeld",
+  "description": "Ngôi làng lớn thứ hai của lãnh địa von Berg, nằm trên con đường chính nối tới Hội Chợ Brackenford. Quán trọ hai tầng của Agnes Coldwell luôn có vài thương nhân qua đường ghé chân, và một khu chợ nhỏ họp mỗi tuần ở quảng trường làng.",
+  "npcs": ["chu-quan-tro-agnes-coldwell"],
+  "buildings": ["Quán trọ hai tầng", "Chợ nhỏ họp mỗi tuần"],
+  "connections": [
+    { "toLocationId": "san-lau-dai-bergfeld", "label": "Con đường chính dẫn về lâu đài Bergfeld", "walkMinutes": 60, "horseMinutes": 25 },
+    { "toLocationId": "lang-ashford", "label": "Đường mòn nối sang Ashford", "walkMinutes": 30, "horseMinutes": 15 }
+  ]
+}

@@ -53,6 +53,14 @@ root.addEventListener("click", (event) => {
     case "open-profile":
       engine.openProfile();
       break;
+    case "open-map":
+      engine.openMap();
+      break;
+    case "travel":
+      if (target.dataset.to && target.dataset.mode) {
+        engine.travelTo(target.dataset.to, target.dataset.mode as "walk" | "horse");
+      }
+      break;
     case "close-overlay":
       engine.closeOverlay();
       break;

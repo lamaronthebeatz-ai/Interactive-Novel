@@ -51,12 +51,45 @@ export interface LocationAction {
   effects?: Effect[];
 }
 
+export interface LocationConnection {
+  toLocationId: string;
+  label: string; // mô tả ngắn con đường, ví dụ "Con đường đất dẫn tới Ashford"
+  walkMinutes: number;
+  horseMinutes: number;
+}
+
 export interface GameLocation {
   id: string;
   name: string;
+  type: string; // "Lâu đài", "Làng", "Thị trấn", "Thành phố"...
+  nation: string; // tên quốc gia trong World Bible
   description: string;
   npcs: string[]; // id NPC Tầng I hoặc Tầng II có mặt tại đây (xem npcTypes.ts)
+  buildings: string[]; // tên công trình tại địa điểm
+  connections: LocationConnection[];
   actions?: LocationAction[];
+}
+
+// ---------- Bản đồ thế giới ----------
+// Dữ liệu tham chiếu nhẹ, tóm tắt từ World Bible (xem lore/) để hiển thị trên bản đồ.
+// Không lặp lại toàn bộ nội dung World Bible — chỉ đủ để định hướng người chơi.
+
+export interface WorldIndexEntry {
+  name: string;
+  blurb: string;
+}
+
+export interface NationIndexEntry extends WorldIndexEntry {
+  type: string;
+}
+
+export interface WorldIndex {
+  continent: string;
+  nations: NationIndexEntry[];
+  majorRoads: WorldIndexEntry[];
+  forests: WorldIndexEntry[];
+  mountains: WorldIndexEntry[];
+  rivers: WorldIndexEntry[];
 }
 
 export interface CharacterStat {
@@ -81,7 +114,7 @@ export interface CharacterProfile {
   openingJournalEntry: string;
 }
 
-export type Screen = "menu" | "location" | "dialogue" | "journal" | "inventory" | "profile";
+export type Screen = "menu" | "location" | "dialogue" | "journal" | "inventory" | "profile" | "map";
 
 export interface ActiveDialogue {
   npcId: string;

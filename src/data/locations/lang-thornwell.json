@@ -1,0 +1,12 @@
+{
+  "id": "lang-thornwell",
+  "name": "Làng Thornwell",
+  "type": "Làng",
+  "nation": "Vương quốc Aurenfeld",
+  "description": "Ngôi làng nhỏ nhất và xa nhất trong ba ngôi làng của lãnh địa von Berg, nằm khuất sau một rặng đồi thấp. Cuộc sống ở đây chậm rãi hơn hẳn — chỉ có nhà kho chung và một giếng làng cũ giữa quảng trường vắng vẻ.",
+  "npcs": [],
+  "buildings": ["Nhà kho chung", "Giếng làng"],
+  "connections": [
+    { "toLocationId": "san-lau-dai-bergfeld", "label": "Con đường mòn dẫn về lâu đài Bergfeld", "walkMinutes": 90, "horseMinutes": 35 }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "lang-ashford",
+  "name": "Làng Ashford",
+  "type": "Làng",
+  "nation": "Vương quốc Aurenfeld",
+  "description": "Một trong ba ngôi làng thuộc lãnh địa von Berg. Khói từ lò rèn của Godric bay lên giữa những mái nhà tranh, còn khu vườn thảo dược cạnh nhà thầy thuốc Elowen tỏa mùi thơm nhẹ trong không khí buổi sáng. Dân làng đã bắt đầu công việc đồng áng từ sớm.",
+  "npcs": ["tho-ren-godric-marlin", "thay-thuoc-elowen-brack"],
+  "buildings": ["Lò rèn", "Nhà thầy thuốc kiêm vườn thảo dược", "Vài chục nóc nhà nông dân"],
+  "connections": [
+    { "toLocationId": "san-lau-dai-bergfeld", "label": "Con đường đất dẫn về lâu đài Bergfeld", "walkMinutes": 45, "horseMinutes": 20 },
+    { "toLocationId": "lang-millbrook", "label": "Đường mòn nối sang Millbrook", "walkMinutes": 30, "horseMinutes": 15 }
+  ]
+}

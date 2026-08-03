@@ -1,0 +1,33 @@
+{
+  "id": "elowen-chao-hoi",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Elowen Brack",
+      "text": "Bà đang cắt tỉa vườn thảo dược, ngẩng lên chào. 'Cậu Lamar. Lên đường xa, cậu đã chuẩn bị đủ thuốc men chưa?'",
+      "choices": [
+        { "text": "Cháu có mang một ít trong hành trang.", "next": "da-chuan-bi" },
+        { "text": "Cháu chưa nghĩ tới việc đó.", "next": "chua-chuan-bi" }
+      ]
+    },
+    "da-chuan-bi": {
+      "speaker": "Elowen Brack",
+      "text": "'Tốt. Nhưng nhớ — vết thương ngoài da không đáng sợ bằng vết thương nhiễm trùng vì chủ quan. Đừng để lành đến mức đó rồi mới tìm thầy thuốc.'",
+      "choices": [
+        { "text": "Cháu sẽ cẩn thận.", "next": "ket-thuc" }
+      ]
+    },
+    "chua-chuan-bi": {
+      "speaker": "Elowen Brack",
+      "text": "Bà lắc đầu, nhưng không trách. 'Đường xa lắm chuyện bất ngờ. Ít nhất hãy nhớ rửa sạch vết thương trước khi băng lại, đừng để bẩn.'",
+      "choices": [
+        { "text": "Cháu xin ghi nhớ.", "next": "ket-thuc" }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Elowen Brack",
+      "text": "'Đi bình an. Về lại thì ghé qua, ta muốn biết cậu ổn.'",
+      "choices": []
+    }
+  }
+}

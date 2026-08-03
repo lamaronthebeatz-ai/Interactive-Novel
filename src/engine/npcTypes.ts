@@ -122,3 +122,23 @@ export const PROMOTION_REASON_LABELS: Record<PromotionReason, string> = {
 export function getNpcDisplayName(npc: HistoricalNpc | PersistentNpc): string {
   return npc.tier === "historical" ? npc.fullName : `${npc.firstName} ${npc.lastName}`;
 }
+
+function timeToMinutes(time: string): number {
+  const [hours, minutes] = time.split(":").map(Number);
+  return hours * 60 + minutes;
+}
+
+// Trả về hoạt động hiện tại của NPC dựa trên lịch sinh hoạt và thời gian trong ngày.
+// Nếu thời điểm hiện tại đến trước mục lịch đầu tiên, NPC vẫn đang ở hoạt động cuối
+// cùng của lịch (coi như kéo dài qua đêm) — đúng với các lịch luôn kết thúc bằng "Ngủ".
+export function getCurrentActivity(schedule: ScheduleEntry[], minutesOfDay: number): string {
+  if (schedule.length === 0) return UNBUILT;
+
+  const sorted = [...schedule].sort((a, b) => timeToMinutes(a.time) - timeToMinutes(b.time));
+  let current = sorted[sorted.length - 1];
+  for (const entry of sorted) {
+    if (timeToMinutes(entry.time) > minutesOfDay) break;
+    current = entry;
+  }
+  return current.activity;
+}

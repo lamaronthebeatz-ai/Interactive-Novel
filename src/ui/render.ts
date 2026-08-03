@@ -4,6 +4,7 @@ import { renderInventory } from "./inventoryView";
 import { renderJournal } from "./journalView";
 import { renderLocation } from "./locationView";
 import { renderMainMenu } from "./mainMenu";
+import { renderMap } from "./mapView";
 import { renderProfile } from "./profileView";
 
 export function render(root: HTMLElement, engine: GameEngine): void {
@@ -25,6 +26,9 @@ export function render(root: HTMLElement, engine: GameEngine): void {
       break;
     case "profile":
       root.innerHTML = renderProfile(engine);
+      break;
+    case "map":
+      root.innerHTML = renderMap(engine);
       break;
   }
 }

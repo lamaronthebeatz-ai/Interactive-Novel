@@ -32,5 +32,6 @@
     { "time": "18:00", "activity": "Phục vụ bữa tối, quán đông khách nhất trong ngày" },
     { "time": "22:00", "activity": "Đóng quán, dọn dẹp" },
     { "time": "23:00", "activity": "Ngủ" }
-  ]
+  ],
+  "dialogueId": "agnes-chao-hoi"
 }
