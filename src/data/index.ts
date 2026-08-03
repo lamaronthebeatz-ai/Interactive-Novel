@@ -6,9 +6,18 @@
 
 import type { CharacterProfile, Dialogue, GameLocation, WorldIndex } from "../engine/types";
 import type { HistoricalNpc, PersistentNpc } from "../engine/npcTypes";
+import type { CityEconomy, Good, Shop, SupplyChain, Tax, TradeRoute } from "../engine/economyTypes";
 
 import character from "./character.json";
 import worldIndexData from "./world-index.json";
+
+// Kinh tế
+import goodsData from "./goods.json";
+import supplyChainsData from "./supply-chains.json";
+import tradeRoutesData from "./trade-routes.json";
+import cityEconomiesData from "./city-economies.json";
+import taxesData from "./taxes.json";
+import shopsData from "./shops.json";
 
 // Địa điểm
 import sanLauDaiBergfeld from "./locations/san-lau-dai-bergfeld.json";
@@ -94,3 +103,14 @@ export const historicalNpcs: Record<string, HistoricalNpc> = Object.fromEntries(
 export const persistentNpcs: Record<string, PersistentNpc> = Object.fromEntries(
   persistentNpcList.map((npc) => [npc.id, npc]),
 );
+
+// ---------- Kinh tế ----------
+
+export const goods: Good[] = goodsData as Good[];
+export const supplyChains: SupplyChain[] = supplyChainsData as SupplyChain[];
+export const tradeRoutes: TradeRoute[] = tradeRoutesData as TradeRoute[];
+export const cityEconomies: CityEconomy[] = cityEconomiesData as CityEconomy[];
+export const taxes: Tax[] = taxesData as Tax[];
+
+const shopList = shopsData as Shop[];
+export const shops: Record<string, Shop> = Object.fromEntries(shopList.map((shop) => [shop.id, shop]));

@@ -1,0 +1,47 @@
+[
+  {
+    "nation": "Vương quốc Kaldrenn",
+    "exports": ["go", "ca", "sat"],
+    "imports": ["lua-mi", "banh-mi"]
+  },
+  {
+    "nation": "Vương quốc Aurenfeld",
+    "exports": ["lua-mi", "banh-mi", "bia", "pho-mai", "ban", "ghe", "bat"],
+    "imports": ["go", "sat", "than"]
+  },
+  {
+    "nation": "Vương quốc Vesmara",
+    "exports": ["ruou-vang"],
+    "imports": ["lua-mi", "sat"]
+  },
+  {
+    "nation": "Công quốc Albamont",
+    "exports": ["sat", "da", "than", "khien", "giap", "kiem"],
+    "imports": ["lua-mi", "banh-mi"]
+  },
+  {
+    "nation": "Liên minh Bá quốc Wyndreach",
+    "exports": ["thit", "da-thuoc", "len", "cung"],
+    "imports": ["sat", "banh-mi"]
+  },
+  {
+    "nation": "Thành bang Argenport",
+    "exports": ["den", "nuoc-hoa", "trang-suc"],
+    "imports": ["lua-mi", "thit", "go"]
+  },
+  {
+    "nation": "Thành bang Inkspire",
+    "exports": ["bat"],
+    "imports": ["lua-mi", "thit"]
+  },
+  {
+    "nation": "Lãnh địa tự trị Mistpeak",
+    "exports": [],
+    "imports": ["banh-mi", "sat"]
+  },
+  {
+    "nation": "Đảo Farrowmere",
+    "exports": ["trang-suc"],
+    "imports": ["lua-mi"]
+  }
+]

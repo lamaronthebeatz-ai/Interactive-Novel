@@ -56,6 +56,19 @@ root.addEventListener("click", (event) => {
     case "open-map":
       engine.openMap();
       break;
+    case "open-market":
+      if (target.dataset.shopId) engine.openMarket(target.dataset.shopId);
+      break;
+    case "buy-good":
+      if (target.dataset.shopId && target.dataset.goodId) {
+        engine.buyGood(target.dataset.shopId, target.dataset.goodId, 1);
+      }
+      break;
+    case "sell-good":
+      if (target.dataset.shopId && target.dataset.goodId) {
+        engine.sellGood(target.dataset.shopId, target.dataset.goodId, 1);
+      }
+      break;
     case "travel":
       if (target.dataset.to && target.dataset.mode) {
         engine.travelTo(target.dataset.to, target.dataset.mode as "walk" | "horse");

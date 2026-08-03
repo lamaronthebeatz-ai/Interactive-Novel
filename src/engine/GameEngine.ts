@@ -1,9 +1,10 @@
-import { dialogues, historicalNpcs, locations, persistentNpcs, protagonist, STARTING_LOCATION_ID, worldIndex } from "../data";
+import { cityEconomies, dialogues, goods, historicalNpcs, locations, persistentNpcs, protagonist, shops, STARTING_LOCATION_ID, supplyChains, taxes, tradeRoutes, worldIndex } from "../data";
 import { SaveManager } from "./SaveManager";
 import { advanceTime, formatClock } from "./time";
 import { promoteToPersistent } from "./npcPromotion";
 import { generateDynamicNpc as generateDynamicNpcFromPopulation } from "./population";
 import { getCurrentActivity, getNpcDisplayName } from "./npcTypes";
+import { formatCurrency, getCurrentPrice, getCurrentSeason, isRouteDisruptedFor } from "./economy";
 import type { LocationType } from "./population";
 import type {
   CharacterProfile,
@@ -16,6 +17,7 @@ import type {
   WorldIndex,
 } from "./types";
 import type { DynamicNpc, HistoricalNpc, PersistentNpc, PromotionReason } from "./npcTypes";
+import type { CityEconomy, Good, Shop, SupplyChain, Tax, TradeRoute } from "./economyTypes";
 
 function createInitialState(): GameState {
   return {
@@ -26,6 +28,8 @@ function createInitialState(): GameState {
     flags: {},
     knownNpcIds: [],
     promotedNpcs: [],
+    currency: protagonist.startingCurrency,
+    shops: JSON.parse(JSON.stringify(shops)),
   };
 }
 
@@ -201,8 +205,22 @@ export class GameEngine {
     this.notify();
   }
 
+  openMarket(shopId: string): void {
+    if (!this.state.shops[shopId]) return;
+    this.previousScreen = this.isOverlayScreen(this.screen) ? this.previousScreen : this.screen;
+    this.state.activeShopId = shopId;
+    this.screen = "market";
+    this.notify();
+  }
+
   private isOverlayScreen(screen: Screen): boolean {
-    return screen === "journal" || screen === "inventory" || screen === "profile" || screen === "map";
+    return (
+      screen === "journal" ||
+      screen === "inventory" ||
+      screen === "profile" ||
+      screen === "map" ||
+      screen === "market"
+    );
   }
 
   closeOverlay(): void {
@@ -255,6 +273,119 @@ export class GameEngine {
     this.state.promotedNpcs.push(persistent);
     this.meetNpc(id);
     return persistent;
+  }
+
+  // ---------- Hệ thống kinh tế ----------
+
+  getGoods(): Good[] {
+    return goods;
+  }
+
+  getSupplyChains(): SupplyChain[] {
+    return supplyChains;
+  }
+
+  getGood(goodId: string): Good | undefined {
+    return goods.find((g) => g.id === goodId);
+  }
+
+  getTaxes(): Tax[] {
+    return taxes;
+  }
+
+  getTradeRoutes(): TradeRoute[] {
+    return tradeRoutes;
+  }
+
+  getCityEconomy(nation: string): CityEconomy | undefined {
+    return cityEconomies.find((c) => c.nation === nation);
+  }
+
+  getShop(shopId: string): Shop | undefined {
+    return this.state.shops[shopId];
+  }
+
+  getShopsAtLocation(locationId: string): Shop[] {
+    return Object.values(this.state.shops).filter((s) => s.locationId === locationId);
+  }
+
+  getActiveShop(): Shop | undefined {
+    return this.state.activeShopId ? this.state.shops[this.state.activeShopId] : undefined;
+  }
+
+  // Giá hiện tại của một hàng hóa tại địa điểm người chơi đang đứng — phụ thuộc mùa vụ,
+  // nơi sản xuất, và tình trạng gián đoạn tuyến thương mại. Không có giá cố định mãi mãi.
+  getGoodPrice(good: Good): number {
+    const nation = this.getCurrentLocation()?.nation ?? "";
+    const season = getCurrentSeason(this.state.time.day);
+    const routeDisrupted = isRouteDisruptedFor(good, nation, tradeRoutes);
+    return getCurrentPrice(good, { currentSeason: season, nation, routeDisrupted });
+  }
+
+  buyGood(shopId: string, goodId: string, quantity: number): void {
+    const shop = this.state.shops[shopId];
+    const good = this.getGood(goodId);
+    if (!shop || !good || quantity <= 0) return;
+
+    const stockEntry = shop.stock.find((s) => s.goodId === goodId);
+    if (!stockEntry || stockEntry.quantity < quantity) {
+      this.flashMessage("Cửa hàng không còn đủ hàng.");
+      return;
+    }
+
+    const totalPrice = Math.round(this.getGoodPrice(good) * stockEntry.priceModifier * quantity);
+    if (this.state.currency < totalPrice) {
+      this.flashMessage("Không đủ tiền.");
+      return;
+    }
+
+    this.state.currency -= totalPrice;
+    stockEntry.quantity -= quantity;
+    this.addItem(good.id, good.name, `${good.name}, mua tại ${shop.name}.`, quantity);
+    this.addJournalEntry(`Mua ${quantity} ${good.unit} ${good.name} tại ${shop.name} với giá ${formatCurrency(totalPrice)}.`);
+    this.notify();
+  }
+
+  sellGood(shopId: string, goodId: string, quantity: number): void {
+    const shop = this.state.shops[shopId];
+    const good = this.getGood(goodId);
+    const item = this.state.inventory.find((i) => i.id === goodId);
+    if (!shop || !good || !item || item.quantity < quantity || quantity <= 0) return;
+
+    const sellPrice = Math.round(this.getGoodPrice(good) * 0.7 * quantity);
+    item.quantity -= quantity;
+    if (item.quantity <= 0) {
+      this.state.inventory = this.state.inventory.filter((i) => i.id !== goodId);
+    }
+
+    const stockEntry = shop.stock.find((s) => s.goodId === goodId);
+    if (stockEntry) {
+      stockEntry.quantity += quantity;
+    } else {
+      shop.stock.push({ goodId, quantity, priceModifier: 1 });
+    }
+
+    this.state.currency += sellPrice;
+    this.addJournalEntry(`Bán ${quantity} ${good.unit} ${good.name} tại ${shop.name}, nhận ${formatCurrency(sellPrice)}.`);
+    this.notify();
+  }
+
+  // Thuế cố định (isPercentage=false) trả đúng mức rate. Thuế phần trăm cần baseAmount
+  // (giá trị giao dịch/tài sản làm nền) để tính — hệ thống tồn tại đầy đủ, chưa cần gắn
+  // vào một điểm gameplay cụ thể nào (ví dụ trạm thu phí) ở build này.
+  payTax(taxId: string, baseAmount = 0): void {
+    const tax = taxes.find((t) => t.id === taxId);
+    if (!tax) return;
+
+    const amount = tax.isPercentage ? Math.round((baseAmount * tax.rate) / 100) : tax.rate;
+    if (this.state.currency < amount) {
+      this.flashMessage("Không đủ tiền nộp thuế.");
+      return;
+    }
+
+    this.state.currency -= amount;
+    this.addJournalEntry(`Nộp ${tax.name}: ${formatCurrency(amount)}.`);
+    this.notify();
   }
 
   private applyEffects(effects: Effect[]): void {

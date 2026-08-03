@@ -1,0 +1,47 @@
+[
+  {
+    "id": "thue-dat-von-berg",
+    "type": "thue-dat",
+    "name": "Thuế đất lãnh địa von Berg",
+    "rate": 10,
+    "isPercentage": true,
+    "appliesTo": "Sản lượng nông nghiệp của ba ngôi làng Ashford, Millbrook, Thornwell",
+    "collectedBy": "Nam tước Reinhardt von Berg"
+  },
+  {
+    "id": "thue-thuong-mai-aurenfeld",
+    "type": "thue-thuong-mai",
+    "name": "Thuế thương mại Aurenfeld",
+    "rate": 5,
+    "isPercentage": true,
+    "appliesTo": "Hàng hóa mua bán tại các chợ và cảng sông trong Vương quốc Aurenfeld",
+    "collectedBy": "Vương quốc Aurenfeld"
+  },
+  {
+    "id": "thue-cau-brackenford",
+    "type": "thue-cau",
+    "name": "Thuế cầu Brackenford",
+    "rate": 5,
+    "isPercentage": false,
+    "appliesTo": "Mỗi lượt qua cây cầu đá cổ tại Brackenford — nguồn thu chính của công quốc",
+    "collectedBy": "Công quốc Brackenford"
+  },
+  {
+    "id": "thue-cang-argenport",
+    "type": "thue-cang",
+    "name": "Thuế cảng Eo biển Ironthroat",
+    "rate": 8,
+    "isPercentage": true,
+    "appliesTo": "Mọi tàu buôn qua Eo biển Ironthroat",
+    "collectedBy": "Thành bang Argenport"
+  },
+  {
+    "id": "thue-cho-hoi-cho-brackenford",
+    "type": "thue-cho",
+    "name": "Thuế gian hàng Hội Chợ Brackenford",
+    "rate": 15,
+    "isPercentage": false,
+    "appliesTo": "Mỗi gian hàng dựng tại Hội Chợ Brackenford hằng năm",
+    "collectedBy": "Công quốc Brackenford"
+  }
+]

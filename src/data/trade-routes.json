@@ -1,0 +1,32 @@
+[
+  {
+    "id": "co-dao-skyreach",
+    "name": "Cổ Đạo Skyreach",
+    "fromNation": "Vương quốc Kaldrenn",
+    "toNation": "Vương quốc Aurenfeld",
+    "goodsCarried": ["go", "sat", "than"],
+    "transportMode": "Đoàn xe ngựa núi",
+    "distanceDays": 6,
+    "active": true
+  },
+  {
+    "id": "con-duong-muoi",
+    "name": "Con Đường Muối",
+    "fromNation": "Vương quốc Vesmara",
+    "toNation": "Liên minh Bá quốc Wyndreach",
+    "goodsCarried": ["ruou-vang", "len", "da-thuoc"],
+    "transportMode": "Xe ngựa",
+    "distanceDays": 9,
+    "active": true
+  },
+  {
+    "id": "tuyen-bien-aldris",
+    "name": "Tuyến Biển Aldris",
+    "fromNation": "Vương quốc Vesmara",
+    "toNation": "Thành bang Argenport",
+    "goodsCarried": ["ruou-vang", "lua", "gia-vi"],
+    "transportMode": "Tàu buôn",
+    "distanceDays": 4,
+    "active": true
+  }
+]

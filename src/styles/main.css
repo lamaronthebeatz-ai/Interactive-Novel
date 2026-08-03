@@ -193,13 +193,20 @@ button:disabled {
   font-size: 0.85rem;
   display: flex;
   align-items: center;
-  gap: 0.4em;
+  justify-content: space-between;
+  gap: 0.6em;
   letter-spacing: 0.02em;
 }
 
 .clock::before {
   content: "⏳";
   margin-right: 0.3em;
+}
+
+.purse {
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .content {
@@ -457,6 +464,12 @@ button:disabled {
   border-left: 3px solid var(--border-strong);
   border-radius: 8px;
   padding: 0.75rem 0.9rem;
+}
+
+.npc-card button {
+  display: block;
+  width: 100%;
+  margin-top: 0.6rem;
 }
 
 .npc-name {
