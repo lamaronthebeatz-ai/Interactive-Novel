@@ -1,0 +1,56 @@
+{
+  "id": "marta-tam-biet",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Marta Hollis",
+      "text": "Bà tìm thấy Lamar gần cổng bếp, tay đang cầm một bọc vải buộc chặt, hơi ấm còn tỏa ra qua lớp vải. \"Ta đã sợ cậu đi mất mà chưa kịp đưa cái này,\" bà nói, giọng gấp gáp như thể vẫn còn đang chạy từ bếp ra. \"Bánh mì nướng sáng nay, với ít thịt muối gói riêng. Đường xa, đồ ăn doanh trại chắc chắn không ngon bằng ở nhà đâu.\"",
+      "choices": [
+        { "text": "\"Cảm ơn bà Marta. Bà lúc nào cũng lo cho con nhiều nhất.\"", "next": "hoi-uc" },
+        { "text": "\"Bà không cần phải làm vậy đâu, con lớn rồi mà.\"", "next": "phan-doi" }
+      ]
+    },
+    "hoi-uc": {
+      "speaker": "Marta Hollis",
+      "text": "Bà cười, nhưng khóe mắt đã đỏ hoe từ trước. \"Lớn rồi cũng vẫn là đứa trẻ ta từng bế trên tay lúc mới lọt lòng, khóc suốt cả đêm đầu tiên vì không chịu bú bình.\" Bà lắc đầu, như đang xua đi ký ức đang chực trào nước mắt. \"Ta đã nuôi cậu từ tã lót đến khi cậu cao hơn ta cả cái đầu. Giờ nhìn cậu mặc áo choàng lữ hành thế này... ta không biết nên tự hào hay nên khóc nữa.\"",
+      "choices": [
+        { "text": "\"Bà có thể làm cả hai cùng lúc mà.\"", "next": "qua-tang" }
+      ]
+    },
+    "phan-doi": {
+      "speaker": "Marta Hollis",
+      "text": "Bà trợn mắt, đúng kiểu cằn nhằn quen thuộc suốt hai mươi năm nay. \"Lớn thì lớn, cậu vẫn là đứa trẻ ta bế trên tay từ lúc lọt lòng, khóc suốt đêm đầu tiên vì không chịu bú bình. Ta có quyền lo cho cậu chừng nào ta còn hơi sức, cậu chủ nhỏ ạ — đừng có cãi ta chuyện này.\" Nhưng giọng bà mềm đi ngay sau đó, không giữ được vẻ nghiêm khắc lâu.",
+      "choices": [
+        { "text": "\"Vâng, vâng, con xin lỗi.\" (Cười)", "next": "qua-tang" }
+      ]
+    },
+    "qua-tang": {
+      "speaker": "Marta Hollis",
+      "text": "Bà đặt bọc vải vào tay Lamar, rồi nắm lấy cả hai tay cậu một lúc lâu, không nói gì thêm. Cuối cùng bà lên tiếng, giọng đã bình tĩnh trở lại. \"Ta không có gì to tát để dặn dò như cha cậu hay bài học sâu xa như giáo sĩ Tobias đâu. Ta chỉ là một bà quản gia già. Nhưng ta đã sống đủ lâu để biết một điều: người ta có thể sống sót qua mọi gian khổ, miễn là còn nhớ đường về nhà. Bếp lò này sẽ luôn ấm, chừng nào ta còn đứng vững.\"",
+      "choices": [
+        {
+          "text": "(Ôm bà Marta, nhận lấy bọc thức ăn cho đường xa)",
+          "effects": [
+            {
+              "type": "addItem",
+              "itemId": "banh-mi-va-thit-muoi",
+              "name": "Bánh mì và thịt muối gói vải",
+              "description": "Phần ăn đường Marta chuẩn bị vội trước lúc Lamar lên đường — vẫn còn hơi ấm khi nhận từ tay bà."
+            },
+            { "type": "addJournalEntry", "text": "Marta, người đã nuôi mình từ nhỏ, tiễn mình ở cổng bếp với một bọc bánh mì và thịt muối còn ấm. Bà không nói nhiều triết lý như cha hay giáo sĩ Tobias, chỉ dặn nhớ đường về nhà — nhưng câu nói ấy lại đọng lại lâu nhất." },
+            { "type": "adjustRelationship", "npcId": "quan-gia-marta-hollis", "deltas": { "affection": 5, "trust": 3 } },
+            {
+              "type": "recordMemory",
+              "npcId": "quan-gia-marta-hollis",
+              "eventType": "khac",
+              "description": "Marta tiễn Lamar bằng đồ ăn đường tự tay chuẩn bị và một lời dặn giản dị: nhớ đường về nhà.",
+              "impact": { "affection": 2 }
+            },
+            { "type": "setFlag", "flag": "tam-biet-marta", "value": true },
+            { "type": "advanceTime", "minutes": 10 }
+          ]
+        }
+      ]
+    }
+  }
+}

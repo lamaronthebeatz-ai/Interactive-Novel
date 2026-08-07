@@ -33,11 +33,24 @@ import sanLauDaiBergfeld from "./locations/san-lau-dai-bergfeld.json";
 import langAshford from "./locations/lang-ashford.json";
 import langMillbrook from "./locations/lang-millbrook.json";
 import langThornwell from "./locations/lang-thornwell.json";
+import doanhTraiFielding from "./locations/doanh-trai-fielding.json";
 
 // Hội thoại
+import chuong1MoDau from "./dialogues/chuong1-mo-dau.json";
 import reinhardtChiaTay from "./dialogues/reinhardt-chia-tay.json";
+import isoldeTamBiet from "./dialogues/isolde-tam-biet.json";
+import eliraTamBiet from "./dialogues/elira-tam-biet.json";
+import martaTamBiet from "./dialogues/marta-tam-biet.json";
 import rowanLoiKhuyen from "./dialogues/rowan-loi-khuyen.json";
 import tobiasChucPhuc from "./dialogues/tobias-chuc-phuc.json";
+import chuong1RoiCong from "./dialogues/chuong1-roi-cong.json";
+import chuong1HanhTrinh from "./dialogues/chuong1-hanh-trinh.json";
+import chuong1DoanhTraiDenNoi from "./dialogues/chuong1-doanh-trai-den-noi.json";
+import chuong1DongDoi from "./dialogues/chuong1-dong-doi.json";
+import chuong1DemDau from "./dialogues/chuong1-dem-dau.json";
+import daiUyFerrinTroChuyen from "./dialogues/dai-uy-ferrin-tro-chuyen.json";
+import bramOstlerTroChuyen from "./dialogues/bram-ostler-tro-chuyen.json";
+import osricVaneTroChuyen from "./dialogues/osric-vane-tro-chuyen.json";
 import godricChaoHoi from "./dialogues/godric-chao-hoi.json";
 import elowenChaoHoi from "./dialogues/elowen-chao-hoi.json";
 import agnesChaoHoi from "./dialogues/agnes-chao-hoi.json";
@@ -46,6 +59,7 @@ import agnesChaoHoi from "./dialogues/agnes-chao-hoi.json";
 import quocVuongAlaricEastmere from "./npcs-historical/quocvuong-alaric-eastmere.json";
 import thaiTuCedricEastmere from "./npcs-historical/thai-tu-cedric-eastmere.json";
 import namTuocReinhardtVonBerg from "./npcs-historical/nam-tuoc-reinhardt-von-berg.json";
+import namTuocPhuNhanIsoldeVonBerg from "./npcs-historical/nam-tuoc-phu-nhan-isolde-von-berg.json";
 import congTuocElricWhitcrest from "./npcs-historical/cong-tuoc-elric-whitcrest.json";
 import baTuocHalvardRosswind from "./npcs-historical/ba-tuoc-halvard-rosswind.json";
 import daiTeTySeraphine from "./npcs-historical/dai-te-ty-seraphine.json";
@@ -59,17 +73,40 @@ import thoRenGodricMarlin from "./npcs-persistent/tho-ren-godric-marlin.json";
 import thayThuocElowenBrack from "./npcs-persistent/thay-thuoc-elowen-brack.json";
 import giaoSiTobiasWren from "./npcs-persistent/giao-si-tobias-wren.json";
 import chuQuanTroAgnesColdwell from "./npcs-persistent/chu-quan-tro-agnes-coldwell.json";
+import tieuThuEliraVonBerg from "./npcs-persistent/tieu-thu-elira-von-berg.json";
+import quanGiaMartaHollis from "./npcs-persistent/quan-gia-marta-hollis.json";
+import daiUyAldousFerrin from "./npcs-persistent/dai-uy-aldous-ferrin.json";
+import tanBinhBramOstler from "./npcs-persistent/tan-binh-bram-ostler.json";
+import tanBinhOsricVane from "./npcs-persistent/tan-binh-osric-vane.json";
 
-const locationList = [sanLauDaiBergfeld, langAshford, langMillbrook, langThornwell] as GameLocation[];
+const locationList = [
+  sanLauDaiBergfeld,
+  langAshford,
+  langMillbrook,
+  langThornwell,
+  doanhTraiFielding,
+] as GameLocation[];
 
 export const locations: Record<string, GameLocation> = Object.fromEntries(
   locationList.map((location) => [location.id, location]),
 );
 
 const dialogueList = [
+  chuong1MoDau,
   reinhardtChiaTay,
+  isoldeTamBiet,
+  eliraTamBiet,
+  martaTamBiet,
   rowanLoiKhuyen,
   tobiasChucPhuc,
+  chuong1RoiCong,
+  chuong1HanhTrinh,
+  chuong1DoanhTraiDenNoi,
+  chuong1DongDoi,
+  chuong1DemDau,
+  daiUyFerrinTroChuyen,
+  bramOstlerTroChuyen,
+  osricVaneTroChuyen,
   godricChaoHoi,
   elowenChaoHoi,
   agnesChaoHoi,
@@ -81,6 +118,9 @@ export const dialogues: Record<string, Dialogue> = Object.fromEntries(
 
 export const STARTING_LOCATION_ID = sanLauDaiBergfeld.id;
 
+// Chương I ("Rời Quê Hương") bắt đầu ngay khi vào game mới — xem newGame() trong GameEngine.
+export const CHAPTER_1_START_DIALOGUE_ID = chuong1MoDau.id;
+
 export const worldIndex: WorldIndex = worldIndexData as WorldIndex;
 
 export const protagonist: CharacterProfile = character as CharacterProfile;
@@ -89,6 +129,7 @@ const historicalNpcList = [
   quocVuongAlaricEastmere,
   thaiTuCedricEastmere,
   namTuocReinhardtVonBerg,
+  namTuocPhuNhanIsoldeVonBerg,
   congTuocElricWhitcrest,
   baTuocHalvardRosswind,
   daiTeTySeraphine,
@@ -103,6 +144,11 @@ const persistentNpcList = [
   thayThuocElowenBrack,
   giaoSiTobiasWren,
   chuQuanTroAgnesColdwell,
+  tieuThuEliraVonBerg,
+  quanGiaMartaHollis,
+  daiUyAldousFerrin,
+  tanBinhBramOstler,
+  tanBinhOsricVane,
 ] as PersistentNpc[];
 
 export const historicalNpcs: Record<string, HistoricalNpc> = Object.fromEntries(

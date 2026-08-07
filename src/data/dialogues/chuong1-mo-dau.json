@@ -1,0 +1,89 @@
+{
+  "id": "chuong1-mo-dau",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "",
+      "text": "Sương chưa tan. Qua khe cửa sổ hẹp của căn phòng đã ở suốt hai mươi năm, Lamar nhìn thấy bầu trời mới chỉ ngả sang màu xám bạc — thứ ánh sáng đến trước cả tiếng gà, trước cả tiếng bước chân đầu tiên của người gác đêm cuối canh. Đâu đó dưới sân, một con ngựa khịt mũi, móng gõ nhẹ lên nền đá lát. Lâu đài Bergfeld vẫn còn ngủ, nhưng hôm nay nó sẽ thức dậy để tiễn một người đi.",
+      "choices": [
+        { "text": "(Ngồi dậy, không buồn ngủ thêm nữa)", "next": "noi-tam" }
+      ]
+    },
+    "noi-tam": {
+      "speaker": "",
+      "text": "Cậu ngồi bên mép giường một lúc lâu, nhìn thanh kiếm gia truyền dựng ở góc phòng — nơi nó vẫn đứng mỗi đêm suốt mười năm qua, chờ cậu luyện tập vào sáng hôm sau. Hôm nay nó sẽ theo cậu đi, không phải để tập, mà để dùng thật. Hai mươi năm ở đây không dài, nhưng cũng đủ để mọi vết nứt trên trần nhà, mọi tiếng cọt kẹt của cánh cửa gỗ sồi, trở thành một phần không thể tách rời khỏi cậu. Lamar hít một hơi dài, đứng dậy, khoác áo choàng lữ hành lên vai lần đầu tiên trong đời.",
+      "choices": [
+        { "text": "(Xuống đại sảnh dùng bữa sáng cuối cùng ở nhà)", "next": "vao-sanh" }
+      ]
+    },
+    "vao-sanh": {
+      "speaker": "",
+      "text": "Đại sảnh còn thắp nến dù trời đã sáng — thói quen của Marta, người luôn cho rằng ánh nến buổi sớm khiến bữa ăn ấm cúng hơn ánh ngày xám xịt. Cha ngồi ở đầu bàn như mọi sáng, áo giáp nhẹ đã mặc sẵn dưới lớp áo choàng, như thể ông sẽ đích thân cưỡi ngựa tiễn con trai ra khỏi lãnh địa. Mẹ ngồi bên phải ông, tay đặt lên một chiếc khăn gấp vuông vắn không rõ để làm gì. Elira, em gái cậu, đã ngồi sẵn từ bao giờ, hai tay chống cằm nhìn chằm chằm vào cửa như thể sợ Lamar sẽ biến mất nếu nó rời mắt dù chỉ một giây.",
+      "choices": [
+        { "text": "(Ngồi xuống chỗ quen thuộc của mình)", "next": "cha-mo-loi" }
+      ]
+    },
+    "cha-mo-loi": {
+      "speaker": "Nam tước Reinhardt von Berg",
+      "text": "Ông rót cho con trai một cốc rượu táo pha loãng — thứ chỉ xuất hiện trên bàn ăn vào những dịp đặc biệt. \"Ăn no vào. Đường tới Fielding không xa, nhưng bụng đói khiến người ta phán đoán kém hơn họ tưởng.\" Giọng ông vẫn điềm tĩnh như thường ngày, chỉ có bàn tay siết quanh cốc rượu hơi chặt hơn cần thiết.",
+      "choices": [
+        { "text": "\"Vâng, thưa cha.\" (Bắt đầu ăn trong yên lặng)", "next": "me-len-tieng" }
+      ]
+    },
+    "me-len-tieng": {
+      "speaker": "Nam tước phu nhân Isolde von Berg",
+      "text": "\"Con nhớ mang theo đủ áo ấm không? Ta đã bảo Marta chuẩn bị thêm một tấm chăn len, đường lên phía bắc doanh trại về đêm lạnh hơn ở đây nhiều.\" Bà nói nhanh, gần như liến thoắng — không giống dáng vẻ điềm đạm bà vẫn giữ trước mặt gia nhân. Đó là cách duy nhất bà biết để không phải nói ra điều thật sự đang nghĩ.",
+      "choices": [
+        {
+          "text": "\"Con sẽ ổn thôi, mẹ đừng lo quá.\"",
+          "next": "em-gai-xen-vao",
+          "effects": [
+            { "type": "adjustRelationship", "npcId": "nam-tuoc-phu-nhan-isolde-von-berg", "deltas": { "affection": 2, "trust": 1 } }
+          ]
+        },
+        {
+          "text": "\"Thành thật thì con cũng hơi lo, mẹ ạ.\"",
+          "next": "em-gai-xen-vao",
+          "effects": [
+            { "type": "adjustRelationship", "npcId": "nam-tuoc-phu-nhan-isolde-von-berg", "deltas": { "trust": 3, "affection": 1 } },
+            {
+              "type": "recordMemory",
+              "npcId": "nam-tuoc-phu-nhan-isolde-von-berg",
+              "eventType": "khac",
+              "description": "Lamar thành thật thừa nhận nỗi lo của mình với mẹ trước khi lên đường, thay vì tỏ ra cứng rắn.",
+              "impact": {}
+            }
+          ]
+        }
+      ]
+    },
+    "em-gai-xen-vao": {
+      "speaker": "Elira von Berg",
+      "text": "\"Nếu anh không viết thư về,\" Elira đột ngột lên tiếng, cố giữ giọng bình thường mà không thành công lắm, \"em thề sẽ xin cha cho cưỡi ngựa lên tận Fielding để hỏi tội anh đấy. Đừng tưởng em không dám.\" Nó cắn một miếng bánh mì lớn hơn cần thiết, như thể để có cớ không phải nhìn thẳng vào mắt anh trai.",
+      "choices": [
+        {
+          "text": "\"Anh hứa sẽ viết thư đều đặn. Với cả — giữ lấy cây cung của em, đừng để cha mẹ phát hiện.\"",
+          "next": "buoi-sang-ket",
+          "effects": [
+            { "type": "adjustRelationship", "npcId": "tieu-thu-elira-von-berg", "deltas": { "affection": 3, "trust": 2 } },
+            { "type": "setFlag", "flag": "elira-biet-giu-bi-mat-cung", "value": true }
+          ]
+        },
+        {
+          "text": "\"Anh đi rồi, em phải chăm sóc cha mẹ thay anh đấy. Đừng có trốn học lễ nghi nữa.\"",
+          "next": "buoi-sang-ket",
+          "effects": [
+            { "type": "adjustRelationship", "npcId": "tieu-thu-elira-von-berg", "deltas": { "respect": 2, "affection": 1 } }
+          ]
+        }
+      ]
+    },
+    "buoi-sang-ket": {
+      "speaker": "",
+      "text": "Bữa sáng trôi qua nhanh hơn Lamar muốn — hoặc có lẽ mọi người đều cố ăn chậm hơn bình thường mà vẫn không đủ. Khi những chiếc đĩa cuối cùng được dọn đi, cha đặt tay lên bàn, đứng dậy trước tiên. \"Rowan đang đợi con ngoài sân, kiểm tra lại yên ngựa. Tobias cũng đã ra nhà nguyện từ sớm.\" Ông ngừng lại một nhịp. \"Đi chào từng người, đừng vội. Ngày hôm nay không có gì phải gấp gáp cả — trừ việc con phải lên đường trước khi mặt trời đứng bóng.\"",
+      "choices": [
+        { "text": "(Đứng dậy, bước ra sân lâu đài buổi sớm)", "effects": [{ "type": "advanceTime", "minutes": 40 }] }
+      ]
+    }
+  }
+}

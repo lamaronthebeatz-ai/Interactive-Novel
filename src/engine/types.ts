@@ -3,8 +3,8 @@
 
 import type { PersistentNpc } from "./npcTypes";
 import type { Shop } from "./economyTypes";
-import type { MaritalStatus, Relationship } from "./relationshipTypes";
-import type { CrimeRecord, InfluenceStats, LoyaltyRecord, ReputationEntry, WorldEvent } from "./politicsTypes";
+import type { MaritalStatus, MemoryEventType, Relationship, RelationshipDimensions, RelationshipRole } from "./relationshipTypes";
+import type { CrimeRecord, InfluenceStats, LoyaltyRecord, ReputationEntry, ReputationTargetType, WorldEvent } from "./politicsTypes";
 
 export interface Item {
   id: string;
@@ -28,7 +28,14 @@ export type Effect =
   | { type: "addItem"; itemId: string; name: string; description: string; quantity?: number }
   | { type: "advanceTime"; minutes: number }
   | { type: "addJournalEntry"; text: string }
-  | { type: "setFlag"; flag: string; value: boolean };
+  | { type: "setFlag"; flag: string; value: boolean }
+  | { type: "meetNpc"; npcId: string }
+  | { type: "adjustRelationship"; npcId: string; deltas: Partial<RelationshipDimensions> }
+  | { type: "recordMemory"; npcId: string; eventType: MemoryEventType; description: string; impact?: Partial<RelationshipDimensions> }
+  | { type: "addRelationshipRole"; npcId: string; role: RelationshipRole }
+  | { type: "adjustReputation"; targetId: string; targetType: ReputationTargetType; targetName: string; delta: number }
+  | { type: "startDialogue"; dialogueId: string; npcId?: string }
+  | { type: "setLocation"; locationId: string };
 
 export interface DialogueChoice {
   text: string;
@@ -53,6 +60,7 @@ export interface LocationAction {
   id: string;
   text: string;
   effects?: Effect[];
+  requiresFlags?: string[]; // tất cả các flag này phải = true thì hành động mới hiện ra
 }
 
 export interface LocationConnection {

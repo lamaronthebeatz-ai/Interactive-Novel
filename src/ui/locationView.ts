@@ -29,6 +29,7 @@ export function renderLocation(engine: GameEngine): string {
     .join("");
 
   const actionButtons = (location.actions ?? [])
+    .filter((action) => engine.isLocationActionAvailable(action))
     .map(
       (action) =>
         `<button data-action="location-action" data-action-id="${action.id}">${action.text}</button>`,

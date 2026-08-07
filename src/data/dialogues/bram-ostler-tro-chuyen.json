@@ -1,0 +1,33 @@
+{
+  "id": "bram-ostler-tro-chuyen",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Bram Ostler",
+      "text": "Anh đang lau lại con dao găm như mọi khi, ngẩng lên khi thấy Lamar tới gần. \"Von Berg. Vai còn ê không sau buổi tập sáng nay? Ta thấy cậu ngã hai lần.\"",
+      "choices": [
+        { "text": "\"Ê thật, nhưng đỡ hơn hôm qua rồi.\"", "next": "than-mat" },
+        { "text": "\"Cậu để ý kỹ ghê nhỉ.\"", "next": "tinh-ban" }
+      ]
+    },
+    "than-mat": {
+      "speaker": "Bram Ostler",
+      "text": "Anh bật cười khẽ, hiếm khi thấy anh cười thoải mái như vậy. \"Vài tuần nữa cậu sẽ quen thôi. Người nông dân bọn ta ngã cả đời rồi, chuyện nhỏ.\" Có vẻ khoảng cách giữa hai người đã bớt xa hơn ngày đầu tiên.",
+      "choices": [
+        { "text": "\"Cảm ơn vì đã không cười vào mặt tôi.\"", "next": "ket-thuc" }
+      ]
+    },
+    "tinh-ban": {
+      "speaker": "Bram Ostler",
+      "text": "Anh nhún vai, có vẻ hơi ngại. \"Cùng lều thì phải để ý chứ. Với cả... cậu không tệ như ta tưởng lúc đầu, von Berg ạ.\" Đó là điều gần nhất với một lời khen mà Bram từng nói.",
+      "choices": [
+        { "text": "\"Cậu cũng vậy, Bram.\"", "next": "ket-thuc" }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Bram Ostler",
+      "text": "\"Thôi, nghỉ ngơi đi. Ngày mai lại một ngày dài nữa.\"",
+      "choices": []
+    }
+  }
+}

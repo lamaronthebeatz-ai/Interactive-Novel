@@ -108,6 +108,18 @@
     "fundingSource": "Ngân sách bí mật của vương thất"
   },
   {
+    "id": "quan-doi-hoang-gia-aurenfeld",
+    "name": "Quân đội Hoàng gia Aurenfeld",
+    "leader": "Bộ Chỉ Huy Tối Cao tại Aurenhall, dưới quyền Quốc vương Alaric Eastmere III",
+    "headquarters": "Aurenhall",
+    "members": ["dai-uy-aldous-ferrin"],
+    "goals": ["Huấn luyện lực lượng trưng binh từ các lãnh địa thành quân đội thống nhất", "Bảo vệ các thành trì dọc sông Goldrun", "Giữ thế cân bằng quân sự trước Kaldrenn"],
+    "allies": ["hoang-gia-aurenfeld"],
+    "enemies": [],
+    "influenceRegions": ["Vương quốc Aurenfeld"],
+    "fundingSource": "Thuế trưng binh và ngân khố hoàng gia"
+  },
+  {
     "id": "hoi-hoc-gia-inkspire",
     "name": "Hội Học Giả Inkspire",
     "leader": "Viện Trưởng Bertrand Cole",

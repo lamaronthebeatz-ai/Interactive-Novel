@@ -1,0 +1,61 @@
+{
+  "id": "chuong1-hanh-trinh",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "",
+      "text": "Con đường tới Fielding chạy dọc theo những cánh đồng lúa mạch đã ngả vàng, xa xa là bóng những người nông dân cúi mình bên luống cày — cảnh tượng quen thuộc, nhưng lần đầu tiên Lamar nhìn nó từ vị trí của một người đang đi qua chứ không phải một người sẽ trở về. Mặt trời lên cao dần, sương tan hẳn, và tiếng vó ngựa của Chiến mã Vệ trở thành thứ âm thanh duy nhất đồng hành cùng cậu suốt nhiều giờ liền.",
+      "choices": [
+        { "text": "(Tiếp tục lên đường)", "next": "gap-thuong-nhan" }
+      ]
+    },
+    "gap-thuong-nhan": {
+      "speaker": "",
+      "text": "Gần trưa, cậu vượt qua một đoàn xe thương nhân chở len từ Wyndreach xuống, những người đánh xe trò chuyện rôm rả về giá cả và tình hình đường sá. Một người trong số họ liếc thấy huy hiệu von Berg trên yên ngựa, khẽ cúi đầu chào, rồi nói vọng theo: \"Lên Fielding nhập ngũ à, cậu chủ? Dạo này đường đó đông người trẻ qua lại lắm — nghe đâu phương bắc lại có chuyện với Kaldrenn về thuế quan trên Cổ Đạo Skyreach.\" Ông ta nhún vai, không có vẻ gì lo lắng thật sự, chỉ là chuyện phiếm dọc đường.",
+      "choices": [
+        { "text": "(Gật đầu chào rồi tiếp tục đi)", "next": "cuu-binh" }
+      ]
+    },
+    "cuu-binh": {
+      "speaker": "",
+      "text": "Non trưa, cậu bắt gặp một người đàn ông ngồi bên vệ đường, một bên ống quần buộc gọn lại nơi đáng lẽ phải có một cái chân. Bộ quân phục cũ sờn của ông ta, dù đã bạc màu, vẫn còn nhận ra phù hiệu của Quân đội Hoàng gia Aurenfeld. Ông ta không xin xỏ, chỉ ngồi đó, nhìn dòng người qua lại với ánh mắt trống rỗng của người đã quen với việc bị lướt qua.",
+      "choices": [
+        {
+          "text": "(Dừng lại, đưa cho ông ta một ít tiền lộ phí)",
+          "next": "sau-cuu-binh",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Mình dừng lại cho một cựu binh bên đường ít tiền lộ phí — ông ta từng phục vụ trong chính đội quân mình sắp gia nhập, giờ chẳng còn gì ngoài một bộ quân phục cũ." },
+            { "type": "adjustReputation", "targetId": "hoang-gia-aurenfeld", "targetType": "phe-phai", "targetName": "Vương thất Eastmere", "delta": 1 }
+          ]
+        },
+        {
+          "text": "(Nhìn ông ta một lúc, rồi tiếp tục đi — hành trình còn dài)",
+          "next": "sau-cuu-binh",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Mình đi ngang qua một cựu binh cụt chân bên đường mà không dừng lại. Có lẽ vì hành trình còn xa, có lẽ vì mình chưa biết phải nói gì với một người từng ở vị trí mình sắp bước vào." }
+          ]
+        }
+      ]
+    },
+    "sau-cuu-binh": {
+      "speaker": "",
+      "text": "Cậu tiếp tục lên đường, nhưng hình ảnh người cựu binh cứ trở đi trở lại trong đầu suốt nhiều dặm sau đó. Đây là lần đầu tiên Lamar nhìn thấy cái giá thật sự của việc khoác lên mình bộ quân phục — không phải trong những câu chuyện Rowan kể, mà bằng xương bằng thịt, ngồi lặng lẽ bên vệ đường. Khi mặt trời bắt đầu ngả về chiều, một âm thanh xa xăm vọng tới — tiếng hô đều đặn, dồn dập, như nhịp trống của hàng chục bước chân cùng giẫm xuống đất một lúc.",
+      "choices": [
+        { "text": "(Hướng về phía âm thanh đó)", "next": "toi-fielding" }
+      ]
+    },
+    "toi-fielding": {
+      "speaker": "",
+      "text": "Qua một khúc quanh, thị trấn Fielding hiện ra — không lớn, nhưng nhộn nhịp hơn hẳn ba ngôi làng quanh lâu đài Bergfeld, với những kho thóc lớn dọc hai bên đường, dấu hiệu của một trung tâm thu mua nông sản quan trọng của cả vương quốc. Nhưng thứ khiến tim Lamar đập nhanh hơn không phải thị trấn — mà là khoảng đất trống ngoại ô, nơi hàng chục lều vải bạt dựng thành hàng ngay ngắn, và một lá cờ mang huy hiệu Vương thất Eastmere bay phần phật trong gió chiều.",
+      "choices": [
+        {
+          "text": "(Thúc ngựa tiến về phía doanh trại)",
+          "effects": [
+            { "type": "advanceTime", "minutes": 300 },
+            { "type": "startDialogue", "dialogueId": "chuong1-doanh-trai-den-noi" }
+          ]
+        }
+      ]
+    }
+  }
+}

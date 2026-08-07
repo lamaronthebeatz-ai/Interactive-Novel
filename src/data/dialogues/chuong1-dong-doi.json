@@ -1,0 +1,95 @@
+{
+  "id": "chuong1-dong-doi",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "",
+      "text": "Lều số bảy trống trải, chỉ có ba tấm chiếu rơm trải trên nền đất nện và vài chiếc túi quân trang xếp gọn ở góc. Một thanh niên vai rộng, tay chai sạn rõ rệt vì lao động đồng áng, đang ngồi lau một con dao găm cũ. Anh ta ngẩng lên khi Lamar bước vào, ánh mắt lướt nhanh từ đầu đến chân — con ngựa chiến buộc ngoài lều, thanh kiếm chạm khắc, đôi ủng còn quá mới.",
+      "choices": [
+        { "text": "(Gật đầu chào, đặt hành lý xuống chỗ trống còn lại)", "next": "bram-gioi-thieu" }
+      ]
+    },
+    "bram-gioi-thieu": {
+      "speaker": "Bram Ostler",
+      "text": "\"Bram Ostler,\" anh ta nói, không đứng dậy, giọng thẳng đến mức gần như cộc cằn. \"Từ vùng gần Goldmouth. Đoán xem — cậu chắc là loại người có gia nhân xách đồ hộ suốt hai mươi năm qua rồi mới lần đầu tự tay dựng lều, đúng không?\" Không hẳn là thù địch, nhưng rõ ràng không có ý định dễ dãi với một người có dáng vẻ quý tộc.",
+      "choices": [
+        {
+          "text": "\"Đúng vậy. Nhưng tôi định học nhanh thôi.\"",
+          "next": "osric-xuat-hien",
+          "effects": [
+            { "type": "meetNpc", "npcId": "tan-binh-bram-ostler" },
+            { "type": "adjustRelationship", "npcId": "tan-binh-bram-ostler", "deltas": { "respect": 2, "trust": 1 } }
+          ]
+        },
+        {
+          "text": "\"Cứ chờ xem. Tôi không định để bị bỏ lại phía sau.\"",
+          "next": "osric-xuat-hien",
+          "effects": [
+            { "type": "meetNpc", "npcId": "tan-binh-bram-ostler" },
+            { "type": "adjustRelationship", "npcId": "tan-binh-bram-ostler", "deltas": { "respect": 1 } }
+          ]
+        }
+      ]
+    },
+    "osric-xuat-hien": {
+      "speaker": "Osric Vane",
+      "text": "Một thanh niên khác bước vào lều đúng lúc đó, kiếm riêng đeo bên hông thay vì thanh kiếm quân đội tiêu chuẩn, dáng đi có gì đó cố tình phô trương. \"Osric Vane, gia tộc Vane,\" anh ta tự giới thiệu, đưa mắt nhìn Lamar với vẻ dò xét pha chút hứng thú khi nhận ra một gương mặt cùng đẳng cấp hiếm hoi trong đám đông tân binh. \"von Berg, đúng không? Ta có nghe tên gia tộc cậu. Ít ra lều này cũng có người biết cách cầm dao ăn đúng cách.\" Anh ta liếc sang Bram, không giấu vẻ khinh khỉnh.",
+      "choices": [
+        {
+          "text": "(Quan sát phản ứng của Bram trước câu nói đó)",
+          "next": "cham-choc",
+          "effects": [{ "type": "meetNpc", "npcId": "tan-binh-osric-vane" }]
+        }
+      ]
+    },
+    "cham-choc": {
+      "speaker": "Osric Vane",
+      "text": "Bram siết chặt tay quanh con dao găm, hàm bạnh ra nhưng không nói gì — có lẽ đã quá quen với những câu như vậy để còn buồn đáp trả. Osric cười nhạt, quay sang Lamar như đang tìm đồng minh. \"Đừng lo, von Berg. Loại người như hắn ta rồi sẽ tự đào thải sau vài tuần đầu thôi — quân đội này vốn không thiếu nông dân đóng giả chiến binh.\"",
+      "choices": [
+        {
+          "text": "\"Anh nói vậy không công bằng. Ai cũng đang bắt đầu như nhau ở đây.\"",
+          "next": "sau-cham-choc",
+          "effects": [
+            { "type": "adjustRelationship", "npcId": "tan-binh-bram-ostler", "deltas": { "trust": 4, "respect": 2 } },
+            { "type": "adjustRelationship", "npcId": "tan-binh-osric-vane", "deltas": { "respect": -2, "suspicion": 3 } },
+            {
+              "type": "recordMemory",
+              "npcId": "tan-binh-bram-ostler",
+              "eventType": "khac",
+              "description": "Lamar công khai bênh vực Bram trước lời châm chọc của Osric ngay ngày đầu ở doanh trại.",
+              "impact": { "trust": 3 }
+            }
+          ]
+        },
+        {
+          "text": "\"Tôi nghĩ chúng ta nên tập trung vào việc sống sót qua khóa huấn luyện trước đã.\" (Khéo léo lảng tránh)",
+          "next": "sau-cham-choc",
+          "effects": [
+            { "type": "adjustRelationship", "npcId": "tan-binh-bram-ostler", "deltas": { "trust": 1 } },
+            { "type": "adjustRelationship", "npcId": "tan-binh-osric-vane", "deltas": { "respect": 1 } }
+          ]
+        }
+      ]
+    },
+    "sau-cham-choc": {
+      "speaker": "",
+      "text": "Không khí trong lều căng thẳng thêm một lúc, rồi tan dần khi tiếng kẻng báo giờ ăn tối vang lên từ phía bếp dã chiến. Bram đứng dậy trước, không nói thêm gì nhưng khi đi ngang qua Lamar, anh ta khẽ gật đầu — một cử chỉ nhỏ, nhưng rõ ràng không phải thù địch nữa. Osric huýt sáo một điệu gì đó, có vẻ đã quên bẵng câu chuyện, hoặc giả vờ như vậy. Lamar nhận ra: đây mới chỉ là buổi chiều đầu tiên, và cậu đã học được nhiều về con người hơn cả một năm ở lâu đài Bergfeld.",
+      "choices": [
+        { "text": "(Ra ngoài dùng bữa tối cùng doanh trại)", "next": "chuyen-canh" }
+      ]
+    },
+    "chuyen-canh": {
+      "speaker": "",
+      "text": "Bữa tối là cháo đặc và bánh mì cứng, ăn ngồi bệt trên đất quanh đống lửa trại cùng hàng chục tân binh khác — khác xa những bữa ăn được phục vụ chỉnh tề trong đại sảnh lâu đài. Lạ thay, Lamar thấy nó ngon miệng hơn cậu tưởng. Xung quanh, tiếng cười nói rời rạc của những người xa lạ dần hòa vào nhau thành thứ gì đó gần giống một cộng đồng. Khi ánh lửa bắt đầu lụi, tiếng kẻng báo giờ nghỉ vang lên, báo hiệu ngày đầu tiên trong quân ngũ sắp khép lại.",
+      "choices": [
+        {
+          "text": "(Trở về lều, chuẩn bị cho đêm đầu tiên xa nhà)",
+          "effects": [
+            { "type": "advanceTime", "minutes": 180 },
+            { "type": "startDialogue", "dialogueId": "chuong1-dem-dau" }
+          ]
+        }
+      ]
+    }
+  }
+}

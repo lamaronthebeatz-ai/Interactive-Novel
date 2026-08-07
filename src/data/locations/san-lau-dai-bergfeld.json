@@ -3,8 +3,8 @@
   "name": "Sân Lâu Đài Bergfeld",
   "type": "Lâu đài",
   "nation": "Vương quốc Aurenfeld",
-  "description": "Sương sớm còn giăng trên sân lâu đài. Chiến mã Vệ đã được thắng yên sẵn, đứng chờ bên cổng. Cha con vẫn đứng đó, dõi theo con như thể muốn khắc ghi hình ảnh này. Rowan kiểm tra lại đai kiếm của con lần cuối, còn Giáo sĩ Tobias đứng lặng lẽ trước cửa nhà nguyện nhỏ. Hôm nay là ngày con rời lãnh địa von Berg.",
-  "npcs": ["nam-tuoc-reinhardt-von-berg", "ky-si-rowan-ashby", "giao-si-tobias-wren"],
+  "description": "Sương sớm còn giăng trên sân lâu đài. Chiến mã Vệ đã được thắng yên sẵn, đứng chờ bên cổng. Cha vẫn đứng đó, dõi theo con như thể muốn khắc ghi hình ảnh này. Đâu đó quanh sân, mẹ, Elira, và Marta cũng đang tìm cớ nán lại — không ai muốn là người đầu tiên nói ra rằng đã đến lúc. Rowan đứng nghiêm ở sân tập, còn Giáo sĩ Tobias lặng lẽ trước cửa nhà nguyện nhỏ. Hôm nay là ngày con rời lãnh địa von Berg. Hãy đi chào từng người trước khi bước qua cổng lần cuối.",
+  "npcs": ["nam-tuoc-reinhardt-von-berg", "nam-tuoc-phu-nhan-isolde-von-berg", "tieu-thu-elira-von-berg", "quan-gia-marta-hollis", "ky-si-rowan-ashby", "giao-si-tobias-wren"],
   "buildings": ["Nhà nguyện nhỏ", "Chuồng ngựa", "Xưởng rèn nhỏ trong thành", "Vọng gác"],
   "connections": [
     { "toLocationId": "lang-ashford", "label": "Con đường đất dẫn tới Ashford", "walkMinutes": 45, "horseMinutes": 20 },
@@ -18,6 +18,14 @@
       "effects": [
         { "type": "addJournalEntry", "text": "Mình đứng lặng một lúc, nhìn lâu đài Bergfeld trong ánh sương sớm — nơi mình đã lớn lên suốt hai mươi năm." },
         { "type": "advanceTime", "minutes": 10 }
+      ]
+    },
+    {
+      "id": "len-duong",
+      "text": "Đã chào tạm biệt mọi người — bước ra cổng, chính thức lên đường tới Fielding",
+      "requiresFlags": ["tam-biet-cha", "tam-biet-me", "tam-biet-em-gai", "tam-biet-marta", "tam-biet-rowan", "tam-biet-tobias"],
+      "effects": [
+        { "type": "startDialogue", "dialogueId": "chuong1-roi-cong" }
       ]
     }
   ]

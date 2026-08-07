@@ -1,0 +1,20 @@
+{
+  "id": "doanh-trai-fielding",
+  "name": "Doanh Trại Huấn Luyện Fielding",
+  "type": "Doanh trại quân sự",
+  "nation": "Vương quốc Aurenfeld",
+  "description": "Doanh trại trải dài trên một cánh đồng trống ngoại ô Fielding, hàng chục lều vải bạt dựng thành hàng ngay ngắn quanh một bãi tập đất nện đã in hằn dấu chân của không biết bao nhiêu khóa tân binh trước đó. Tiếng hô khẩu lệnh, tiếng vũ khí gỗ va chạm, và mùi khói bếp dã chiến hòa vào nhau thành thứ không khí đặc trưng của một nơi đang huấn luyện người ta cho một cuộc chiến chưa ai biết khi nào sẽ tới. Lá cờ mang huy hiệu Vương thất Eastmere bay trên cột cờ trung tâm, hơi rách ở góc vì gió.",
+  "npcs": ["dai-uy-aldous-ferrin", "tan-binh-bram-ostler", "tan-binh-osric-vane"],
+  "buildings": ["Lều chỉ huy", "Bãi tập luyện", "Kho vũ khí", "Dãy lều tân binh", "Bếp dã chiến"],
+  "connections": [],
+  "actions": [
+    {
+      "id": "tap-luyen-co-ban",
+      "text": "Ra bãi tập luyện các động tác cơ bản cùng những tân binh khác",
+      "effects": [
+        { "type": "addJournalEntry", "text": "Mình dành buổi sáng tập luyện đội hình và các động tác cơ bản cùng những tân binh khác — cơ thể mỏi rã rời, nhưng đầu óc lại tỉnh táo lạ thường." },
+        { "type": "advanceTime", "minutes": 120 }
+      ]
+    }
+  ]
+}

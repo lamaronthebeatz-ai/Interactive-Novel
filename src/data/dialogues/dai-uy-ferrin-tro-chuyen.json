@@ -1,0 +1,26 @@
+{
+  "id": "dai-uy-ferrin-tro-chuyen",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Đại úy Aldous Ferrin",
+      "text": "Ông đang xem lại sổ điểm danh, không ngẩng đầu lên ngay. \"Von Berg. Có việc gì không, hay chỉ đứng đó cho có?\"",
+      "choices": [
+        { "text": "\"Con chỉ muốn hỏi thăm tình hình doanh trại, thưa Đại úy.\"", "next": "tinh-hinh" },
+        { "text": "\"Không có gì ạ. Con xin phép rút lui.\"", "next": "ket-thuc" }
+      ]
+    },
+    "tinh-hinh": {
+      "speaker": "Đại úy Aldous Ferrin",
+      "text": "\"Vẫn như mọi khóa khác — vài người sẽ bỏ cuộc, phần lớn sẽ trụ lại.\" Ông đặt bút xuống một lúc. \"Cứ giữ kỷ luật, đúng giờ, và đừng để bị cuốn vào những trò trẻ con giữa các tân binh. Thế là đủ để ta không phải nhớ tên cậu vì lý do xấu.\"",
+      "choices": [
+        { "text": "\"Con sẽ ghi nhớ.\"", "next": "ket-thuc" }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Đại úy Aldous Ferrin",
+      "text": "\"Được rồi. Về vị trí đi.\"",
+      "choices": []
+    }
+  }
+}

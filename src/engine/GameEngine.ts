@@ -1,4 +1,4 @@
-import { cityEconomies, dialogues, factions, goods, historicalNpcs, laws, locations, nobilityTitles, persistentNpcs, protagonist, shops, startingReputation, startingRelationships, STARTING_LOCATION_ID, supplyChains, taxes, tradeRoutes, worldIndex } from "../data";
+import { CHAPTER_1_START_DIALOGUE_ID, cityEconomies, dialogues, factions, goods, historicalNpcs, laws, locations, nobilityTitles, persistentNpcs, protagonist, shops, startingReputation, startingRelationships, STARTING_LOCATION_ID, supplyChains, taxes, tradeRoutes, worldIndex } from "../data";
 import { SaveManager } from "./SaveManager";
 import { advanceTime, formatClock } from "./time";
 import { promoteToPersistent } from "./npcPromotion";
@@ -15,6 +15,7 @@ import type {
   Effect,
   GameLocation,
   GameState,
+  LocationAction,
   Screen,
   WorldIndex,
 } from "./types";
@@ -82,7 +83,7 @@ export class GameEngine {
       this.addItem(item.id, item.name, item.description, item.quantity);
     }
     this.addJournalEntry(protagonist.openingJournalEntry);
-    this.screen = "location";
+    this.beginDialogue(CHAPTER_1_START_DIALOGUE_ID);
     this.notify();
   }
 
@@ -182,12 +183,18 @@ export class GameEngine {
     const choice = node.choices[index];
     if (!choice) return;
 
+    const dialogueIdBefore = active.dialogueId;
+
     if (choice.effects) {
       this.applyEffects(choice.effects);
     }
 
-    if (choice.next) {
-      active.nodeId = choice.next;
+    const activeAfter = this.state.activeDialogue;
+    if (choice.next && activeAfter && activeAfter.dialogueId === dialogueIdBefore) {
+      activeAfter.nodeId = choice.next;
+      this.notify();
+    } else if (activeAfter && activeAfter.dialogueId !== dialogueIdBefore) {
+      // Một effect (startDialogue) đã chuyển sang hội thoại khác — giữ nguyên vị trí mới.
       this.notify();
     } else {
       this.endDialogue();
@@ -200,14 +207,32 @@ export class GameEngine {
     this.notify();
   }
 
+  // Bắt đầu (hoặc chuyển sang) một hội thoại trực tiếp, không cần người chơi bấm vào NPC —
+  // dùng để dẫn chuyện tự động (mở đầu chương, nối cảnh) và cho effect "startDialogue".
+  private beginDialogue(dialogueId: string, npcId?: string): void {
+    const dialogue = dialogues[dialogueId];
+    if (!dialogue) return;
+    this.state.activeDialogue = {
+      npcId: npcId ?? this.state.activeDialogue?.npcId ?? "",
+      dialogueId,
+      nodeId: dialogue.start,
+    };
+    this.screen = "dialogue";
+  }
+
   performLocationAction(actionId: string): void {
     const location = this.getCurrentLocation();
     const action = location?.actions?.find((a) => a.id === actionId);
     if (!action) return;
+    if (action.requiresFlags && !action.requiresFlags.every((flag) => this.state.flags[flag])) return;
     if (action.effects) {
       this.applyEffects(action.effects);
     }
     this.notify();
+  }
+
+  isLocationActionAvailable(action: LocationAction): boolean {
+    return !action.requiresFlags || action.requiresFlags.every((flag) => this.state.flags[flag]);
   }
 
   openJournal(): void {
@@ -808,6 +833,27 @@ export class GameEngine {
           break;
         case "setFlag":
           this.state.flags[effect.flag] = effect.value;
+          break;
+        case "meetNpc":
+          this.meetNpc(effect.npcId);
+          break;
+        case "adjustRelationship":
+          this.adjustRelationship(effect.npcId, effect.deltas);
+          break;
+        case "recordMemory":
+          this.recordMemory(effect.npcId, effect.eventType, effect.description, effect.impact ?? {});
+          break;
+        case "addRelationshipRole":
+          this.addRelationshipRole(effect.npcId, effect.role);
+          break;
+        case "adjustReputation":
+          this.adjustReputation(effect.targetId, effect.targetType, effect.targetName, effect.delta);
+          break;
+        case "startDialogue":
+          this.beginDialogue(effect.dialogueId, effect.npcId);
+          break;
+        case "setLocation":
+          this.state.currentLocationId = effect.locationId;
           break;
       }
     }

@@ -1,0 +1,36 @@
+{
+  "id": "tan-binh-osric-vane",
+  "tier": "persistent",
+  "firstName": "Osric",
+  "lastName": "Vane",
+  "age": 21,
+  "gender": "Nam",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Tân binh, Quân đội Hoàng gia Aurenfeld — con trai út của một gia tộc quý tộc nhỏ",
+  "residence": "Doanh Trại Huấn Luyện Fielding",
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "friends": ["chưa xây dựng"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Trợ cấp định kỳ từ gia tộc Vane, nhiều hơn hẳn so với tân binh bình thường.",
+  "assets": "Một thanh kiếm riêng chất lượng tốt hơn quân trang tiêu chuẩn, mang theo từ nhà.",
+  "personality": ["Kiêu ngạo", "Hiếu thắng", "Sắc sảo", "Che giấu bất an sau vẻ tự tin"],
+  "likes": ["Được công nhận trước đám đông", "Cạnh tranh công khai"],
+  "dislikes": ["Bị so sánh thua kém", "Bị phớt lờ"],
+  "lifeGoal": "Chứng minh với gia tộc rằng con trai út cũng có thể làm nên tên tuổi, không chỉ người anh cả thừa kế.",
+  "schedule": [
+    { "time": "05:30", "activity": "Thức dậy, điểm danh" },
+    { "time": "06:30", "activity": "Tập luyện buổi sáng" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:00", "activity": "Tập luyện chiến thuật" },
+    { "time": "18:00", "activity": "Dùng bữa tối cùng tân binh khác" },
+    { "time": "20:00", "activity": "Bảo dưỡng quân trang" },
+    { "time": "21:30", "activity": "Ngủ" }
+  ],
+  "dialogueId": "osric-vane-tro-chuyen"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "chuong1-roi-cong",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "",
+      "text": "Lamar dẫn Chiến mã Vệ qua khoảng sân lát đá, những bước chân vang lên rõ hơn cậu tưởng trong buổi sớm tĩnh lặng. Nơi cổng chính, cha đứng lặng, một tay giơ lên — không phải vẫy, chỉ là một cử chỉ tiễn biệt kiệm lời đúng chất ông. Xa hơn một chút, trên bức tường thấp cạnh nhà bếp, mẹ, Elira, và Marta đứng cùng nhau, không ai nói gì, chỉ nhìn theo. Rowan gật đầu một cái, ngắn gọn — với ông, thế là đủ để nói hết những gì cần nói.",
+      "choices": [
+        { "text": "(Quay lại nhìn lâu đài Bergfeld lần cuối)", "next": "nhin-lai" }
+      ]
+    },
+    "nhin-lai": {
+      "speaker": "",
+      "text": "Cậu dừng lại một nhịp ngay dưới vòm cổng, quay đầu nhìn về phía sau. Lâu đài Bergfeld đứng đó, không lớn, không lộng lẫy, những bức tường đá xám đã lên rêu ở vài chỗ — nhưng nó là toàn bộ những gì cậu từng biết về nhà. Ánh mắt cậu lướt qua từng người: cha vẫn đứng bất động nơi cổng, mẹ đưa tay lên che miệng, Elira vẫy tay dữ dội hơn cần thiết, còn Marta đang lau mắt bằng vạt tạp dề. Không ai gọi cậu quay lại. Không ai cần phải làm vậy.",
+      "choices": [
+        { "text": "(Quay người, bước qua cổng)", "next": "qua-cong" }
+      ]
+    },
+    "qua-cong": {
+      "speaker": "",
+      "text": "Bước chân đầu tiên ra khỏi ranh giới lãnh địa nhẹ hơn Lamar nghĩ, và cũng nặng hơn Lamar nghĩ, cùng một lúc. Con đường đất trải dài phía trước, uốn quanh một vạt rừng thưa rồi mất hút sau một ngọn đồi thấp — hướng về Fielding, nơi một cuộc đời khác đang chờ, dù cậu chưa hình dung nổi nó sẽ trông ra sao. Gió sớm thổi tạt vào mặt, mang theo mùi đất ẩm và cỏ non. Lần đầu tiên trong đời, không có bức tường thành nào bao quanh cậu nữa.",
+      "choices": [
+        {
+          "text": "(Thúc ngựa, chính thức lên đường tới Fielding)",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Mình rời lâu đài Bergfeld, chính thức lên đường tới doanh trại Fielding để gia nhập Quân đội Hoàng gia Aurenfeld." },
+            { "type": "startDialogue", "dialogueId": "chuong1-hanh-trinh" }
+          ]
+        }
+      ]
+    }
+  }
+}

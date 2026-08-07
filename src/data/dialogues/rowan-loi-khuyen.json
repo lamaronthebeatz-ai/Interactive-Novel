@@ -4,44 +4,60 @@
   "nodes": {
     "start": {
       "speaker": "Rowan Ashby",
-      "text": "Để ta xem lại tư thế đeo kiếm của cậu lần cuối. ...Được. Cậu đã luyện tập với ta bao nhiêu năm rồi nhỉ? Cậu nghĩ mình đã sẵn sàng chưa?",
+      "text": "Ông đang đứng giữa sân tập, đã dậy từ trước bình minh như mọi ngày, thanh trường kiếm riêng dựng cạnh chân. Khi Lamar tới gần, ông không chào hỏi — chỉ vươn tay chỉnh lại đai kiếm trên hông cậu, kéo chặt hơn một chút, rồi lùi lại quan sát. \"Được. Cậu đã luyện tập với ta bao nhiêu năm rồi nhỉ — mười hai, mười ba năm? Cậu nghĩ mình đã sẵn sàng chưa?\"",
       "choices": [
-        { "text": "Con đã luyện tập chăm chỉ suốt nhiều năm rồi.", "next": "tu-tin" },
-        { "text": "Con e là mình chưa từng thực chiến thật sự.", "next": "lo-thuc-chien" }
+        { "text": "\"Con đã luyện tập chăm chỉ suốt nhiều năm rồi.\"", "next": "tu-tin" },
+        { "text": "\"Con e là mình chưa từng thực chiến thật sự.\"", "next": "lo-thuc-chien" }
       ]
     },
     "tu-tin": {
       "speaker": "Rowan Ashby",
-      "text": "Kỹ thuật của cậu không tệ, ta công nhận. Nhưng nhớ lấy — tự tin không thay được kinh nghiệm thực chiến. Trên thao trường không ai thật sự muốn giết cậu. Ngoài kia thì khác.",
+      "text": "Ông khịt mũi, gần như là một tiếng cười. \"Kỹ thuật của cậu không tệ, ta công nhận — tốt hơn phần lớn học trò ta từng dạy. Nhưng nhớ lấy: tự tin không thay được kinh nghiệm thực chiến. Trên thao trường này, không ai thật sự muốn giết cậu, dù ta có đánh mạnh tay đến đâu. Ngoài kia thì khác. Người ta sẽ không dừng tay chỉ vì cậu mất thăng bằng.\"",
       "choices": [
-        {
-          "text": "Con sẽ ghi nhớ điều đó.",
-          "next": "ket-thuc",
-          "effects": [
-            { "type": "addJournalEntry", "text": "Rowan nhắc mình rằng tự tin không thay được kinh nghiệm thực chiến." },
-            { "type": "advanceTime", "minutes": 20 }
-          ]
-        }
+        { "text": "\"Con sẽ ghi nhớ điều đó.\"", "next": "kiem-tra-trang-bi" }
       ]
     },
     "lo-thuc-chien": {
       "speaker": "Rowan Ashby",
-      "text": "Thành thật là tốt. Ai cũng vậy thôi, kể cả ta ngày trước. Nền tảng của cậu vững — kiếm, cung, cưỡi ngựa, quan sát, cậu không thiếu thứ gì cả. Kinh nghiệm rồi sẽ đến, miễn là cậu còn sống để học từ nó.",
+      "text": "Ông gật đầu chậm, có vẻ hài lòng với câu trả lời hơn là nếu Lamar tỏ ra tự tin thái quá. \"Thành thật là tốt. Ai cũng vậy thôi lúc mới bắt đầu, kể cả ta ngày trước — ta còn nhớ trận đánh đầu tiên của mình, tay run đến mức suýt đánh rơi kiếm.\" Ông hiếm khi kể chuyện bản thân, nên câu nói ấy có trọng lượng riêng. \"Nền tảng của cậu vững — kiếm, cung, cưỡi ngựa, quan sát, cậu không thiếu thứ gì cả. Kinh nghiệm rồi sẽ đến, miễn là cậu còn sống để học từ nó.\"",
       "choices": [
-        {
-          "text": "Con sẽ cẩn thận.",
-          "next": "ket-thuc",
-          "effects": [
-            { "type": "addJournalEntry", "text": "Rowan trấn an mình rằng nền tảng đã đủ vững, kinh nghiệm rồi sẽ đến." },
-            { "type": "advanceTime", "minutes": 20 }
-          ]
-        }
+        { "text": "\"Con sẽ cẩn thận.\"", "next": "kiem-tra-trang-bi" }
+      ]
+    },
+    "kiem-tra-trang-bi": {
+      "speaker": "Rowan Ashby",
+      "text": "Ông đi vòng quanh Lamar một lượt, kiểm tra từng chi tiết như đang thanh tra một tân binh chứ không phải tiễn một người học trò — dây cung, móng ngựa của Chiến mã Vệ, độ chặt của bao kiếm. \"Một điều cuối cùng, và nhớ cho kỹ — luôn kiểm tra móng ngựa và dây cung mỗi sáng trước khi lên đường. Ta đã thấy nhiều người giỏi chết vì những thứ nhỏ nhặt bị bỏ quên hơn là vì kiếm thuật kém. Kỷ luật không nằm ở những trận đánh lớn, Lamar. Nó nằm ở những việc nhỏ nhặt cậu làm khi không ai nhìn thấy.\"",
+      "choices": [
+        { "text": "\"Con hiểu, thưa thầy.\"", "next": "ket-thuc" }
       ]
     },
     "ket-thuc": {
       "speaker": "Rowan Ashby",
-      "text": "Một điều cuối cùng — luôn kiểm tra móng ngựa và dây cung mỗi sáng trước khi lên đường. Ta đã thấy nhiều người giỏi chết vì những thứ nhỏ nhặt bị bỏ quên hơn là vì kiếm thuật kém.",
-      "choices": []
+      "text": "Ông rút từ thắt lưng ra một viên đá mài kiếm cũ, mòn vẹt một bên vì đã dùng qua nhiều năm, đưa cho Lamar mà không giải thích gì thêm. \"Của ta từ thời còn là lính trơn, trước khi ta phục vụ gia tộc con. Một viên đá mài không làm nên một chiến binh giỏi — nhưng một thanh kiếm cùn thì chắc chắn làm nên một chiến binh chết sớm.\" Ông ngừng lại, rồi nói thêm, giọng khẽ hơn bình thường một chút. \"Ta đã dạy cậu mọi thứ ta biết. Phần còn lại, cậu phải tự học lấy — nhưng ta tin cậu sẽ học nhanh thôi.\"",
+      "choices": [
+        {
+          "text": "(Nhận viên đá mài kiếm từ Rowan)",
+          "effects": [
+            {
+              "type": "addItem",
+              "itemId": "da-mai-kiem-cua-rowan",
+              "name": "Đá mài kiếm của Rowan",
+              "description": "Viên đá mài cũ, mòn vẹt một bên — vật bất ly thân của Rowan từ thời còn là lính trơn, nay ông trao lại cho Lamar."
+            },
+            { "type": "addJournalEntry", "text": "Rowan tặng mình viên đá mài kiếm ông dùng từ thời còn là lính trơn — món quà hiếm hoi và giản dị đúng như con người ông. Ông nói đã dạy mình mọi thứ ông biết, phần còn lại phải tự học." },
+            { "type": "adjustRelationship", "npcId": "ky-si-rowan-ashby", "deltas": { "respect": 3, "trust": 2 } },
+            {
+              "type": "recordMemory",
+              "npcId": "ky-si-rowan-ashby",
+              "eventType": "khac",
+              "description": "Rowan trao cho Lamar viên đá mài kiếm từ thời ông còn là lính trơn, trước khi Lamar lên đường gia nhập quân đoàn.",
+              "impact": { "loyalty": 3 }
+            },
+            { "type": "setFlag", "flag": "tam-biet-rowan", "value": true },
+            { "type": "advanceTime", "minutes": 20 }
+          ]
+        }
+      ]
     }
   }
 }

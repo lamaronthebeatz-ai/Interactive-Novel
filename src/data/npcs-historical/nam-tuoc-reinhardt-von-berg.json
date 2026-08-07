@@ -16,8 +16,8 @@
     "father": "chưa xây dựng",
     "mother": "chưa xây dựng",
     "siblings": ["chưa xây dựng"],
-    "spouse": "chưa xây dựng",
-    "children": ["lamar-von-berg"]
+    "spouse": "nam-tuoc-phu-nhan-isolde-von-berg",
+    "children": ["lamar-von-berg", "tieu-thu-elira-von-berg"]
   },
   "politicalRelations": [
     { "npcId": "quocvuong-alaric-eastmere", "type": "chu", "note": "Nam tước von Berg là chư hầu trực tiếp của Vương quốc Aurenfeld" }

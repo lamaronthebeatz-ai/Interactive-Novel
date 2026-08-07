@@ -1,0 +1,33 @@
+{
+  "id": "osric-vane-tro-chuyen",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Osric Vane",
+      "text": "Anh đang so thanh kiếm riêng của mình với thanh kiếm quân đội tiêu chuẩn của Lamar, ra vẻ đánh giá. \"Kiếm cậu xoàng hơn của ta, nhưng nghe nói cậu bắn cung khá đấy. Ferrin có nhắc tới trong buổi kiểm tra trang bị.\"",
+      "choices": [
+        { "text": "\"Cũng tạm được thôi.\"", "next": "khiem-ton" },
+        { "text": "\"Anh vẫn để ý xem ai giỏi hơn ai à?\"", "next": "thang-than" }
+      ]
+    },
+    "khiem-ton": {
+      "speaker": "Osric Vane",
+      "text": "Anh nhướn mày. \"Khiêm tốn kiểu đó không hợp lắm với con nhà quý tộc đâu, von Berg. Nhưng thôi, ta thích người biết mình có gì mà không cần khoe khoang.\" Có vẻ đó là một dạng công nhận, dù được gói trong giọng điệu vẫn còn chút cạnh tranh.",
+      "choices": [
+        { "text": "\"Cứ coi đó là lời khen đi.\"", "next": "ket-thuc" }
+      ]
+    },
+    "thang-than": {
+      "speaker": "Osric Vane",
+      "text": "Anh cười khẩy, nhưng không hẳn khó chịu. \"Tất nhiên. Ta là con út, von Berg — anh cả ta thừa kế mọi thứ, ta chỉ có thể tự làm nên tên tuổi bằng chính mình. Cậu không hiểu đâu, cậu vốn đã là người thừa kế rồi.\" Có gì đó thành thật hiếm hoi thoáng qua trong câu nói.",
+      "choices": [
+        { "text": "\"Có lẽ anh nói đúng. Nhưng tôi hiểu áp lực phải chứng minh bản thân.\"", "next": "ket-thuc" }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Osric Vane",
+      "text": "\"Thôi, để xem ai bắn giỏi hơn trong buổi tập tới. Đừng để ta thắng dễ quá đấy.\"",
+      "choices": []
+    }
+  }
+}
