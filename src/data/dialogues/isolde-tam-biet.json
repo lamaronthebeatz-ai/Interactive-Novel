@@ -1,0 +1,56 @@
+{
+  "id": "isolde-tam-biet",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Nam tước phu nhân Isolde von Berg",
+      "text": "Bà đang đứng riêng ở góc sân, cạnh bụi hoa oải hương bà tự tay trồng nhiều năm trước, tay vẫn giữ chặt tấm khăn gấp từ bữa sáng. Khi Lamar lại gần, bà không quay lại ngay — chỉ đưa tay chạm nhẹ vào một nhánh hoa, như đang cố trấn tĩnh trước khi đối diện với con trai lần cuối trước một hành trình dài. \"Ta cứ nghĩ mình đã chuẩn bị tinh thần cho ngày này từ nhiều năm trước rồi,\" bà nói, giọng nhẹ đến mức gần như tan vào gió sớm. \"Hóa ra vẫn không đủ.\"",
+      "choices": [
+        { "text": "\"Mẹ đã cho con mọi thứ con cần để sẵn sàng, mẹ ạ.\"", "next": "trac-an" },
+        { "text": "\"Con cũng không nghĩ mình đã sẵn sàng thật sự.\"", "next": "chan-thanh" }
+      ]
+    },
+    "trac-an": {
+      "speaker": "Nam tước phu nhân Isolde von Berg",
+      "text": "Bà quay lại nhìn con trai, đôi mắt ánh lên điều gì đó giữa tự hào và đau lòng — hai cảm xúc hiếm khi đi cùng nhau nhưng lại rất thật trong khoảnh khắc này. \"Con vẫn luôn biết nói đúng điều một người mẹ muốn nghe. Cha con dạy con kiếm thuật, Rowan dạy con chiến thuật — nhưng con học nói dịu dàng như vậy từ ai, con trai?\" Bà mỉm cười, dù khóe mắt đã ươn ướt.",
+      "choices": [
+        { "text": "\"Chắc là từ mẹ thôi.\"", "next": "mon-qua" }
+      ]
+    },
+    "chan-thanh": {
+      "speaker": "Nam tước phu nhân Isolde von Berg",
+      "text": "Bà thở ra nhẹ nhõm hơn Lamar tưởng, như thể câu trả lời thành thật ấy dễ chịu hơn một lời trấn an giả tạo. \"Vậy thì con giống ta hơn con nghĩ đấy. Ngày ta về làm dâu lâu đài này, ta cũng sợ đến mức không ngủ được cả tuần trước đó. Sợ không phải vì yếu đuối, Lamar — sợ vì con biết điều mình sắp làm là quan trọng. Người không sợ gì mới là người đáng lo.\"",
+      "choices": [
+        { "text": "\"Con sẽ nhớ điều đó.\"", "next": "mon-qua" }
+      ]
+    },
+    "mon-qua": {
+      "speaker": "Nam tước phu nhân Isolde von Berg",
+      "text": "Bà mở tấm khăn gấp vẫn cầm từ nãy giờ — bên trong là một chiếc bùa hộ mệnh nhỏ bằng gỗ, khắc hình một cành oải hương, cùng một gói vải nhỏ đựng thảo dược khô. \"Bùa này ta tự tay khắc, không có phép thuật gì trong đó cả, đừng hỏi Tobias. Nhưng nếu nó khiến con nhớ tới nhà mỗi khi cầm vào, thì với ta thế là đủ. Thảo dược thì để pha trà lúc mệt mỏi — Elowen dạy ta công thức này từ hồi con còn bé, lúc con hay bị cảm lạnh mỗi mùa đông.\"",
+      "choices": [
+        {
+          "text": "(Nhận bùa hộ mệnh và gói thảo dược từ mẹ, ôm mẹ một cái thật chặt)",
+          "effects": [
+            {
+              "type": "addItem",
+              "itemId": "bua-ho-menh-oai-huong",
+              "name": "Bùa hộ mệnh hoa oải hương",
+              "description": "Chiếc bùa gỗ nhỏ mẹ tự tay khắc, hình một cành oải hương — không có phép thuật, chỉ có tình thương."
+            },
+            { "type": "addJournalEntry", "text": "Mẹ tặng mình một chiếc bùa hộ mệnh bà tự tay khắc và một gói thảo dược pha trà. Bà cố giữ vẻ điềm tĩnh suốt cuộc trò chuyện, nhưng lúc ôm mình, mình cảm nhận được bà đang run." },
+            { "type": "adjustRelationship", "npcId": "nam-tuoc-phu-nhan-isolde-von-berg", "deltas": { "affection": 4, "trust": 2 } },
+            {
+              "type": "recordMemory",
+              "npcId": "nam-tuoc-phu-nhan-isolde-von-berg",
+              "eventType": "khac",
+              "description": "Mẹ tặng Lamar chiếc bùa hộ mệnh bà tự tay khắc trước khi Lamar rời lâu đài gia nhập quân đoàn.",
+              "impact": { "affection": 3 }
+            },
+            { "type": "setFlag", "flag": "tam-biet-me", "value": true },
+            { "type": "advanceTime", "minutes": 15 }
+          ]
+        }
+      ]
+    }
+  }
+}

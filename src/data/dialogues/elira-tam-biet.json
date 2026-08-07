@@ -1,0 +1,69 @@
+{
+  "id": "elira-tam-biet",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "Elira von Berg",
+      "text": "Nàng đang ngồi vắt vẻo trên hàng rào gỗ quanh chuồng ngựa, cố tỏ ra như đang chờ ở đó tình cờ chứ không phải đã đứng ngồi không yên từ lúc bữa sáng kết thúc. Khi thấy Lamar tới, nàng nhảy xuống, phủi tay lên váy — một cử chỉ mẹ vẫn luôn mắng nàng vì không hợp với một tiểu thư. \"Em cứ nghĩ anh sẽ đi lén không chào em cơ,\" nàng nói, cố làm ra vẻ trách móc mà giọng vẫn hơi run.",
+      "choices": [
+        { "text": "\"Anh sẽ không bao giờ làm vậy với em.\"", "next": "khang-dinh" },
+        { "text": "\"Anh còn phải lấy lại cây cung từ chỗ em cơ mà.\"", "next": "dua-cot" }
+      ]
+    },
+    "khang-dinh": {
+      "speaker": "Elira von Berg",
+      "text": "Nàng im lặng một giây, rồi đá nhẹ vào một hòn đá dưới chân, mắt nhìn đi chỗ khác. \"Em biết chứ. Chỉ là... lâu đài này sẽ kỳ lạ lắm khi không có anh. Ai sẽ giả vờ không thấy em trốn học thêu thùa để ra đây tập bắn cung nữa?\"",
+      "choices": [
+        { "text": "\"Rowan sẽ để mắt tới em thay anh, nếu em nhờ ông ấy.\"", "next": "tam-su" }
+      ]
+    },
+    "dua-cot": {
+      "speaker": "Elira von Berg",
+      "text": "Nàng bật cười, đúng như Lamar mong đợi — dù tiếng cười tắt nhanh hơn bình thường. \"Cây cung đó giờ là của em rồi, anh trai. Anh mà đòi lại, em sẽ mách mẹ là ai dạy em bắn cung đầu tiên đấy.\" Nàng đưa tay quệt ngang mắt thật nhanh, ra vẻ như đang phủi bụi chứ không phải gì khác.",
+      "choices": [
+        { "text": "\"Được thôi, coi như quà chia tay của anh.\"", "next": "tam-su" }
+      ]
+    },
+    "tam-su": {
+      "speaker": "Elira von Berg",
+      "text": "Nàng ngồi xuống bậc thềm chuồng ngựa, kéo Lamar ngồi xuống cạnh mình như hồi còn nhỏ. \"Em ước gì em cũng có thể đi. Không phải để trốn tránh gì cả — em chỉ muốn tự mình biết thế giới ngoài kia thế nào, không phải qua lời kể của thương nhân qua đường.\" Nàng ngước lên nhìn anh trai, ánh mắt nghiêm túc hiếm hoi. \"Anh nghĩ một ngày nào đó cha mẹ sẽ để em học kiếm thật sự không?\"",
+      "choices": [
+        {
+          "text": "\"Anh nghĩ vậy. Và nếu họ không đồng ý, anh sẽ nói giúp em khi anh trở về.\"",
+          "next": "ket-thuc",
+          "effects": [
+            { "type": "adjustRelationship", "npcId": "tieu-thu-elira-von-berg", "deltas": { "trust": 4, "respect": 2 } },
+            {
+              "type": "recordMemory",
+              "npcId": "tieu-thu-elira-von-berg",
+              "eventType": "khac",
+              "description": "Lamar hứa sẽ ủng hộ Elira học võ nghệ thật sự khi anh trở về, thay vì gạt bỏ ước mơ của em gái.",
+              "impact": { "loyalty": 3 }
+            }
+          ]
+        },
+        {
+          "text": "\"Chuyện đó khó nói trước lắm, Elira à. Nhưng em cứ kiên trì.\"",
+          "next": "ket-thuc",
+          "effects": [
+            { "type": "adjustRelationship", "npcId": "tieu-thu-elira-von-berg", "deltas": { "trust": 1, "respect": 1 } }
+          ]
+        }
+      ]
+    },
+    "ket-thuc": {
+      "speaker": "Elira von Berg",
+      "text": "Nàng đứng dậy trước, có lẽ vì không muốn anh trai thấy mình khóc thật sự. \"Đi đi, kẻo cha lại phải ra giục.\" Nàng chần chừ một nhịp rồi ôm chầm lấy anh, ngắn và vụng về, đúng kiểu một đứa em không quen thể hiện tình cảm. \"Đừng chết. Đừng để em phải là người thừa kế duy nhất, em không muốn học sổ sách thuế đâu.\"",
+      "choices": [
+        {
+          "text": "(Ôm em gái lần cuối trước khi rời đi)",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Elira tiễn mình ở chuồng ngựa, cố che giấu nỗi buồn sau những câu đùa. Trước khi chia tay, em ôm mình thật chặt và dặn đừng chết — theo đúng cách chỉ em mới nói được." },
+            { "type": "setFlag", "flag": "tam-biet-em-gai", "value": true },
+            { "type": "advanceTime", "minutes": 15 }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "tieu-thu-elira-von-berg",
+  "tier": "persistent",
+  "firstName": "Elira",
+  "lastName": "von Berg",
+  "age": 15,
+  "gender": "Nữ",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Tiểu thư gia tộc von Berg, đang được giáo dục tại lâu đài",
+  "residence": "Lâu đài Bergfeld",
+  "family": {
+    "father": "nam-tuoc-reinhardt-von-berg",
+    "mother": "nam-tuoc-phu-nhan-isolde-von-berg",
+    "siblings": ["lamar-von-berg"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "friends": ["ky-si-rowan-ashby"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Không có thu nhập riêng, được gia tộc chu cấp.",
+  "assets": "Một cây cung tập nhỏ giấu trong chuồng ngựa, không cho cha mẹ biết.",
+  "personality": ["Tinh nghịch", "Bộc trực", "Thông minh", "Bướng bỉnh", "Giấu tình cảm sau trò đùa"],
+  "likes": ["Cưỡi ngựa", "Trốn học may vá để xem Rowan luyện binh", "Trêu chọc Lamar"],
+  "dislikes": ["Bị đối xử như trẻ con", "Ngồi yên trong phòng thêu thùa cả buổi chiều"],
+  "lifeGoal": "Được huấn luyện võ nghệ đàng hoàng thay vì chỉ học thêu thùa và lễ nghi — điều mà nàng biết cha mẹ sẽ không dễ dàng chấp thuận.",
+  "schedule": [
+    { "time": "06:30", "activity": "Thức dậy" },
+    { "time": "07:00", "activity": "Ăn sáng cùng gia đình" },
+    { "time": "08:00", "activity": "Học lễ nghi và chữ viết với gia sư" },
+    { "time": "11:00", "activity": "Lén ra chuồng ngựa tập bắn cung" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "14:00", "activity": "Học thêu thùa (thường lén trốn)" },
+    { "time": "18:00", "activity": "Dùng bữa tối cùng gia đình" },
+    { "time": "20:00", "activity": "Đọc sách phiêu lưu giấu dưới gối" },
+    { "time": "21:30", "activity": "Ngủ" }
+  ],
+  "dialogueId": "elira-tam-biet"
+}

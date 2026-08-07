@@ -4,37 +4,44 @@
   "nodes": {
     "start": {
       "speaker": "Nam tước Reinhardt von Berg",
-      "text": "Con đã chuẩn bị xong rồi đấy à. Ta không giữ con lại đâu — đây là truyền thống của gia tộc mình, chính ta cũng đã từng đứng ở chỗ con đứng bây giờ. Con đã sẵn sàng chưa?",
+      "text": "Ông đang đứng cạnh Chiến mã Vệ, một tay đặt lên cổ con ngựa như để trấn an chính mình hơn là con vật. Khi thấy Lamar bước ra, ông không vội lên tiếng — chỉ nhìn con trai từ đầu đến chân, như đang ghi nhớ hình ảnh này để mang theo suốt phần đời còn lại. \"Con đã chuẩn bị xong rồi đấy à. Ta không giữ con lại đâu — đây là truyền thống của gia tộc mình, chính ta cũng đã từng đứng ở chỗ con đứng bây giờ, ba mươi năm trước, cũng ở đúng khoảnh sân này. Con đã sẵn sàng chưa?\"",
       "choices": [
-        { "text": "Con đã sẵn sàng, thưa cha.", "next": "san-sang" },
-        { "text": "Thành thật mà nói, con vẫn còn lo lắng.", "next": "lo-lang" },
-        { "text": "Cha có điều gì muốn dặn dò thêm không?", "next": "dan-do" }
+        { "text": "\"Con đã sẵn sàng, thưa cha.\"", "next": "san-sang" },
+        { "text": "\"Thành thật mà nói, con vẫn còn lo lắng.\"", "next": "lo-lang" },
+        { "text": "\"Cha có điều gì muốn dặn dò thêm không?\"", "next": "dan-do" }
       ]
     },
     "san-sang": {
       "speaker": "Nam tước Reinhardt von Berg",
-      "text": "Tốt. Nhưng nhớ lấy: sẵn sàng không có nghĩa là không cần thận trọng. Giữ danh dự của gia tộc von Berg ở bất cứ nơi nào con đến — đó là thứ duy nhất không ai cướp được của con.",
+      "text": "Ông gật đầu chậm, khóe miệng khẽ nhếch lên — không hẳn là một nụ cười, nhưng gần như thế. \"Tốt. Nhưng nhớ lấy: sẵn sàng không có nghĩa là không cần thận trọng. Người tự tin quá mức thường là người đầu tiên gục ngã, ta đã thấy điều đó xảy ra với những chiến binh giỏi hơn con nhiều. Giữ danh dự của gia tộc von Berg ở bất cứ nơi nào con đến — đó là thứ duy nhất không ai cướp được của con, dù họ có cướp mọi thứ khác.\"",
       "choices": [
-        { "text": "Con xin ghi nhớ lời cha.", "next": "ket-thuc" }
+        { "text": "\"Con xin ghi nhớ lời cha.\"", "next": "sau-nua" }
       ]
     },
     "lo-lang": {
       "speaker": "Nam tước Reinhardt von Berg",
-      "text": "Ba mươi năm trước ta cũng đứng ở cổng này, lo lắng không kém con bây giờ. Điều đó không có gì xấu hổ — chỉ là con chưa từng đi xa thôi. Cứ đi từng bước một, đừng vội phán xét những gì con chưa hiểu.",
+      "text": "Có một khoảng lặng ngắn trước khi ông đáp, như thể đang cân nhắc xem có nên nói điều này không. \"Ba mươi năm trước ta cũng đứng ở cổng này, lo lắng không kém con bây giờ — có khi còn hơn, vì ông nội con không phải người dễ tính như ta. Điều đó không có gì xấu hổ cả. Chỉ là con chưa từng đi xa thôi. Cứ đi từng bước một, đừng vội phán xét những gì con chưa hiểu — thế giới ngoài kia phức tạp hơn những gì sách vở và bài học của Rowan có thể dạy con.\"",
       "choices": [
-        { "text": "Cảm ơn cha đã nói vậy.", "next": "ket-thuc" }
+        { "text": "\"Cảm ơn cha đã nói vậy.\"", "next": "sau-nua" }
       ]
     },
     "dan-do": {
       "speaker": "Nam tước Reinhardt von Berg",
-      "text": "Ba điều thôi. Đừng vội tin ai chỉ vì họ nói lời hay. Đã hứa thì phải giữ, dù có phải trả giá. Và nhớ đường về — lãnh địa này sẽ luôn chờ con, dù con đi bao lâu.",
+      "text": "\"Ba điều thôi, vì nói nhiều con cũng chẳng nhớ hết.\" Ông giơ một ngón tay. \"Đừng vội tin ai chỉ vì họ nói lời hay — người tốt thật sự thường chứng minh bằng hành động, không phải lời nói.\" Ngón tay thứ hai. \"Đã hứa thì phải giữ, dù có phải trả giá — một lời hứa bị phá vỡ còn tệ hơn một lời hứa chưa từng được đưa ra.\" Ngón tay thứ ba, giọng ông trầm xuống. \"Và nhớ đường về. Lãnh địa này sẽ luôn chờ con, dù con đi bao lâu, dù con trở về khác đi thế nào.\"",
       "choices": [
-        { "text": "Con sẽ khắc ghi những điều đó.", "next": "ket-thuc" }
+        { "text": "\"Con sẽ khắc ghi những điều đó.\"", "next": "sau-nua" }
+      ]
+    },
+    "sau-nua": {
+      "speaker": "Nam tước Reinhardt von Berg",
+      "text": "Ông im lặng một lúc, nhìn ra phía cổng lâu đài nơi con đường đất dẫn đi xa dần vào sương sớm. \"Ta sẽ không giả vờ rằng ta không lo cho con. Nhưng ta tin vào những gì Rowan đã dạy con, vào những gì con đã học được ở đây. Quân đoàn sẽ dạy con thứ mà lâu đài này không thể — kỷ luật thật sự, và cái giá thật sự của một lời thề. Ta chỉ mong con đừng quên mình là ai trong lúc học những điều đó.\"",
+      "choices": [
+        { "text": "\"Con sẽ không quên, thưa cha.\"", "next": "ket-thuc" }
       ]
     },
     "ket-thuc": {
       "speaker": "Nam tước Reinhardt von Berg",
-      "text": "Cầm lấy thứ này.",
+      "text": "Ông rút từ trong áo choàng ra một chiếc hộp gỗ nhỏ, cũ kỹ, bản lề đã xỉn màu. \"Cầm lấy thứ này. Ông nội con đưa cho ta ngày ta rời lâu đài, giờ đến lượt con.\" Bên trong là một chiếc nhẫn khắc huy hiệu gia tộc von Berg — không lộng lẫy, nhưng chắc chắn, giống hệt tính cách của người trao nó.",
       "choices": [
         {
           "text": "(Nhận chiếc nhẫn ấn tín từ cha)",
@@ -43,9 +50,18 @@
               "type": "addItem",
               "itemId": "nhan-an-tin-von-berg",
               "name": "Nhẫn Ấn Tín von Berg",
-              "description": "Chiếc nhẫn khắc huy hiệu gia tộc, cha trao cho con trước ngày lên đường — bằng chứng thân phận nếu con cần đến."
+              "description": "Chiếc nhẫn khắc huy hiệu gia tộc, cha trao cho con trước ngày lên đường — bằng chứng thân phận nếu con cần đến, và một lời nhắc rằng con luôn có nơi để trở về."
             },
-            { "type": "addJournalEntry", "text": "Cha trao cho mình chiếc nhẫn ấn tín của gia tộc trước khi lên đường, và dặn dò vài điều trước lúc chia tay." },
+            { "type": "addJournalEntry", "text": "Cha trao cho mình chiếc nhẫn ấn tín của gia tộc trước khi lên đường — chiếc nhẫn từng thuộc về ông nội. Ông dặn dò vài điều trước lúc chia tay, giọng vẫn điềm tĩnh như mọi khi, nhưng bàn tay ông siết chặt vai mình một chút lâu hơn bình thường." },
+            { "type": "adjustRelationship", "npcId": "nam-tuoc-reinhardt-von-berg", "deltas": { "respect": 2, "loyalty": 2 } },
+            {
+              "type": "recordMemory",
+              "npcId": "nam-tuoc-reinhardt-von-berg",
+              "eventType": "khac",
+              "description": "Cha trao cho Lamar chiếc nhẫn ấn tín từng thuộc về ông nội, trước khi Lamar lên đường gia nhập quân đoàn.",
+              "impact": { "trust": 3 }
+            },
+            { "type": "setFlag", "flag": "tam-biet-cha", "value": true },
             { "type": "advanceTime", "minutes": 20 }
           ]
         }

@@ -4,44 +4,60 @@
   "nodes": {
     "start": {
       "speaker": "Giáo sĩ Tobias Wren",
-      "text": "Con trai của Nam tước, hôm nay là ngày trọng đại. Con có muốn ta cầu nguyện cho hành trình của con trước khi đi không?",
+      "text": "Ông đứng trước cửa nhà nguyện nhỏ, hai tay chắp trước ngực theo thói quen, ánh nến bên trong hắt ra một quầng sáng ấm giữa buổi sớm còn se lạnh. \"Con trai của Nam tước,\" ông nói, giọng đều đều và trầm ổn như mọi khi, thứ giọng đã đọc kinh cầu nguyện suốt hai mươi năm trong căn nhà nguyện này. \"Hôm nay là ngày trọng đại. Con có muốn ta cầu nguyện cho hành trình của con trước khi đi không?\"",
       "choices": [
-        { "text": "Có, xin giáo sĩ cầu nguyện cho con.", "next": "cau-nguyen" },
-        { "text": "Con xin cảm ơn, nhưng con muốn lên đường ngay.", "next": "tu-choi" }
+        { "text": "\"Có, xin giáo sĩ cầu nguyện cho con.\"", "next": "cau-nguyen" },
+        { "text": "\"Con xin cảm ơn, nhưng con muốn lên đường ngay.\"", "next": "tu-choi" }
       ]
     },
     "cau-nguyen": {
       "speaker": "Giáo sĩ Tobias Wren",
-      "text": "Ông làm một nghi lễ ngắn, đặt tay lên vai con và khẽ nói lời cầu chúc. 'Xin các Linh dõi theo bước chân con, và giữ cho tâm con luôn bình thản dù gặp chuyện gì.'",
+      "text": "Ông ra hiệu Lamar quỳ xuống bậc thềm nhà nguyện, rồi làm một nghi lễ ngắn — đặt tay lên vai cậu, mắt nhắm lại, khẽ đọc những lời cầu nguyện bằng cổ ngữ Linh Giáo mà Lamar chỉ hiểu lõm bõm từ những bài học thời thơ ấu. Cuối cùng ông chuyển sang tiếng phổ thông, giọng nhẹ hẳn đi. \"Xin các Linh dõi theo bước chân con, giữ cho tâm con luôn bình thản dù gặp chuyện gì, và cho con đủ khôn ngoan để phân biệt lòng dũng cảm thật sự với sự liều lĩnh mù quáng — hai thứ ấy dễ bị nhầm lẫn hơn con tưởng.\"",
       "choices": [
-        {
-          "text": "Con xin cảm tạ giáo sĩ.",
-          "next": "ket-thuc",
-          "effects": [
-            { "type": "addJournalEntry", "text": "Giáo sĩ Tobias làm lễ cầu chúc cho hành trình của mình trước khi rời lâu đài." },
-            { "type": "advanceTime", "minutes": 15 }
-          ]
-        }
+        { "text": "\"Con xin cảm tạ giáo sĩ.\"", "next": "loi-day" }
       ]
     },
     "tu-choi": {
       "speaker": "Giáo sĩ Tobias Wren",
-      "text": "Ông gật đầu, không ép buộc. 'Vậy thì ta chỉ nói một câu thôi: giữ lấy lương tâm mình, đó là thứ quý giá hơn bất kỳ lời cầu nguyện nào.'",
+      "text": "Ông gật đầu, không hề tỏ ra phật lòng — có lẽ đã quen với việc những chàng trai trẻ nôn nóng lên đường hơn là dừng lại cầu nguyện. \"Vậy thì ta chỉ nói một câu thôi, và mong con nhớ nó hơn cả nghi lễ: giữ lấy lương tâm mình. Đó là thứ quý giá hơn bất kỳ lời cầu nguyện nào ta có thể ban cho con — vì lương tâm là thứ duy nhất còn ở lại với con khi mọi lời cầu nguyện đã dứt.\"",
       "choices": [
-        {
-          "text": "Con sẽ ghi nhớ.",
-          "next": "ket-thuc",
-          "effects": [
-            { "type": "addJournalEntry", "text": "Giáo sĩ Tobias chỉ dặn mình giữ lấy lương tâm trước khi rời lâu đài." },
-            { "type": "advanceTime", "minutes": 5 }
-          ]
-        }
+        { "text": "\"Con sẽ ghi nhớ.\"", "next": "loi-day" }
+      ]
+    },
+    "loi-day": {
+      "speaker": "Giáo sĩ Tobias Wren",
+      "text": "Ông nhìn ra xa, về phía con đường dẫn khỏi lâu đài, nơi vệt sương vẫn còn chưa tan hẳn. \"Con sắp bước vào một nơi mà kỷ luật quân đội và giáo lý của các Linh không phải lúc nào cũng nói cùng một tiếng nói, Lamar. Sẽ có lúc con phải chọn giữa mệnh lệnh và điều con tin là đúng. Ta không thể nói trước con nên chọn thế nào trong từng trường hợp — chỉ có thể nói rằng con luôn có quyền chọn, dù cái giá đôi khi rất đắt.\"",
+      "choices": [
+        { "text": "\"Con sẽ ghi nhớ lời giáo sĩ.\"", "next": "ket-thuc" }
       ]
     },
     "ket-thuc": {
       "speaker": "Giáo sĩ Tobias Wren",
-      "text": "Đi bình an, con trai. Nhà nguyện này sẽ luôn thắp đèn chờ con trở về.",
-      "choices": []
+      "text": "Ông tháo một chiếc mề đay gỗ nhỏ khắc biểu tượng Linh Giáo khỏi cổ mình, đeo vào tay Lamar thay vì cổ — biết rằng một người lính sẽ không muốn thứ gì vướng víu quanh cổ khi ra trận. \"Đi bình an, con trai. Nhà nguyện này sẽ luôn thắp đèn chờ con trở về, dù con trở về mang theo điều gì trong lòng.\"",
+      "choices": [
+        {
+          "text": "(Nhận mề đay từ giáo sĩ Tobias)",
+          "effects": [
+            {
+              "type": "addItem",
+              "itemId": "me-day-go-linh-giao",
+              "name": "Mề đay gỗ khắc biểu tượng Linh Giáo",
+              "description": "Chiếc mề đay giáo sĩ Tobias từng đeo, nay trao lại cho Lamar — đeo ở tay thay vì cổ, để không vướng víu khi ra trận."
+            },
+            { "type": "addJournalEntry", "text": "Giáo sĩ Tobias làm lễ cầu chúc và trao cho mình chiếc mề đay ông từng đeo, trước khi mình rời lâu đài gia nhập quân đoàn." },
+            { "type": "adjustRelationship", "npcId": "giao-si-tobias-wren", "deltas": { "trust": 3, "respect": 2 } },
+            {
+              "type": "recordMemory",
+              "npcId": "giao-si-tobias-wren",
+              "eventType": "khac",
+              "description": "Giáo sĩ Tobias trao cho Lamar chiếc mề đay gỗ ông từng đeo, trước khi Lamar lên đường gia nhập quân đoàn.",
+              "impact": { "affection": 2 }
+            },
+            { "type": "setFlag", "flag": "tam-biet-tobias", "value": true },
+            { "type": "advanceTime", "minutes": 15 }
+          ]
+        }
+      ]
     }
   }
 }

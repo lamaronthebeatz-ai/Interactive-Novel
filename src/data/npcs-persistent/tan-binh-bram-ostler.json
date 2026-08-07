@@ -1,0 +1,36 @@
+{
+  "id": "tan-binh-bram-ostler",
+  "tier": "persistent",
+  "firstName": "Bram",
+  "lastName": "Ostler",
+  "age": 22,
+  "gender": "Nam",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Tân binh, Quân đội Hoàng gia Aurenfeld — trước đây là nông dân",
+  "residence": "Doanh Trại Huấn Luyện Fielding",
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "friends": ["chưa xây dựng"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Phụ cấp tân binh ít ỏi, phần lớn gửi về nhà cho gia đình ở gần Goldmouth.",
+  "assets": "Hầu như không có gì ngoài quân trang được cấp.",
+  "personality": ["Thẳng tính", "Chăm chỉ", "Đa nghi với quý tộc", "Trung thực đến mức thô lỗ"],
+  "likes": ["Người nói ít làm nhiều", "Bữa ăn no trước khi tập luyện"],
+  "dislikes": ["Người ỷ vào dòng dõi để né việc nặng", "Bị coi thường vì xuất thân nông dân"],
+  "lifeGoal": "Trở thành hạ sĩ quan để có bổng lộc ổn định gửi về đỡ đần gia đình đang vay nợ ruộng đất.",
+  "schedule": [
+    { "time": "05:30", "activity": "Thức dậy, điểm danh" },
+    { "time": "06:30", "activity": "Tập luyện buổi sáng" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "13:00", "activity": "Tập luyện chiến thuật" },
+    { "time": "18:00", "activity": "Dùng bữa tối cùng tân binh khác" },
+    { "time": "20:00", "activity": "Bảo dưỡng quân trang" },
+    { "time": "21:30", "activity": "Ngủ" }
+  ],
+  "dialogueId": "bram-ostler-tro-chuyen"
+}

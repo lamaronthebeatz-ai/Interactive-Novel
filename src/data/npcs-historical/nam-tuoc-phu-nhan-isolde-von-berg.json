@@ -1,0 +1,41 @@
+{
+  "id": "nam-tuoc-phu-nhan-isolde-von-berg",
+  "tier": "historical",
+  "fullName": "Isolde von Berg",
+  "title": "Nam tước phu nhân",
+  "house": "von Berg",
+  "nation": "Vương quốc Aurenfeld",
+  "age": 46,
+  "gender": "Nữ",
+  "biography": [
+    "Xuất thân từ một gia tộc điền chủ nhỏ ở vùng hạ lưu sông Goldrun, kết hôn với Reinhardt von Berg khi mới ngoài đôi mươi. Hơn hai mươi năm làm chủ mẫu lâu đài Bergfeld, bà là người thực sự vận hành mọi việc trong nhà — sổ sách lương thực, xếp đặt gia nhân, tiếp đãi khách khứa — trong khi chồng lo việc lãnh địa.",
+    "Người trong lâu đài nói bà nghiêm với gia nhân nhưng công bằng, không bao giờ quở trách ai trước mặt người khác. Bà giữ thói quen đích thân kiểm tra kho thuốc và kho lương mỗi mùa, một phần vì tính cẩn trọng, phần khác vì bà từng chứng kiến một vụ mất mùa thời trẻ và không bao giờ muốn lãnh địa của mình rơi vào cảnh đó.",
+    "Với Lamar, bà là người dạy cậu đọc chữ trước khi Rowan dạy cậu cầm kiếm — và là người duy nhất trong lâu đài có thể khiến cậu đổi ý chỉ bằng một câu nói nhẹ nhàng."
+  ],
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "nam-tuoc-reinhardt-von-berg",
+    "children": ["tieu-thu-elira-von-berg"]
+  },
+  "politicalRelations": [],
+  "wealth": "Không có tài sản riêng theo luật thừa kế Aurenfeld, nhưng toàn quyền quản lý chi tiêu và kho lương của lâu đài Bergfeld.",
+  "military": "Không có",
+  "schedule": [
+    { "time": "05:30", "activity": "Thức dậy, kiểm tra sổ sách nhà bếp" },
+    { "time": "07:00", "activity": "Ăn sáng cùng gia đình" },
+    { "time": "08:00", "activity": "Xếp đặt công việc cho gia nhân" },
+    { "time": "10:00", "activity": "Kiểm tra kho lương và kho thuốc" },
+    { "time": "12:00", "activity": "Ăn trưa" },
+    { "time": "14:00", "activity": "Thêu thùa hoặc tiếp khách trong phòng khách nhỏ" },
+    { "time": "18:00", "activity": "Dùng bữa tối cùng gia đình" },
+    { "time": "20:30", "activity": "Đọc sách hoặc viết thư" },
+    { "time": "22:00", "activity": "Ngủ" }
+  ],
+  "goals": [
+    "Giữ cho lâu đài Bergfeld vận hành êm đẹp trong lúc con trai vắng mặt",
+    "Chờ tin tức từ Lamar và cầu mong con bình an"
+  ],
+  "dialogueId": "isolde-tam-biet"
+}

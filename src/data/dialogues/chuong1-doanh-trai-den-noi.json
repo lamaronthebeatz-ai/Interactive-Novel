@@ -1,0 +1,82 @@
+{
+  "id": "chuong1-doanh-trai-den-noi",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "",
+      "text": "Bước qua cổng doanh trại, Lamar hiểu ngay tại sao âm thanh nghe được từ xa lại dồn dập đến vậy. Khắp bãi đất nện, hàng chục thanh niên trạc tuổi cậu đang tập đi đều bước dưới cái nắng chiều gay gắt, mồ hôi ướt đẫm áo, trong khi một viên hạ sĩ quan quát tháo không ngớt về sự chậm chạp của họ. Mùi bùn đất, mồ hôi, và kim loại trộn lẫn vào nhau. Không ai để ý tới cậu — ở đây, một con ngựa tốt và một bộ áo choàng lữ hành sạch sẽ không có nghĩa lý gì.",
+      "choices": [
+        { "text": "(Tìm nơi đăng ký nhập ngũ)", "next": "gap-si-quan" }
+      ]
+    },
+    "gap-si-quan": {
+      "speaker": "Đại úy Aldous Ferrin",
+      "text": "Một người đàn ông trung niên ngồi sau chiếc bàn gỗ đơn sơ dưới mái lều bạt, không ngẩng lên ngay mà tiếp tục ghi chép vào cuốn sổ dày trước mặt. \"Tên,\" ông hỏi cộc lốc, không phải câu chào. Khi cuối cùng ông ngước lên và nhìn thấy con ngựa chiến, thanh kiếm gia truyền, và dáng vẻ rõ ràng không phải con nhà nông của Lamar, ánh mắt ông khẽ nheo lại — không phải ác cảm, chỉ là đánh giá.",
+      "choices": [
+        { "text": "\"Lamar von Berg, con trai Nam tước von Berg của lãnh địa Bergfeld.\"", "next": "xung-danh-quy-toc" },
+        { "text": "\"Lamar. Từ vùng Bergfeld tới.\" (Không nhắc tới tước vị)", "next": "khong-xung-danh" }
+      ]
+    },
+    "xung-danh-quy-toc": {
+      "speaker": "Đại úy Aldous Ferrin",
+      "text": "Ông đặt bút xuống, nhìn thẳng vào Lamar một lúc lâu. \"Con trai Nam tước.\" Ông lặp lại, giọng không mang cảm xúc rõ ràng nào — không mỉa mai, cũng không nể trọng thừa thãi. \"Ở đây ta không quan tâm cậu là con ai ngoài lều chỉ huy này. Trong bãi tập, cậu chỉ là một cái tên trong sổ, giống như mọi người khác. Cậu chấp nhận điều đó chứ?\"",
+      "choices": [
+        {
+          "text": "\"Con hiểu rõ, thưa Đại úy. Con không mong được đối xử khác.\"",
+          "next": "ket-qua-dang-ky",
+          "effects": [
+            { "type": "meetNpc", "npcId": "dai-uy-aldous-ferrin" },
+            { "type": "adjustRelationship", "npcId": "dai-uy-aldous-ferrin", "deltas": { "respect": 3, "trust": 1 } },
+            {
+              "type": "recordMemory",
+              "npcId": "dai-uy-aldous-ferrin",
+              "eventType": "khac",
+              "description": "Lamar khẳng định ngay từ đầu rằng cậu không mong được đối xử khác vì xuất thân quý tộc.",
+              "impact": { "respect": 2 }
+            }
+          ]
+        }
+      ]
+    },
+    "khong-xung-danh": {
+      "speaker": "Đại úy Aldous Ferrin",
+      "text": "Ông liếc qua con ngựa chiến và thanh kiếm chạm khắc tinh xảo, rồi nhìn lại Lamar, khóe miệng nhếch lên nửa nụ cười khó đoán. \"Cậu nghĩ ta không nhận ra một cậu ấm khi thấy một cậu ấm à?\" Ông không có vẻ giận, chỉ là nhận xét thẳng thắn. \"Không sao. Ít ra cậu không cố phô trương nó ra trước mặt ta. Đó là khởi đầu không tệ.\"",
+      "choices": [
+        {
+          "text": "\"Con chỉ muốn được nhìn nhận như một tân binh bình thường.\"",
+          "next": "ket-qua-dang-ky",
+          "effects": [
+            { "type": "meetNpc", "npcId": "dai-uy-aldous-ferrin" },
+            { "type": "adjustRelationship", "npcId": "dai-uy-aldous-ferrin", "deltas": { "trust": 3, "respect": 1 } },
+            {
+              "type": "recordMemory",
+              "npcId": "dai-uy-aldous-ferrin",
+              "eventType": "khac",
+              "description": "Lamar cố tình không phô trương xuất thân quý tộc khi đăng ký nhập ngũ.",
+              "impact": { "trust": 2 }
+            }
+          ]
+        }
+      ]
+    },
+    "ket-qua-dang-ky": {
+      "speaker": "Đại úy Aldous Ferrin",
+      "text": "Ông ghi tên Lamar vào sổ, rồi chỉ tay về phía dãy lều xa nhất. \"Lều số bảy, còn hai chỗ trống. Điểm danh mỗi sáng lúc chuông thứ nhất, chậm một khắc là phạt lao dịch cả tuần, không có ngoại lệ — kể cả cho con trai Nam tước.\" Ông ngừng lại, đưa mắt nhìn Lamar một lần cuối. \"Doanh trại này không dạy người ta đánh nhau trước tiên. Nó dạy người ta biết vâng lời đúng lúc trước đã. Kỹ năng cậu có thể tự học được. Kỷ luật thì không.\"",
+      "choices": [
+        { "text": "(Nhận chỗ ở, chuẩn bị làm quen với doanh trại)", "next": "quan-sat-doanh-trai" }
+      ]
+    },
+    "quan-sat-doanh-trai": {
+      "speaker": "",
+      "text": "Lamar dắt ngựa về phía dãy lều được chỉ, đi ngang qua từng nhóm tân binh đang nghỉ giữa buổi tập. Cậu nhận ra ngay sự phân chia không thành văn nhưng rõ rệt — những người có vẻ xuất thân nông dân tụ lại thành nhóm, còn vài gương mặt có dáng vẻ quý tộc đứng tách biệt, không hẳn bị xa lánh, nhưng cũng không thực sự hòa vào đâu. Cậu chợt nhận ra: ở lâu đài Bergfeld, cậu luôn là con trai Nam tước. Ở đây, cậu sẽ phải tự chứng minh mình là ai.",
+      "choices": [
+        {
+          "text": "(Bước tới lều số bảy, sẵn sàng làm quen với những người sẽ cùng cậu huấn luyện)",
+          "effects": [
+            { "type": "startDialogue", "dialogueId": "chuong1-dong-doi" }
+          ]
+        }
+      ]
+    }
+  }
+}

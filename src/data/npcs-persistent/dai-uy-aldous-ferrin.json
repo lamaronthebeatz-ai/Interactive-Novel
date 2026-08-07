@@ -1,0 +1,37 @@
+{
+  "id": "dai-uy-aldous-ferrin",
+  "tier": "persistent",
+  "firstName": "Aldous",
+  "lastName": "Ferrin",
+  "age": 39,
+  "gender": "Nam",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Đại úy tuyển mộ, chỉ huy doanh trại huấn luyện Fielding, Quân đội Hoàng gia Aurenfeld",
+  "residence": "Doanh Trại Huấn Luyện Fielding",
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "friends": ["chưa xây dựng"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Lương sĩ quan từ ngân khố hoàng gia Aurenfeld, đủ sống khá giả nhưng không dư dả.",
+  "assets": "Một thanh kiếm quy chuẩn quân đội, bộ giáp đã sờn qua nhiều năm phục vụ.",
+  "personality": ["Kỷ luật", "Thẳng thắn", "Công bằng đến mức lạnh lùng", "Hiếm khi khen ai trước mặt người khác"],
+  "likes": ["Tân binh biết nhận lỗi thay vì chống chế", "Doanh trại gọn gàng đúng giờ"],
+  "dislikes": ["Quý tộc ỷ danh phận", "Lời hứa suông"],
+  "lifeGoal": "Huấn luyện được một khóa tân binh không ai phải bỏ mạng vì thiếu kỷ luật trong trận đánh đầu tiên.",
+  "schedule": [
+    { "time": "05:00", "activity": "Thức dậy, thị sát doanh trại" },
+    { "time": "06:00", "activity": "Điểm danh tân binh" },
+    { "time": "06:30", "activity": "Chỉ huy buổi tập buổi sáng" },
+    { "time": "12:00", "activity": "Ăn trưa cùng sĩ quan khác" },
+    { "time": "13:00", "activity": "Huấn luyện chiến thuật và đội hình" },
+    { "time": "18:00", "activity": "Dùng bữa tối" },
+    { "time": "20:00", "activity": "Xem xét sổ sách doanh trại" },
+    { "time": "22:00", "activity": "Ngủ" }
+  ],
+  "dialogueId": "dai-uy-ferrin-tro-chuyen"
+}

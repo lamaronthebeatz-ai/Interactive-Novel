@@ -1,0 +1,50 @@
+{
+  "id": "chuong1-dem-dau",
+  "start": "start",
+  "nodes": {
+    "start": {
+      "speaker": "",
+      "text": "Tiếng kẻng cuối ngày vang lên khi bóng tối đã trùm kín doanh trại, chỉ còn ánh lửa trại và vài ngọn đèn dầu trong lều chỉ huy còn sáng. Trước khi các tân binh giải tán về lều, Đại úy Ferrin xuất hiện giữa bãi tập, đứng trên một bệ gỗ thấp để mọi người có thể nhìn thấy ông rõ hơn trong ánh lửa bập bùng.",
+      "choices": [
+        { "text": "(Đứng nghiêm cùng hàng ngũ tân binh, lắng nghe)", "next": "loi-dan-si-quan" }
+      ]
+    },
+    "loi-dan-si-quan": {
+      "speaker": "Đại úy Aldous Ferrin",
+      "text": "\"Đêm nay là đêm đầu tiên trong nhiều đêm các cậu sẽ ngủ ở đây,\" ông nói, giọng vang đủ để tới được hàng cuối. \"Ta sẽ không nói dối các cậu — sẽ có người bỏ cuộc trong vài tuần tới. Sẽ có người nhận ra mình chọn sai. Điều đó không sao cả. Nhưng với những ai còn ở lại, hãy nhớ lấy điều này: quân đoàn này không cần anh hùng đơn độc. Nó cần những người biết đứng đúng vị trí, làm đúng phần việc, và tin tưởng người đứng cạnh mình. Không có ngoại lệ cho dòng dõi, không có ưu tiên cho tài năng bẩm sinh. Chỉ có kỷ luật, và những gì các cậu chọn làm mỗi ngày.\"",
+      "choices": [
+        { "text": "(Ghi nhớ từng lời)", "next": "khoanh-khac-tu-hao" }
+      ]
+    },
+    "khoanh-khac-tu-hao": {
+      "speaker": "",
+      "text": "Trước khi giải tán, Ferrin ra hiệu kiểm tra nhanh trang bị của từng tân binh. Khi tới lượt Lamar, ông cầm lấy cây cung săn của cậu, ngắm nghía một lúc, rồi thử kéo dây. \"Cung tốt, được chăm sóc kỹ.\" Ông liếc sang tấm bản đồ sơ lược trong túi hành lý của Lamar, tự vẽ tay từ những bài học của Rowan, rồi gật đầu, gần như không nhận ra mình đang làm vậy. \"Biết đọc địa hình. Không nhiều tân binh có được điều đó ngay từ ngày đầu.\" Ông không nói thêm gì, nhưng đó là lời khen gần nhất một người như Ferrin có thể thốt ra.",
+      "choices": [
+        { "text": "(Cảm thấy một chút tự hào, dù cố không để lộ ra ngoài)", "next": "ve-leu" }
+      ]
+    },
+    "ve-leu": {
+      "speaker": "",
+      "text": "Trở về lều số bảy, Lamar ngồi xuống tấm chiếu rơm của mình, lấy từ hành lý ra từng món đồ nhận được sáng nay — chiếc nhẫn ấn tín của cha, bùa hộ mệnh hoa oải hương của mẹ, viên đá mài kiếm của Rowan, chiếc mề đay gỗ của giáo sĩ Tobias. Đặt cạnh nhau dưới ánh lửa trại hắt qua khe lều, chúng trông nhỏ bé và tầm thường — nhưng với Lamar, chúng là toàn bộ lâu đài Bergfeld thu nhỏ lại vừa đủ để mang theo. Bram đã ngáy nhẹ ở góc lều, còn Osric vẫn đang mài lại thanh kiếm riêng trong im lặng, không ai buồn trò chuyện thêm nữa sau một ngày dài.",
+      "choices": [
+        { "text": "(Cất kỹ từng món đồ, nằm xuống nhìn lên mái lều)", "next": "quyet-tam" }
+      ]
+    },
+    "quyet-tam": {
+      "speaker": "",
+      "text": "Nằm trong bóng tối, lắng nghe tiếng gió lùa qua vải bạt và tiếng thở đều của những người xa lạ giờ đã thành đồng đội, Lamar nghĩ về khoảng sân lâu đài sáng nay — cha đứng lặng nơi cổng, mẹ với chiếc khăn gấp, Elira cố không khóc, Marta với bọc bánh mì còn ấm. Cậu chưa biết con đường phía trước sẽ dẫn tới đâu, chưa biết doanh trại này sẽ tôi luyện cậu thành người thế nào. Nhưng cậu biết một điều chắc chắn: cậu sẽ không để những gì họ trao cho mình sáng nay trở thành vô nghĩa. Lamar nhắm mắt lại, và lần đầu tiên kể từ khi rời lâu đài, cậu ngủ một cách yên ổn.",
+      "choices": [
+        {
+          "text": "(Kết thúc ngày đầu tiên trong quân ngũ)",
+          "effects": [
+            { "type": "addJournalEntry", "text": "Đêm đầu tiên ở doanh trại Fielding. Mình đã rời lâu đài Bergfeld, chào tạm biệt từng người mình yêu thương, vượt qua chặng đường dài, và chính thức trở thành một tân binh của Quân đội Hoàng gia Aurenfeld. Chương đầu tiên của hành trình đã khép lại — chương tiếp theo bắt đầu từ đây." },
+            { "type": "adjustReputation", "targetId": "quan-doi-hoang-gia-aurenfeld", "targetType": "phe-phai", "targetName": "Quân đội Hoàng gia Aurenfeld", "delta": 5 },
+            { "type": "recordMemory", "npcId": "dai-uy-aldous-ferrin", "eventType": "khac", "description": "Đêm đầu tiên ở doanh trại, Ferrin nhận ra Lamar có nền tảng kỹ năng và kiến thức địa hình tốt hơn phần lớn tân binh khác.", "impact": { "respect": 1 } },
+            { "type": "setFlag", "flag": "chuong-1-hoan-thanh", "value": true },
+            { "type": "setLocation", "locationId": "doanh-trai-fielding" }
+          ]
+        }
+      ]
+    }
+  }
+}

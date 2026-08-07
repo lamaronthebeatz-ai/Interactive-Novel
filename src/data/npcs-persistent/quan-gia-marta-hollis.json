@@ -1,0 +1,38 @@
+{
+  "id": "quan-gia-marta-hollis",
+  "tier": "persistent",
+  "firstName": "Marta",
+  "lastName": "Hollis",
+  "age": 61,
+  "gender": "Nữ",
+  "nationality": "Vương quốc Aurenfeld",
+  "occupation": "Quản gia lâu đài Bergfeld, từng là vú nuôi của Lamar",
+  "residence": "Lâu đài Bergfeld",
+  "family": {
+    "father": "chưa xây dựng",
+    "mother": "chưa xây dựng",
+    "siblings": ["chưa xây dựng"],
+    "spouse": "chưa xây dựng",
+    "children": ["chưa xây dựng"]
+  },
+  "friends": ["nam-tuoc-phu-nhan-isolde-von-berg"],
+  "enemies": ["chưa xây dựng"],
+  "income": "Bổng lộc quản gia trọn đời từ gia tộc von Berg, cộng thêm chỗ ở và ăn uống suốt đời trong lâu đài.",
+  "assets": "Một chiếc rương gỗ nhỏ cất giữ đồ vật của những đứa trẻ bà từng nuôi nấng.",
+  "personality": ["Ấm áp", "Cằn nhằn vì thương yêu", "Tỉ mỉ", "Kiên định"],
+  "likes": ["Bếp lò còn ấm vào sáng sớm", "Kể lại chuyện Lamar hồi bé", "Trà thảo mộc pha đặc"],
+  "dislikes": ["Người trẻ tuổi bỏ bữa vì vội vã", "Sự vô tâm núp dưới danh nghĩa bận rộn"],
+  "lifeGoal": "Sống đủ lâu để thấy đứa trẻ mình từng bế trên tay trở về lâu đài với tư cách Nam tước.",
+  "schedule": [
+    { "time": "04:30", "activity": "Thức dậy, nhóm lò bếp" },
+    { "time": "05:30", "activity": "Chỉ đạo gia nhân chuẩn bị bữa sáng" },
+    { "time": "07:00", "activity": "Phục vụ bữa sáng gia đình" },
+    { "time": "08:30", "activity": "Kiểm kê vải vóc, chăn nệm, đồ dùng lâu đài" },
+    { "time": "12:00", "activity": "Ăn trưa cùng gia nhân trong bếp" },
+    { "time": "14:00", "activity": "Giám sát việc dọn dẹp và giặt giũ" },
+    { "time": "18:30", "activity": "Phục vụ bữa tối gia đình" },
+    { "time": "21:00", "activity": "Ngồi bên bếp lò khâu vá" },
+    { "time": "22:30", "activity": "Ngủ" }
+  ],
+  "dialogueId": "marta-tam-biet"
+}
